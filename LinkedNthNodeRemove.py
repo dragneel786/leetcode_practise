@@ -1,4 +1,4 @@
-def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+def removeNthFromEnd(self, head, n):
     first = head
     second = head
     

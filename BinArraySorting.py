@@ -12,6 +12,6 @@ def sortBinaryArray (arr, n):
                 while(one_pos < n and arr[one_pos] != 1):
                     one_pos += 1
         
-        return arr
+        print(arr)
 
 sortBinaryArray([0,0,0,0], 4)
