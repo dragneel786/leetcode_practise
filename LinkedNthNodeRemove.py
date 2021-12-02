@@ -4,7 +4,7 @@ def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNod
     
     for i in range(n - 1):
         if not first.next:
-            break;
+            break
         first = first.next
     
     prev = None
@@ -18,4 +18,4 @@ def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNod
     else:
         prev.next = second.next
     
-    return head
+    print(head)
