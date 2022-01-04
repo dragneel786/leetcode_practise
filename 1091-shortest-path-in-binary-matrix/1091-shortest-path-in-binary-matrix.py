@@ -7,18 +7,17 @@ class Solution:
 
         q = Queue()
         path = 0
-        q.put((0, 0, 1))
+        q.put([0, 0, 1])
         grid[0][0] = 1
         while(not q.empty()):
             r, c, d = q.get()
             if(r == n - 1 and c == n - 1):
                 return d
 
-            for i, j in ((r + 1, c), (r, c + 1), (r - 1, c), (r, c - 1)\
-                , (r + 1, c + 1), (r + 1, c - 1), (r - 1, c + 1), (r - 1, c - 1)):
-
+            for di, dj in [[1, 0], [-1, 0], [0, 1], [0, -1], [-1, -1], [1, 1], [-1, 1], [1, -1]]:
+                i, j = r + di, c + dj
                 if(i > -1 and j > -1 and i < n and j < n and not grid[i][j]):
                     grid[i][j] = 1
-                    q.put((i, j, d + 1))
-                    
+                    q.put([i, j, d + 1])
+
         return -1
