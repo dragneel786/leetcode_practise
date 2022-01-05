@@ -6,10 +6,8 @@ class Solution:
 
     def addSubset(self, nums, res, op = []):
         if(not nums):
-            if(op not in res):
-                res.append(op)
+            res.append(op)
             return
 
-        for i in range(len(nums)):
-            self.addSubset(nums[i + 1: ], res, op)
-            self.addSubset(nums[i + 1: ], res, op + [nums[i]])
+        self.addSubset(nums[1: ], res, op)
+        self.addSubset(nums[1: ], res, op + [nums[0]])
