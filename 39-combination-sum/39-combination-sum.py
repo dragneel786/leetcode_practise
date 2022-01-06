@@ -1,6 +1,7 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
+        candidates.sort()
         self.getPossibleSums(candidates, target, res)
         return res
     
@@ -14,6 +15,6 @@ class Solution:
 
         for i in range(len(candidates)):
             if(target - candidates[i] < 0):
-                continue
+                break
             self.getPossibleSums(candidates[i: ], target - candidates[i]\
                 , res, op + [candidates[i]])
