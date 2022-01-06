@@ -13,5 +13,7 @@ class Solution:
             return
 
         for i in range(len(candidates)):
+            if(target - candidates[i] < 0):
+                continue
             self.getPossibleSums(candidates[i: ], target - candidates[i]\
                 , res, op + [candidates[i]])
