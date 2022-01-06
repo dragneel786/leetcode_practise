@@ -10,9 +10,6 @@ class Solution:
             res.append(op)
             return
 
-        if(target < 0):
-            return
-
         for i in range(len(candidates)):
             if(candidates[i] > target):
                 break
