@@ -10,18 +10,19 @@ class Solution:
 
         return False
 
-    def dfs(self, board, word, r, c):
-        if(not word):
+    def dfs(self, board, word, r, c, i = 0):
+        if(i == len(word)):
             return True
 
         if(r < 0 or c < 0 or r >= len(board) or \
-             c >= len(board[0]) or board[r][c] == "_" or board[r][c] != word[0]):
+             c >= len(board[0]) or board[r][c] == "_" or board[r][c] != word[i]):
             return False
 
         temp = board[r][c]
         board[r][c] = "_"
-        res = self.dfs(board, word[1:], r + 1, c) or self.dfs(board, word[1:], r, c + 1) or \
-                self.dfs(board, word[1:], r - 1, c) or self.dfs(board, word[1:], r, c - 1)
-        board[r][c] = temp
+        for di, dj in [[1, 0], [0, 1], [-1, 0], [0, -1]]:
+            if(self.dfs(board, word, r + di, c + dj, i + 1)):
+                return True
 
-        return res
+        board[r][c] = temp
+        return False
