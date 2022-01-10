@@ -1,15 +1,15 @@
-from queue import LifoQueue
+from collections import deque
 class Solution:
     def isValid(self, s: str) -> bool:
-        stack = LifoQueue()
+        stack = deque()
         for i in s:
             if(i == "(" or i == "[" or i == "{"):
-                stack.put(i)
+                stack.append(i)
             else:
-                if(stack.empty()):
+                if(len(stack) == 0):
                     return False
-                
-                top = stack.get()
+
+                top = stack.pop()
                 if(top == "(" and i != ")"):
                     return False
 
@@ -19,4 +19,4 @@ class Solution:
                 if(top == "[" and i != "]"):
                     return False
 
-        return True if(stack.empty()) else False
+        return True if(not len(stack)) else False
