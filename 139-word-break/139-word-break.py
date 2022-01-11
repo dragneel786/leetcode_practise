@@ -2,7 +2,7 @@ class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         n = len(s)
         wordDict = set(wordDict)
-        dp = [False] * (n + 1)
+        # dp = [False] * (n + 1)
         # dp[n] = True
         isBreakable = False
         idx = [n]
