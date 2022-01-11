@@ -9,7 +9,7 @@ class Solution:
             for j in idx:
                 if(s[i: j] in wordDict):
                     dp[i] = True
-                    idx.append(i)
+                    idx = [i] + idx
                     break
 
         return dp[0]
