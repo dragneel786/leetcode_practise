@@ -3,13 +3,15 @@ class Solution:
         n = len(s)
         wordDict = set(wordDict)
         dp = [False] * (n + 1)
-        dp[n] = True
+        # dp[n] = True
+        isBreakable = False
         idx = [n]
         for i in range(n - 1, -1, -1):
+            isBreakable = False
             for j in idx:
                 if(s[i: j] in wordDict):
-                    dp[i] = True
+                    isBreakable = True
                     idx = [i] + idx
                     break
 
-        return dp[0]
+        return isBreakable
