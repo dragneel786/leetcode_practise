@@ -5,7 +5,7 @@ class Solution:
         for i in range(len(s) - 1, -1, -1):
             if(s[i] == " "):
                 if(leng_last):
-                    return leng_last
+                    break
             else:
                 leng_last += 1
 
