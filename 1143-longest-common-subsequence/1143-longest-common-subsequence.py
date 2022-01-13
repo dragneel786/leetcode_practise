@@ -3,20 +3,17 @@ class Solution:
         n = len(text1)
         m = len(text2)
         memo = [[float("-inf") for _ in range(m + 1)] for _ in range(n + 1)]
-        return self.getLcs(text1, text2, n - 1, m - 1, memo)
+        for i in range(n + 1):
+            memo[i][0] = 0
 
-    def getLcs(self, text1, text2, i, j, memo):    
-        if(i < 0 or j < 0):
-            memo[i][j] = 0
-            return 0
+        for j in range(m + 1):
+            memo[0][j] = 0
 
-        if(memo[i][j] != float('-inf')):
-            return memo[i][j]
+        for i in range(1, n + 1):
+            for j in range(1, m + 1):
+                if(text1[i - 1] == text2[j - 1]):
+                    memo[i][j] = 1 + memo[i - 1][j - 1]
+                else:
+                    memo[i][j] = max(memo[i - 1][j], memo[i][j - 1])
 
-        if(text1[i] == text2[j]):
-            memo[i][j] = 1 + self.getLcs(text1, text2, i - 1, j - 1, memo)
-        else:
-            memo[i][j] = max(self.getLcs(text1, text2, i - 1, j, memo),\
-             self.getLcs(text1, text2, i, j - 1, memo))
-
-        return memo[i][j]
+        return memo[n][m]
