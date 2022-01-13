@@ -4,6 +4,7 @@ class Solution:
         dp = [[0, 0] for _ in range(n)]
         dp[0] = [1, 1]
         maxM = 1
+        res = 1
         for i in range(1, n): 
             val = 0
             count = 1
@@ -17,12 +18,11 @@ class Solution:
 
             dp[i][0] = val + 1
             dp[i][1] = count
-            maxM = max(maxM, dp[i][0])
-
-        count = 0
-        for i in range(n):
             if(maxM == dp[i][0]):
-                count += dp[i][1]
+                res += dp[i][1]
+            elif(maxM < dp[i][0]):
+                maxM = dp[i][0]
+                res = dp[i][1]
 
         # print(dp)
-        return count
+        return res
