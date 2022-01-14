@@ -10,4 +10,4 @@ class Solution:
                     dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
 
         i, j = m - dp[n][m], n - dp[n][m]
-        return i + j if(dp[n][m]) else (m + n)  
+        return m - dp[n][m] + n - dp[n][m] 
