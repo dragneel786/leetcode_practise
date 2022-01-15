@@ -1,8 +1,5 @@
 class Solution:
     def numDecodings(self, s: str) -> int:
-        if(s[0] == "0"):
-            return 0
-
         n = len(s)
         dp = [0] * (n + 1)
         dp[n] = 1
