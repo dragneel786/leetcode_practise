@@ -1,23 +1,21 @@
 import random
 class Solution:
     original = list()
-    curr = list()
     def __init__(self, nums: List[int]):
         self.original = nums
-        self.curr = nums.copy()
 
     def reset(self) -> List[int]:
-        self.curr = self.original.copy()
-        return self.curr
+        return self.original
 
     def shuffle(self) -> List[int]:
-        n = len(self.curr)
+        n = len(self.original)
+        curr = self.original[:]
         for i in range(n - 1, -1, -1):
             n -= 1
             r = random.randint(0, n)
-            self.curr[i], self.curr[r] = self.curr[r], self.curr[i]
+            curr[i], curr[r] = curr[r], curr[i]
         
-        return self.curr
+        return curr
         
 
 # Your Solution object will be instantiated and called as such:
