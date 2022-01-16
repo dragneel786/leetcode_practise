@@ -13,9 +13,9 @@ class Solution:
     def shuffle(self) -> List[int]:
         n = len(self.curr)
         for i in range(n - 1, -1, -1):
-            r = random.randint(0, n - 1)
-            self.curr[i], self.curr[r] = self.curr[r], self.curr[i]
             n -= 1
+            r = random.randint(0, n)
+            self.curr[i], self.curr[r] = self.curr[r], self.curr[i]
         
         return self.curr
         
