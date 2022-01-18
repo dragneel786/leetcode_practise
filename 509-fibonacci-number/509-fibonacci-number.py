@@ -1,6 +1,6 @@
 class Solution:
     def fib(self, n: int) -> int:
-        if(n == 0):
+        if(not n):
             return 0
         
         f1 = 0
