@@ -4,25 +4,25 @@ class Solution:
         if(n < 3):
             return 0
         
-        lookup = [0] * 26
+        # lookup = [0] * 26
+        lookup = dict()
         for i in range(3):
-            lookup[ord(s[i]) - 97] += 1
+            lookup[s[i]] = lookup.get(s[i], 0) + 1
         
         count = 0
-        if(self.containsOnes(lookup)):
+        if(self.checkKeys(lookup)):
             count += 1
         
         for i in range(3, n):
-            lookup[ord(s[i - 3]) - 97] -= 1
-            lookup[ord(s[i]) - 97] += 1
-            if(self.containsOnes(lookup)):
+            lookup[s[i - 3]] -= 1
+            lookup[s[i]] = lookup.get(s[i], 0) + 1
+            if(self.checkKeys(lookup)):
                 count += 1
         
         return count
-    
-    def containsOnes(self, lookup):
-        for i in lookup:
-            if(i > 1):
-                return False
-        
+
+    def checkKeys(self, lookup):
+        for i in lookup.keys():
+            if(lookup[i] > 1):
+                return False   
         return True
