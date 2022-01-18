@@ -3,9 +3,8 @@ class Solution:
         if(n == 0):
             return 0
         
-        f1 = 0
-        f2 = 1
+        dp = [0, 1]
         for i in range(n - 1):
-            f1, f2 = f2, f1 + f2
+            dp[0], dp[1] = dp[1], dp[0] + dp[1]
             
-        return f2
+        return dp[1]
