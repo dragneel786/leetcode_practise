@@ -1,6 +1,7 @@
 class Solution:
     def fib(self, n: int) -> int:
-        f1, f2 = 0, 1
+        dp = [0, 1]
         for i in range(n):
-            f1, f2 = f2, f1 + f2
-        return f1
+            dp[0], dp[1] = dp[1], dp[0] + dp[1]
+            
+        return dp[0]
