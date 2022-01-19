@@ -1,36 +1,24 @@
 from collections import deque
 class Solution:
     def countServers(self, grid: List[List[int]]) -> int:
-        rows = len(grid)
-        cols = len(grid[0])
-        count = 0
-        for row in range(rows):
-            for col in range(cols):
-                temp = 0
+        row_hash = defaultdict(int)
+        col_hash = defaultdict(int)
+        retry = set()
+        total = 0
+        for row in range(len(grid)):
+            for col in range(len(grid[0])):
                 if(grid[row][col]):
-                    temp = self.bfs(grid, row, col)
-                    if(temp >= 2):
-                        count += temp
+                    row_hash[row] += 1
+                    col_hash[col] += 1
+                    if(row_hash[row] > 1 and col_hash[col] > 1):
+                        total += 1
+                    else:
+                        retry.add((row, col))
 
-        return count
-
-    def bfs(self, grid, row, col):
-        count = 1
-        q = deque()
-        q.append([row, col])
-        grid[row][col] = 0
-        dir = [[1, 0], [0, 1], [-1, 0], [0, -1]]
-        while(len(q)):
-            r, c = q.popleft()
-            for d in dir:
-                i, j = r + d[0], c + d[1]
-                while(i > -1 and j > -1 and i < len(grid) and j < len(grid[0])):
-                    if(grid[i][j]):
-                        q.append([i, j])
-                        grid[i][j] = 0
-                        count += 1
-                    i, j = i + d[0], j + d[1]
-        if(count == 1):
-            grid[row][col] = 1
-
-        return count
+        for r in retry:
+            if(row_hash[r[0]] > 1):
+                total += 1
+            elif(col_hash[r[1]] > 1):
+                total += 1
+        
+        return total
