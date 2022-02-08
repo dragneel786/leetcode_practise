@@ -13,14 +13,17 @@ class Solution:
             val = (nums[i] * dic[nums[i]])
             if(nums[i - 1] + 1 == nums[i]):
                 temp = max_before + val
-                if(temp > max_till):
-                    max_before = max_till
-                    max_till = temp
-                else:
-                    max_before = max_till
+                # if(temp > max_till):
+                #     max_before = max_till
+                #     max_till = temp
+                # else:
+                #     max_before = max_till
             else:
                 temp = max_till + val
-                max_before = max_till
+                # max_before = max_till
+                # max_till = temp
+            max_before = max_till
+            if(temp > max_till):
                 max_till = temp
 
         return max_till
