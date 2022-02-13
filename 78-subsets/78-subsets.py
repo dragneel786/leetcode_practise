@@ -1,13 +1,15 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        res = list()
-        self.addSubset(nums, res)
+        res = []
+    
+        def getSubset(inp, op = []):
+            if(not inp):
+                res.append(op)
+                return
+
+            getSubset(inp[1:], op)
+            getSubset(inp[1:], op + [inp[0]])
+            
+        
+        getSubset(nums)
         return res
-
-    def addSubset(self, nums, res, op = []):
-        if(not nums):
-            res.append(op)
-            return
-
-        self.addSubset(nums[1: ], res, op)
-        self.addSubset(nums[1: ], res, op + [nums[0]])
