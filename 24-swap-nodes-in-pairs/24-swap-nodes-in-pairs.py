@@ -10,19 +10,18 @@ class Solution:
         
         prev = head
         curr = head.next
-        head = curr
-        temp = None
-        while(prev and curr):
+        head = ListNode(0, head)
+        next = head
+        while(True):
+            next.next = curr
             prev.next = curr.next
             curr.next = prev
-            if(not temp):
-                temp = prev
-            else:
-                temp.next = curr
-                temp = prev
-            prev = prev.next
-            if(prev):
-                curr = prev.next
+            next = prev
+            if(not next.next or not next.next.next):
+                return head.next
+            prev = next.next
+            curr = prev.next
+            
         
-        return head
+                
             
