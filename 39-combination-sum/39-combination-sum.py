@@ -1,20 +1,19 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        res = []
-        candidates.sort()
-        self.getPossibleSums(candidates, target, res)
-        return res
+        
+        def getCombo(candi, t, op = []):
+            if(not t):
+                return [op.copy()]
+
+            if(t < 0):
+                return []
+
+            res = []
+            for i in range(len(candi)):
+                temp = getCombo(candi[i:], t - candi[i], op + [candi[i]])
+                if(temp):
+                    res.extend(temp)
+
+            return res
     
-    def getPossibleSums(self, candidates, target, res, op = []):
-        if(target == 0):
-            res.append(op)
-            return
-
-        if(target < 0):
-            return
-
-        for i in range(len(candidates)):
-            if(candidates[i] > target):
-                break
-            self.getPossibleSums(candidates[i: ], target - candidates[i]\
-                , res, op + [candidates[i]])
+        return getCombo(candidates, target)
