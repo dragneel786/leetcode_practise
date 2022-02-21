@@ -6,9 +6,8 @@ class Solution:
         i = m - 1
         j = n - 1
         k = len(nums1) - 1
-        print(i, j, k)
-        while(i > -1 and j > -1):
-            if(nums1[i] > nums2[j]):
+        while(i > -1 or j > -1):
+            if(j == -1 or (i != -1 and nums1[i] > nums2[j])):
                 nums1[k] = nums1[i]
                 i -= 1
             else:
@@ -17,12 +16,12 @@ class Solution:
             
             k -= 1
         
-        while(i > -1):
-            nums1[k] = nums1[i]
-            i -= 1
-            k -= 1
+#         while(i > -1):
+#             nums1[k] = nums1[i]
+#             i -= 1
+#             k -= 1
         
-        while(j > -1):
-            nums1[k] = nums2[j]
-            j -= 1
-            k -= 1
+#         while(j > -1):
+#             nums1[k] = nums2[j]
+#             j -= 1
+#             k -= 1
