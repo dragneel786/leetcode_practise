@@ -1,9 +1,6 @@
 class Solution:
     def titleToNumber(self, columnTitle: str) -> int:
-        col_num = 0
-        powI = 0
-        for i in range(len(columnTitle) - 1, -1, -1):
-            col_num += (ord(columnTitle[i]) - 64) * (26 ** powI)
-            powI += 1
-        
+        col_num = ord(columnTitle[0]) - 64
+        for i in range(1, len(columnTitle)):
+            col_num = col_num * 26 + (ord(columnTitle[i]) - 64)
         return col_num
