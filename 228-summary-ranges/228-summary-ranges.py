@@ -6,15 +6,13 @@ class Solution:
         
         ranges = []
         start = nums[0]
-        end = nums[0]
         nums.append(float('inf'))
         for i in range(1, n + 1):
-            if(nums[i] != end + 1):
-                if(start == end):
+            if(nums[i] != nums[i - 1] + 1):
+                if(start == nums[i - 1]):
                     ranges.append(str(start))
                 else:
-                    ranges.append(str(start) + "->" + str(end))
+                    ranges.append(str(start) + "->" + str(nums[i - 1]))
                 start = nums[i]
-            end = nums[i]
         
         return ranges
