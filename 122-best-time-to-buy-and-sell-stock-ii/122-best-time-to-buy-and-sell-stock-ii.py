@@ -1,12 +1,11 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        prices += [0]
-        maxi = prices[0]
+        start = prices[0]
+        prices.append(-1)
         total = 0
-        n = len(prices)
-        for i in range(1, n):
-            if(prices[i - 1] > prices[i]):
-                total += (prices[i - 1] - maxi)
-                maxi = prices[i]
-
+        for i in range(1, len(prices)):
+            if(prices[i - 1] >= prices[i]):
+                total += prices[i - 1] - start
+                start = prices[i]
+            
         return total
