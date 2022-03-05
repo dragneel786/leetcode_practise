@@ -1,15 +1,22 @@
 class Solution:
     def deleteAndEarn(self, nums: List[int]) -> int:
-        n = len(nums)
+        dic = defaultdict(int)
+        for n in nums:
+            dic[n] += 1
+
         nums.sort()
-        dp = [0] * n
-        dp[0] = nums[0]
-        for i in range(1, n):
-            maxTill = 0
-            for j in range(i):
-                if(nums[j] + 1 != nums[i]):
-                    maxTill = max(dp[j], maxTill)
+        nums = list(set(nums))
+        max_till = nums[0] * dic[nums[0]]
+        max_before = 0
+        for i in range(1, len(nums)):
+            temp = 0
+            val = nums[i] * dic[nums[i]]
+            if(nums[i] - 1 == nums[i - 1]):
+                temp = max_before + val
+            else:
+                temp = max_till + val
 
-            dp[i] = maxTill + nums[i]
+            max_before = max_till
+            max_till = max(max_till, temp)
 
-        return max(dp)
+        return max_till
