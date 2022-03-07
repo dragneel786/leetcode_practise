@@ -7,4 +7,4 @@ class Solution:
         if(low % 2 == 1 and high % 2 == 1):
             return range // 2 + 1
     
-        return range // 2 - 1 + 1
+        return range // 2
