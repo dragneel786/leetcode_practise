@@ -9,4 +9,4 @@ class Solution:
             w1[ord(s1[i]) - 97] += 1
             w2[ord(s2[i]) - 97] += 1
         
-        return w1 == w2 and (diff == 2 or diff == 0)
+        return diff == 0 or (diff == 2 and w1 == w2)
