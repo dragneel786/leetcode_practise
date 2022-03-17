@@ -1,38 +1,33 @@
 class MyQueue:
-    st1 = None
-    st2 = None
+    
 
     def __init__(self):
-        self.st1 = deque()
-        self.st2 = deque()
+        self.enque = deque()
+        self.deque = deque()
 
     def push(self, x: int) -> None:
-        self.st1.append(x)
+        if(not len(self.enque)):
+            self.deque.reverse()
+            self.enque = self.deque.copy()
+            self.deque.clear()
+        self.enque.append(x)
 
     def pop(self) -> int:
-        while(len(self.st1)):
-            self.st2.append(self.st1.pop())
-        
-        val = self.st2.pop()
-        
-        while(len(self.st2)):
-            self.st1.append(self.st2.pop())
-        
-        return val
+        if(not len(self.deque)):
+            self.enque.reverse()
+            self.deque = self.enque.copy()
+            self.enque.clear()
+        return self.deque.pop()
 
     def peek(self) -> int:
-        while(len(self.st1)):
-            self.st2.append(self.st1.pop())
-        
-        val = self.st2[-1]
-        
-        while(len(self.st2)):
-            self.st1.append(self.st2.pop())
-        
-        return val
-
+        if(not len(self.deque)):
+            self.enque.reverse()
+            self.deque = self.enque.copy()
+            self.enque.clear()
+        return self.deque[-1]
+    
     def empty(self) -> bool:
-        if(len(self.st1)):
+        if(len(self.enque) or len(self.deque)):
             return False
         return True
 
