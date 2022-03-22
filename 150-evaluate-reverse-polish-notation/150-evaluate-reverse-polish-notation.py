@@ -1,5 +1,11 @@
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
+        opmap = {
+            '+': operator.add,
+            '-': operator.sub,
+            '*': operator.mul,
+            '/': operator.truediv
+        }
         st = deque()
         for ch in tokens:
             if(ch.lstrip("-").isnumeric()):
@@ -7,14 +13,6 @@ class Solution:
             else:
                 b = int(st.pop())
                 a = int(st.pop())
-                if(ch == "+"):
-                    res = a + b
-                elif(ch == "-"):
-                    res = a - b
-                elif(ch == "*"):
-                    res = a * b
-                else:
-                    res = a / b
-                st.append(res)
+                st.append(opmap[ch](a, b))
 
         return int(st.pop())
