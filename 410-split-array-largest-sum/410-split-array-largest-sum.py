@@ -18,10 +18,8 @@ class Solution:
                     split += 1
                 tillSum += nums[i]
 
-            if(split == m):
-                ans = mid
-
             if(split <= m):
+                ans = mid
                 high = mid - 1
             else:
                 low = mid + 1
