@@ -12,21 +12,21 @@ class Solution:
         if(not head):
             return None
         
-        hashIt = dict()
-        newHead = Node(head.val)
-        hashIt[head] = newHead
-        mhead = head.next
-        chead = newHead
-        while(mhead):
-            chead.next = Node(mhead.val)
-            hashIt[mhead] = chead.next
-            chead = chead.next
-            mhead = mhead.next
+        node = head
+        while(node):
+            temp = node.next
+            node.next = Node(node.val)
+            node.next.next = temp
+            node = temp
         
+        nHead = head.next
         while(head):
             if(head.random):
-                hashIt[head].random = hashIt[head.random]
-            head = head.next
+                head.next.random = head.random.next
+            temp = head.next.next
+            if(temp):
+                head.next.next = temp.next
+            head = temp
         
-        return newHead
+        return nHead
         
