@@ -20,13 +20,12 @@ class Solution:
             node = temp
         
         nHead = head.next
-        while(head):
+        while(True):
             if(head.random):
                 head.next.random = head.random.next
             temp = head.next.next
-            if(temp):
-                head.next.next = temp.next
+            if(not temp):
+                return nHead
+            head.next.next = temp.next
             head = temp
-        
-        return nHead
         
