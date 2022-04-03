@@ -8,7 +8,7 @@ class Solution:
         carry = 0
         head = ListNode(0)
         temp = head
-        while(l1 or l2):
+        while(l1 or l2 or carry):
             val1 = 0
             val2 = 0
             if(l1):
@@ -22,8 +22,8 @@ class Solution:
             temp.next = ListNode(ans % 10)
             temp = temp.next
         
-        if(carry):
-            temp.next = ListNode(carry)
+        # if(carry):
+        #     temp.next = ListNode(carry)
         
         return head.next
             
