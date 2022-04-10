@@ -1,14 +1,14 @@
 class Solution:
     def calPoints(self, ops: List[str]) -> int:
-        res = []
+        st = deque()
         for o in ops:
             if(o == '+'):
-                res.append(res[-1] + res[-2])
+                st.append(st[-1] + st[-2])
             elif(o == 'D'):
-                res.append(res[-1] * 2)
+                st.append(st[-1] * 2)
             elif(o == "C"):
-                res.pop()
+                st.pop()
             else:
-                res.append(int(o))
+                st.append(int(o))
         
-        return sum(res)
+        return sum(st)
