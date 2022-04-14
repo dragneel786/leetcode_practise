@@ -12,13 +12,6 @@ class Solution:
         if(root.val == val):
             return root
         
-        ret1 = self.searchBST(root.left, val)
-        ret2 = self.searchBST(root.right, val)
-        
-        if(ret1):
-            return ret1
-        if(ret2):
-            return ret2
-        else:
-            return None
+        res = self.searchBST(root.left, val) or self.searchBST(root.right, val)
+        return res if res else None
         
