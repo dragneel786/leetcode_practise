@@ -8,16 +8,15 @@ class Solution:
     def convertBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         
         
-        def makeGreater(root, s = [0]):
+        def makeGreater(root, val):
             if(not root):
-                return
+                return val
             
-            makeGreater(root.right, s)
-            root.val += s[0]
-            s[0] = root.val
-            makeGreater(root.left, s)
+            val = makeGreater(root.right, val)
+            root.val += val
+            return makeGreater(root.left, root.val)
             
         
-        makeGreater(root)
+        makeGreater(root, 0)
         return root
             
