@@ -12,17 +12,18 @@ class BSTIterator:
         
     def next(self) -> int:
         node = self.stack.pop()
-        self.__pushLeft(node.right)
+        if(node.right):
+            self.__pushLeft(node.right)
         return node.val
         
     def hasNext(self) -> bool:
-        return len(self.stack) != 0
+        return len(self.stack) != 0   
     
     def __pushLeft(self, node):
         while(node):
             self.stack.append(node)
             node = node.left
-
+            
 # Your BSTIterator object will be instantiated and called as such:
 # obj = BSTIterator(root)
 # param_1 = obj.next()
