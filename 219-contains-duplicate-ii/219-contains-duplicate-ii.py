@@ -7,7 +7,6 @@ class Solution:
         
         for v in seen.keys():
             ind = seen[v]
-            print(ind)
             for i in range(len(ind)):
                 for j in range(i + 1, len(ind)):
                     if(abs(ind[i] - ind[j]) <= k):
