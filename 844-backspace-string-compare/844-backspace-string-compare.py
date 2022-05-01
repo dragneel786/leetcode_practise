@@ -2,14 +2,17 @@ class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
         
         def construct(s):
-            res = []
-            for i in s:
-                if(i != "#"):
-                    res.append(i)
+            res = ""
+            count = 0
+            for i in range(len(s) - 1, -1, -1):
+                if(s[i] != "#"):
+                    if(count):
+                        count -= 1
+                        continue
+                    res = s[i] + res
                 else:
-                    if(res):
-                        res.pop()
-            return "".join(res)
+                    count += 1
+            return res
                 
             
         s = construct(s)
