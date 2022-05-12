@@ -1,17 +1,19 @@
 class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
         res = []
-        nums = nums + [11]
         nums.sort()
-        self.genPermute(nums, res)
-        return res
-
-    def genPermute(self, nums, res, op = []):
-        if(len(nums) == 1):
-            res.append(op)
-            return
-
-        for i in range(0, len(nums) - 1):
-            if(nums[i] != nums[i - 1]):
-                self.genPermute(nums[0: i] + nums[i + 1: ], res, op + [nums[i]])
+        
+        def genPermute(nums, op = []):
+            if(not nums):
+                res.append(op)
+                return
             
+            for i in range(len(nums)):
+                if(i == 0 or (i != 0 and nums[i] != nums[i - 1])):
+                    genPermute(nums[:i] + nums[i + 1:], op + [nums[i]])
+                    
+        genPermute(nums)
+        return res
+        
+        
+        
