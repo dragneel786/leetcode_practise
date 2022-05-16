@@ -1,23 +1,30 @@
-from queue import Queue
 class Solution:
     def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
         n = len(grid)
-        if(grid[0][0] or grid[n - 1][n - 1]):
+        if(grid[n - 1][n - 1] or grid[0][0]):
             return -1
-
-        q = Queue()
-        path = 0
-        q.put([0, 0, 1])
-        grid[0][0] = 1
-        while(not q.empty()):
-            r, c, d = q.get()
-            if(r == n - 1 and c == n - 1):
-                return d
-
-            for di, dj in [[1, 0], [-1, 0], [0, 1], [0, -1], [-1, -1], [1, 1], [-1, 1], [1, -1]]:
-                i, j = r + di, c + dj
-                if(i > -1 and j > -1 and i < n and j < n and not grid[i][j]):
-                    grid[i][j] = 1
-                    q.put([i, j, d + 1])
-
+        
+        visited = set()
+        st = deque()
+        st.append((0, 0))
+        visited.add((0, 0))
+        path = 1
+        while(len(st)):
+            for _ in range(len(st)):
+                node = st.pop()
+                if(node == (n - 1, n - 1)):
+                    return path
+                for dx, dy in [[1,0], [-1,0], [0,1], [0,-1],\
+                              [1,-1], [-1,1], [1,1],[-1,-1]]:
+                    x = node[0] - dx
+                    y = node[1] - dy
+                    if(x >= n or x < 0 or y < 0 or y >= n \
+                       or (x, y) in visited or grid[x][y]):
+                        continue
+                    st.appendleft((x, y))
+                    visited.add((x, y))
+            path += 1
+        
         return -1
+        
+        
