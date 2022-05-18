@@ -1,15 +1,8 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        group = dict()
+        groups = defaultdict(lambda:[])
         for s in strs:
-            tups = ''.join(sorted(s))
-            if(tups in group):
-                group[tups].append(s)
-            else:
-                group[tups] = [s]
-
-        res = []
-        for k in group.keys():
-            res.append(group[k])
-
-        return res
+            key = "".join(sorted(s))
+            groups[key].append(s)
+        
+        return groups.values()
