@@ -4,11 +4,11 @@
 
 <p>Each node in the graph contains a value (<code>int</code>) and a list (<code>List[Node]</code>) of its neighbors.</p>
 
-<pre>class Node {
+<pre style="position: relative;">class Node {
     public int val;
     public List&lt;Node&gt; neighbors;
 }
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p>&nbsp;</p>
 
@@ -23,28 +23,28 @@
 <p>&nbsp;</p>
 <p><strong>Example 1:</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2019/11/04/133_clone_graph_question.png" style="width: 454px; height: 500px;">
-<pre><strong>Input:</strong> adjList = [[2,4],[1,3],[2,4],[1,3]]
+<pre style="position: relative;"><strong>Input:</strong> adjList = [[2,4],[1,3],[2,4],[1,3]]
 <strong>Output:</strong> [[2,4],[1,3],[2,4],[1,3]]
 <strong>Explanation:</strong> There are 4 nodes in the graph.
 1st node (val = 1)'s neighbors are 2nd node (val = 2) and 4th node (val = 4).
 2nd node (val = 2)'s neighbors are 1st node (val = 1) and 3rd node (val = 3).
 3rd node (val = 3)'s neighbors are 2nd node (val = 2) and 4th node (val = 4).
 4th node (val = 4)'s neighbors are 1st node (val = 1) and 3rd node (val = 3).
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><strong>Example 2:</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2020/01/07/graph.png" style="width: 163px; height: 148px;">
-<pre><strong>Input:</strong> adjList = [[]]
+<pre style="position: relative;"><strong>Input:</strong> adjList = [[]]
 <strong>Output:</strong> [[]]
 <strong>Explanation:</strong> Note that the input contains one empty list. The graph consists of only one node with val = 1 and it does not have any neighbors.
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><strong>Example 3:</strong></p>
 
-<pre><strong>Input:</strong> adjList = []
+<pre style="position: relative;"><strong>Input:</strong> adjList = []
 <strong>Output:</strong> []
 <strong>Explanation:</strong> This an empty graph, it does not have any nodes.
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
