@@ -1,13 +1,13 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        max_wo, max_wi = 0, nums[0]
+        res = nums[0]
+        prev = 0
         for i in range(1, len(nums)):
-            val = max_wo + nums[i]
-            if(val > max_wi):
-                max_wo = max_wi
-                max_wi = val
+            temp = max(res, prev + nums[i])
+            if(res < temp):
+                prev = res
+                res = temp
             else:
-                max_wo = max_wi
-
-        return max_wi
-                
+                prev = res
+        
+        return res
