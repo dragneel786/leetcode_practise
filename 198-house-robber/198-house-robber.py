@@ -3,7 +3,7 @@ class Solution:
         res = nums[0]
         prev = 0
         for i in range(1, len(nums)):
-            temp = max(res, prev + nums[i])
+            temp = prev + nums[i]
             if(res < temp):
                 prev = res
                 res = temp
