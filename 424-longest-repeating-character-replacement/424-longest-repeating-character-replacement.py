@@ -3,22 +3,16 @@ class Solution:
         chars = defaultdict(int)
         chars[s[0]] += 1
         
-        index = count = 1
-        maxCount = last = 0
-        n = len(s)
-        while(index < n):
-            chars[s[index]] += 1
-            count += 1
-            
-            if(count - chars[s[last]] > k):
-                chars[s[last]] -= 1
-                last += 1
-                count -= 1
-            
-            maxCount = max(count, maxCount)
-            index += 1
-        
-        if(count - chars[s[last]] < k):
-            count += k
-        
-        return min(max(count, maxCount), n)
+        maxFreq = 1
+        maxLen = k
+        l = 0
+        for r in range(1, len(s)):
+            chars[s[r]] += 1
+            maxFreq = max(chars[s[r]], maxFreq)
+            if((r - l + 1) - maxFreq <= k):
+                maxLen = max(maxLen, (r - l + 1))
+            else:
+                chars[s[l]] -= 1
+                l += 1
+        return maxLen
+                
