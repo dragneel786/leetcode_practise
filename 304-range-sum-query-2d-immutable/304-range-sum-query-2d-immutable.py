@@ -1,31 +1,33 @@
 class NumMatrix:
 
     def __init__(self, matrix: List[List[int]]):
-        for i in range(len(matrix)):
-            for j in range(len(matrix[0])):
-                if(i > 0):
-                    matrix[i][j] += matrix[i - 1][j]
+        rows, cols = len(matrix), len(matrix[0])
+        for r in range(rows):
+            for c in range(cols):
+                if(r > 0):
+                    matrix[r][c] += matrix[r - 1][c]
                 
-                if(j > 0):
-                    matrix[i][j] += matrix[i][j - 1]
-
-                if(i > 0 and j > 0):
-                    matrix[i][j] -= matrix[i - 1][j - 1]
-                    
+                if(c > 0):
+                    matrix[r][c] += matrix[r][c - 1]
+                
+                if(r > 0 and c > 0):
+                    matrix[r][c] -= matrix[r - 1][c - 1]
+        
         self.matrix = matrix
 
     def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
-        val = self.matrix[row2][col2]
+        res = self.matrix[row2][col2]
         if(row1 > 0):
-            val -= self.matrix[row1 - 1][col2]
+            res -= self.matrix[row1 - 1][col2]
         
         if(col1 > 0):
-            val -= self.matrix[row2][col1 - 1]
+            res -= self.matrix[row2][col1 - 1]
         
         if(row1 > 0 and col1 > 0):
-            val += self.matrix[row1 - 1][col1 - 1]
-
-        return val
+            res += self.matrix[row1 - 1][col1 - 1]
+        
+        return res
+            
 
 
 # Your NumMatrix object will be instantiated and called as such:
