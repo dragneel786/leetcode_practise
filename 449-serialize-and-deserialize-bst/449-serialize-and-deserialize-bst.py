@@ -32,22 +32,20 @@ class Codec:
         st = deque()
         st.append(root)
         for l in data.split("|"):
-            p = st.pop()
-            c = 0
             levels = l.split(",")
-            for i in range(len(levels)):
-                node = None
+            for i in range(0, len(levels), 2):
+                node = st.pop()
+                left, right = None, None
                 if(levels[i] != "N"):
-                    node = TreeNode(int(levels[i]))
-                    st.appendleft(node)
-                if(c == 0):
-                    p.left = node
-                elif(c == 1):
-                    p.right = node
-                    if(i + 1 < len(levels)):
-                        p = st.pop()
-                c = (c + 1) % 2
-        
+                    left = TreeNode(int(levels[i]))
+                    st.appendleft(left)
+                    
+                if(i + 1 < len(levels) and levels[i + 1] != "N"):
+                    right = TreeNode(int(levels[i + 1]))
+                    st.appendleft(right)
+                
+                node.left = left
+                node.right = right
         return root.left
         
 
