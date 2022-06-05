@@ -18,14 +18,12 @@ class Solution:
             if(r1 != -math.inf or r2 != -math.inf):
                 idx = max(r1, r2) + 1
             
+            if(idx == len(ans)):
+                ans.append([])
+                
             ans[idx].append(root.val)
             return idx
         
-        ans = defaultdict(list)
+        ans = []
         getLeaves(root)
-        res = []
-        for i in range(100):
-            if(i not in ans):
-                break
-            res.append(ans[i])
-        return res
+        return ans
