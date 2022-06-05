@@ -14,7 +14,7 @@ class Solution:
         
         def validate(invalid, pos):
             for k in invalid.keys():
-                if(k == pos[0] or invalid[k] == pos[1] or\
+                if(invalid[k] == pos[1] or\
                   abs(pos[0] - k) == abs(pos[1] - invalid[k])):
                     return False
             return True
