@@ -3,15 +3,28 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        i = m - 1
-        j = n - 1
-        k = len(nums1) - 1
-        while(i > -1 or j > -1):
-            if(j == -1 or (i != -1 and nums1[i] > nums2[j])):
-                nums1[k] = nums1[i]
-                i -= 1
-            else:
+        for i in range(m + n - 1, n - 1, -1):
+            nums1[i], nums1[i - n] = nums1[i - n], nums1[i]
+        
+        i = n
+        j = 0
+        k = 0
+        while(i < m + n and j < n):
+            if(nums1[i] > nums2[j]):
                 nums1[k] = nums2[j]
-                j -= 1
+                j += 1
+            else:
+                nums1[k] = nums1[i]
+                i += 1
+            k += 1
+        
+        while(i < m + n):
+            nums1[k] = nums1[i]
+            i += 1
+            k += 1
+        
+        while(j < n):
+            nums1[k] = nums2[j]
+            j += 1
+            k += 1
             
-            k -= 1
