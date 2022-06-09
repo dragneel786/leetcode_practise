@@ -17,9 +17,6 @@ class Solution:
             for dx, dy in [(-1, 0), (0, -1), (1, 0), (0, 1)]:
                 x, y = px + dx, py + dy
 
-                if((x, y, k) in visited):
-                    continue
-
                 if(0 <= x < m and 0 <= y < n):
                     ne = k - grid[x][y]
                     newState = (x, y, ne)
