@@ -1,17 +1,15 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        hashed = defaultdict(lambda:-1)
-        n = len(s)
-        i = 0
+        seen = defaultdict(lambda:0)
         j = 0
-        maxL = 0
-        while(j < n):
-            if(hashed[s[j]] != -1):
-                print(hashed[s[j]], j)
-                maxL = max(maxL, j - i)
-                i = max(i, hashed[s[j]] + 1)
-            hashed[s[j]] = j
-            j += 1
-        maxL = max(maxL, j - i)
-        return maxL
+        n = len(s)
+        long = 0
+        for i in range(n):
+            seen[s[i]] += 1
+            while(j <= i and seen[s[i]] > 1):
+                seen[s[j]] -= 1
+                j += 1
             
+            long = max(long, i - j + 1)
+        
+        return long
