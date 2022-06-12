@@ -1,30 +1,31 @@
 class Solution:
     def shortestWay(self, source: str, target: str) -> int:
-        def isSub(w):
-            i = 0
-            for c in w:
-                idx = bisect_left(indexes[c], i)
-                if(idx == len(indexes[c])):
-                    return False
-                i = indexes[c][idx] + 1
-            return True
-                
-        indexes = defaultdict(lambda:[])
-        for i,ch in enumerate(source):
-            indexes[ch].append(i)
-        
-        for c in target:
-            if(not indexes[c]):
-                return -1
-        
-        counts = 0
+        maps = dict()
         n = len(source)
-        m = len(target)
-        i = 0
-        while(i < m):
-            w = n if(n < m - i) else m - i 
-            while(not isSub(target[i: i + w])):
-                w -= 1
-            counts += 1
-            i += w
+        for i, c in enumerate(source):
+            if(c not in maps):
+                maps[c] = ([0] * n)
+            maps[c][i] = i + 1
+        
+        for c in maps.keys():
+            prev = 0
+            for j in range(n - 1, -1, -1):
+                if(maps[c][j]):
+                    prev = maps[c][j]
+                maps[c][j] = prev
+        
+        
+        j = 0
+        counts = 1
+        for c in target:
+            if(c not in maps): return -1
+            
+            if(j == n or not maps[c][j]):
+                counts += 1
+                j = 0
+                
+            j = maps[c][j]
+        
         return counts
+            
+            
