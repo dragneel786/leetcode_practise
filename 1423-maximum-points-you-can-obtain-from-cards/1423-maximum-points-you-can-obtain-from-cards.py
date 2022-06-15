@@ -4,17 +4,20 @@ class Solution:
         if(n == k):
             return sum(cardPoints)
         
-        for i in range(1, n):
-            cardPoints[i] += cardPoints[i - 1]
-        
-        res = cardPoints[-1]
-        for i in range(k + 1):
-            # print(cardPoints[i + (n - k) - 1])
-            temp = cardPoints[i + (n - k) - 1]
-            if(i > 0):
-                temp -= cardPoints[i - 1]
-            res = min(res, temp)
-        
-        return cardPoints[-1] - res
+        w = n - k
+        res = math.inf
+        j = curr = 0
+        tot = 0
+        for i, c in enumerate(cardPoints):
+            tot += c
+            curr += c
+            if(i - j + 1 > w):
+                curr -= cardPoints[j]
+                j += 1
+            
+            if(i - j + 1 == w):
+                res = min(res, curr)
+            
+        return tot - res
                 
         
