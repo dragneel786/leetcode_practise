@@ -1,22 +1,18 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         n = len(s)
-        dp = [([0] * n) for _ in range(n)]
-        lo, hi = 0, 1
+        
+        def findLP(s, j, k):
+            while(j > -1 and k < n and s[j] == s[k]):
+                j -= 1
+                k += 1
+            return s[j + 1:k]
+        
+        res = s[0]
         for i in range(n):
-            dp[i][i] = 1
-            if(i < n - 1 and s[i] == s[i + 1]):
-                dp[i][i + 1] = 1
-                lo = i
-                hi = i + 2
+            res = max(findLP(s, i, i), findLP(s, i, i + 1), res, key=len)
+        return res
         
-        
-        for i in range(2, n):
-            for j in range(n - i):
-                if(s[j] == s[j + i] and dp[j + 1][j + i - 1]):
-                    dp[j][j + i] = 1
-                    lo, hi = j, j + i + 1
-        
-        return s[lo: hi]
+                
         
             
