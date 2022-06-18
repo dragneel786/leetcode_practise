@@ -9,12 +9,10 @@ class WordFilter:
                 n, pre = len(s), self.pre
                 for c in s:
                     pre[c] = pre.get(c, dict())
-                    pre["$"] = pre.get("$", list())
-                    pre["$"].append(k)
+                    pre["$"] = k
                     pre = pre[c]
                 
-                pre["$"] = pre.get("$", list())
-                pre["$"].append(k)
+                pre["$"] = k
         
     def f(self, prefix: str, suffix: str) -> int:
         pre = self.pre
@@ -23,7 +21,7 @@ class WordFilter:
                 return -1
             pre = pre[c]
         
-        return pre["$"][-1]
+        return pre["$"]
         
         
 
