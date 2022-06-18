@@ -12,15 +12,15 @@ class Solution:
                 
                 if(p[i] == "."):
                     isFile = True
-            
+                    
             while(st and st[-1][0] >= tab):
                 poped = st.pop()
                 if(poped[2]):
                     res = max(res, len(poped[1]))
+            
+            path = p[tab:]
             if(st):
-                path = st[-1][1] + "/" + p[tab:]
-            else:
-                path = p[tab:]
+                path = st[-1][1] + "/" + path
             st.append((tab, path, isFile))
     
         while(st):
