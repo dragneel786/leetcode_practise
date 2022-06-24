@@ -18,7 +18,7 @@ class Solution:
             if(len(heap) > k):
                 heappop(heap)
         
-        return [heappop(heap).word for _ in range(len(heap))][::-1]
+        return reversed([heappop(heap).word for _ in range(len(heap))])
         
         
         
