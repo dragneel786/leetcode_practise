@@ -1,23 +1,16 @@
 class Leaderboard:
 
     def __init__(self):
-        self.scores = dict()
+        self.S = Counter()
 
     def addScore(self, playerId: int, score: int) -> None:
-        self.scores[playerId] = self.scores.get(playerId, 0) + score
+        self.S[playerId] += score
 
     def top(self, K: int) -> int:
-        val = list(self.scores.values())
-        heap = val[:K]
-        heapify(heap)
-        for v in val[K:]:
-            if(v > heap[0]):
-                heappop(heap)
-                heappush(heap, v)
-        return sum(heap)
+        return sum([v[1] for v in self.S.most_common(K)])
 
     def reset(self, playerId: int) -> None:
-        self.scores[playerId] = 0
+        self.S[playerId] = 0
 
 
 # Your Leaderboard object will be instantiated and called as such:
