@@ -1,15 +1,13 @@
 class Solution:
 
     def __init__(self, nums: List[int]):
-        self.dic = defaultdict(lambda:deque())
+        self.dic = defaultdict(lambda:[])
         for i,n in enumerate(nums):
             self.dic[n].append(i)
 
     def pick(self, target: int) -> int:
-        d = self.dic
-        i = d[target].popleft()
-        d[target].append(i)
-        return i
+        li = self.dic[target]
+        return random.choice(li)
         
 
 
