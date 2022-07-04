@@ -11,7 +11,6 @@ class Solution:
         res = []
         for i,d in enumerate(ind):
             if(not d):
-                ind[i] = -1
                 q.append(i)
                 
         while(q):
