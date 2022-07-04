@@ -1,20 +1,23 @@
 class Solution:
     def maxDistToClosest(self, seats: List[int]) -> int:
         n = len(seats)
-        l = [0] * n
-        r = [0] * n
-        li, ri = 2*n, 2*n
-        for i in range(n):
-            if(seats[i]): li = i
-            l[i] = li
+        r = []
+        for i in range(n - 1, -1, -1):
+            if(seats[i]):
+                r.append(i)
             
-            if(seats[n - i - 1]): ri= (n - i - 1)
-            r[n - i - 1] = ri
-        
         res = 0
+        lt = 2*n
+        rt = 2*n if(not r) else r.pop()
         for i in range(n):
+            if(i > rt):
+                rt = 2*n if(not r) else r.pop()
+                
             if(not seats[i]):
-                lv, rv = abs(i - l[i]), abs(r[i] - i)
+                lv, rv = abs(lt - i), abs(i - rt)
                 res = max(res, min(lv, rv))
+            else:
+                lt = i
+                
         return res
             
