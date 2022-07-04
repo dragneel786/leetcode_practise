@@ -24,7 +24,9 @@ class Solution:
                 res.append(c)
                 for v in graph[c]:
                     ind[v] -= 1
-            findAndAdd()
+                    if(not ind[v] and v not in visited):
+                        q.append(v)
+                        visited.add(v)
         
         return res if(taken == numCourses) else []
                 
