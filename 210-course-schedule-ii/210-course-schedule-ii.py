@@ -1,11 +1,5 @@
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        def findAndAdd():
-            for i,d in enumerate(ind):
-                if(not d and i not in visited):
-                    q.append(i)
-                    visited.add(i)
-        
         graph = defaultdict(lambda:[])
         ind = [0] * numCourses
         for p in prerequisites:
@@ -15,8 +9,11 @@ class Solution:
         q = deque()
         taken = 0
         res = []
-        visited = set()
-        findAndAdd()
+        for i,d in enumerate(ind):
+            if(not d):
+                ind[i] = -1
+                q.append(i)
+                
         while(q):
             for _ in range(len(q)):
                 c = q.popleft()
@@ -24,9 +21,8 @@ class Solution:
                 res.append(c)
                 for v in graph[c]:
                     ind[v] -= 1
-                    if(not ind[v] and v not in visited):
+                    if(ind[v] == 0):
                         q.append(v)
-                        visited.add(v)
         
         return res if(taken == numCourses) else []
                 
