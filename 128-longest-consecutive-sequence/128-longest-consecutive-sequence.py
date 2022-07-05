@@ -1,29 +1,27 @@
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
-        if(not nums):
-            return 0
-        
-        seen = defaultdict(lambda:False)
+        values = dict()
         for n in nums:
-            seen[n] = True
+            values[n] = values.get(n, 1)
+        
+        
+        def traverse(val, dic):
+            nonlocal counts
+            num = val + dic
+            while(num in values and values[num] != -1):
+                values[num] = -1
+                counts += 1
+                num += dic
         
         longest = 0
         for n in nums:
-            if(seen[n]):
-                f = n - 1
-                c1 = 0
-                while(seen[f]):
-                    seen[f] = False
-                    f -= 1
-                    c1 += 1
-
-                f = n + 1
-                c2 = 0
-                while(seen[f]):
-                    seen[f] = False
-                    f += 1
-                    c2 += 1
-                
-                longest = max(c1 + c2 + 1, longest)
+            counts = 1
+            traverse(n, -1)
+            traverse(n,  1)
+            longest = max(longest, counts)
         
         return longest
+                
+                
+                
+                
