@@ -7,16 +7,11 @@ class Solution:
         while(i < m and j < n):
             s1, e1 = slots1[i]
             s2, e2 = slots2[j]
-            if(e2 < s1):
-                j += 1
-            elif(s2 > e1):
-                i += 1
-            else:
-                s, e = max(s1, s2), min(e1, e2)
-                if(s + duration <= e):
-                    return [s, s + duration]
-                if(e1 > e2): j += 1
-                else: i += 1
+            s, e = max(s1, s2), min(e1, e2)
+            if(s + duration <= e):
+                return [s, s + duration]
+            if(e1 > e2): j += 1
+            else: i += 1
         return []
             
             
