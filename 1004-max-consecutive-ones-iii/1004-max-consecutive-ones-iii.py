@@ -8,7 +8,7 @@ class Solution:
                     while(nums[j]):
                         j += 1
                     j += 1
-                    k += 1
-                k -= 1
+                else:
+                    k -= 1
             maxReach = max(maxReach, i - j + 1)
         return maxReach
