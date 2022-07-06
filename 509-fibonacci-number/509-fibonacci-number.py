@@ -1,7 +1,10 @@
 class Solution:
     def fib(self, n: int) -> int:
-        dp = [0, 1]
-        for i in range(n):
-            dp[0], dp[1] = dp[1], dp[0] + dp[1]
-            
-        return dp[0]
+        
+        @functools.lru_cache(None)
+        def getFib(n):
+            if(n < 2):
+                return n
+            return getFib(n - 1) + getFib(n - 2)
+        
+        return getFib(n)
