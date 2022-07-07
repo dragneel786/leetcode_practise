@@ -9,15 +9,15 @@ class Solution:
             if(i == l1 and j == l2 and k == l3):
                 return True
             
-            if((i, j, k) in memo):
-                return memo[(i, j, k)]
+            if((i, j) in memo):
+                return memo[(i, j)]
             
             res = False
             if(i < l1 and s1[i] == s3[k]):
                 res |= checkInter(i + 1, j, k + 1)
             if(not res and j < l2 and s2[j] == s3[k]):
                 res |= checkInter(i, j + 1, k + 1)
-            memo[(i, j, k)] = res
+            memo[(i, j)] = res
             return res
         
         return checkInter(0, 0, 0)
