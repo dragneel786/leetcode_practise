@@ -3,23 +3,18 @@ class Solution:
         l1, l2, l3 = len(s1), len(s2), len(s3)
         if(l1 + l2 != l3):
             return False
+        l1, l2 = l1 + 1, l2 + 1
+        dp = [([False] * l2) for _ in range(l1)]
+        for i in range(l1):
+            for j in range(l2):
+                if(i == 0 and j == 0):
+                    dp[i][j] = True
+                    
+                if(j > 0):
+                    dp[i][j] |= (dp[i][j - 1] & (s2[j - 1] == s3[i + j - 1]))
+
+                if(not dp[i][j] and i > 0):
+                    dp[i][j] |= (dp[i - 1][j] & (s1[i - 1] == s3[i + j - 1]))
         
-        def checkInter(i, j, k, memo = {}):
-            nonlocal l1, l2, l3
-            if(i == l1 and j == l2 and k == l3):
-                return True
-            
-            if((i, j) in memo):
-                return memo[(i, j)]
-            
-            res = False
-            if(i < l1 and s1[i] == s3[k]):
-                res |= checkInter(i + 1, j, k + 1)
-            if(not res and j < l2 and s2[j] == s3[k]):
-                res |= checkInter(i, j + 1, k + 1)
-            memo[(i, j)] = res
-            return res
-        
-        return checkInter(0, 0, 0)
-            
+        return dp[l1 - 1][l2 - 1]
                 
