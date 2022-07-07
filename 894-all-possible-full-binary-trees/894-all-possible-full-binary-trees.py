@@ -9,6 +9,7 @@ class Solution:
         if(n % 2 == 0):
             return []
         
+        @functools.lru_cache(None)
         def genTrees(n):
             if(n == 1):
                 return [TreeNode(0)]
