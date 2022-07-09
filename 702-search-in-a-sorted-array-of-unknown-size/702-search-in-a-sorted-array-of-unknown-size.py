@@ -11,7 +11,7 @@ class Solution:
         hval = (10 ** 4 + 1)
         high = hval
         while(low <= high):
-            mid = ((high - low) // 2) + low
+            mid = ((high - low) >> 1) + low
             temp = reader.get(mid)
             if(temp == target):
                 return mid
