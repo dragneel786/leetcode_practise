@@ -7,18 +7,19 @@
 
 class Solution:
     def search(self, reader: 'ArrayReader', target: int) -> int:
-        low = 0
-        hval = (10 ** 4 + 1)
-        high = hval
-        while(low <= high):
-            mid = ((high - low) >> 1) + low
+        lo, hi = 0, 1
+        while(reader.get(hi) < target):
+            lo = hi
+            hi <<= 1
+    
+        while(lo <= hi):
+            mid = ((hi - lo) >> 1) + lo
             temp = reader.get(mid)
             if(temp == target):
                 return mid
-            
             if(temp > target):
-                high = mid - 1
+                hi = mid - 1
             else:
-                low = mid + 1
+                lo = mid + 1
         return -1
         
