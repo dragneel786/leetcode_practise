@@ -1,19 +1,18 @@
 class Solution:
     def PredictTheWinner(self, nums: List[int]) -> bool:
-        def predict(left, right, player):
-            key = (left, right, player)
+        def predict(left, right):
+            key = (left, right)
             if(left > right):
                 return 0
             
             if(key not in memo):
-                if(not player):
-                    memo[key] = max(nums[left] + predict(left + 1, right, 1),\
-                               nums[right] + predict(left, right - 1, 1))
-                else:
-                    memo[key] = min(predict(left + 1, right, 0), predict(left, right - 1, 0))
+                memo[key] = nums[left] + min(predict(left + 2, right),\
+                                             predict(left + 1, right - 1))
+                memo[key] = max(memo[key], nums[right] + min(predict(left + 1, right - 1),\
+                                             predict(left, right - 2)))
             return memo[key]
                  
         n = len(nums)
         memo = {}
-        val = predict(0, n - 1, 0)
+        val = predict(0, n - 1)
         return val >= (sum(nums) - val)
