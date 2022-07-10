@@ -1,20 +1,17 @@
 class Solution:
     def longestSubarray(self, nums: List[int], limit: int) -> int:
-        j = 0
-        long = 1
-        minH = [(nums[0], 0)]
-        maxH = [(-nums[0], 0)]
-        nums.append(10 ** 9 + 9)
-        for i in range(1, len(nums)):
-            heappush(minH, (nums[i], i))
-            heappush(maxH, (-nums[i], i))
-            while(abs((-maxH[0][0]) - minH[0][0]) > limit and j < i):
-                long = max(long, i - j)
-                while(maxH[0][1] <= j):
-                    heappop(maxH)
-                while(minH[0][1] <= j):
-                    heappop(minH)
-                j += 1
-        return max(long, i - j + 1)
+        mn = deque()
+        mx = deque()
+        i = 0
+        for a in nums:
+            while(mn and mn[-1] > a): mn.pop()
+            while(mx and mx[-1] < a): mx.pop()
+            mn.append(a)
+            mx.append(a)
+            if(mx[0] - mn[0] > limit):
+                if(mx[0] == nums[i]): mx.popleft()
+                if(mn[0] == nums[i]): mn.popleft()
+                i += 1
+        return len(nums) - i
                 
             
