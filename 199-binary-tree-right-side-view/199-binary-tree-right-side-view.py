@@ -11,12 +11,13 @@ class Solution:
             if(not root):
                 return
             
-            levels[l] = root.val
-            getRightView(root.left, l + 1)
+            if(len(rightView) == l):
+                rightView.append(root.val)
+
             getRightView(root.right, l + 1)
+            getRightView(root.left, l + 1)
         
-        levels = dict()
+        rightView = []
         getRightView(root, 0)
-        return [levels[k] for k in levels.keys()]
-        
+        return rightView        
         
