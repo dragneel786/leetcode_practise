@@ -1,20 +1,15 @@
 class Solution:
     def swimInWater(self, grid: List[List[int]]) -> int:
-        n = len(grid)
-        dp = [([math.inf] * n) for _ in range(n)]
-        dp[0][0] = grid[0][0]
-        q = deque([(0, 0)])
-        while(q):
-            for _ in range(len(q)):
-                x, y = q.popleft()
-                for dx, dy in [(-1, 0), (0, -1), (1, 0), (0, 1)]:
-                    nx, ny = x + dx, y + dy
-                    if(0 <= nx < n and 0 <= ny < n):
-                        val = max(dp[x][y], grid[nx][ny])
-                        if(dp[nx][ny] > val):
-                            dp[nx][ny] = val
-                            q.append((nx, ny))
-
-        return dp[n - 1][n - 1]
+        n, pq, res, seen = len(grid), [(grid[0][0], 0, 0)], 0, set([(0, 0)])
+        while(True):
+            m, x, y = heappop(pq)
+            res = max(m, res)
+            if(x == y == n - 1):
+                return res
+            
+            for i, j in [(x - 1, y), (x, y - 1), (x + 1, y), (x, y + 1)]:
+                if(0 <= i < n and 0 <= j < n and (i, j) not in seen):
+                    seen.add((i, j))
+                    heappush(pq, (grid[i][j], i, j))
             
                 
