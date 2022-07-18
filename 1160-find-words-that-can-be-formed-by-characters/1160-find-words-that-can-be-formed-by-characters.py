@@ -4,11 +4,7 @@ class Solution:
         ans = 0
         for w in words:
             wc = Counter(w)
-            canMake = True
-            for k in wc.keys():
-                if(wc[k] > chars[k]):
-                    canMake = False
-                    break
-            ans += len(w) if(canMake) else 0
+            if(all(wc[k] <= chars[k] for k in wc.keys())):
+                ans += len(w)
         return ans
             
