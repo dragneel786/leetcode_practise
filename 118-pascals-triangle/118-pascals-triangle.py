@@ -1,11 +1,10 @@
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
-        pascals = [[1], [1, 1]]
-        for i in range(numRows - 2):
+        res = [[1], [1, 1]]
+        for n in range(2, numRows):
             temp = [1]
-            for j in range(1, len(pascals[-1])):
-                temp.append(pascals[-1][j - 1] + pascals[-1][j])
+            for i in range(n - 1):
+                temp.append(sum(res[-1][i:i + 2]))
             temp.append(1)
-            pascals.append(temp)
-        
-        return pascals[:numRows]
+            res.append(temp)
+        return res[:numRows]
