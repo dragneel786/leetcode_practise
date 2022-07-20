@@ -1,24 +1,15 @@
 class Solution:
     def numMatchingSubseq(self, s: str, words: List[str]) -> int:
-        
-        def isSubSeq(word, counter):
-            pos = 0
-            for i, c in enumerate(word):
-                idx = bisect_left(counter[c], pos)
-                if(idx >= len(counter[c])):
-                    return False
-                pos = counter[c][idx] + 1
-            return True
-    
-        counter = defaultdict(list)
-        for i, c in enumerate(s):
-            counter[c].append(i)
-            
-        counts = 0
+        heads = defaultdict(list)
         for w in words:
-            if(isSubSeq(w, counter)):
-                counts += 1
-        return counts
+            heads[w[0]].append(iter(w[1:]))
+        
+        for c in s:
+            for it in heads.pop(c, []):
+                heads[next(it, None)].append(it)
+        return len(heads[None])
+                
+                
         
         
         
