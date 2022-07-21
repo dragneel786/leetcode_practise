@@ -1,14 +1,14 @@
 class Solution:
     def binarySearchableNumbers(self, nums: List[int]) -> int:
         n = len(nums)
-        small = [inf] * n
-        large = [0] * n
+        state = [False] * n
+        max_v, min_v = -inf, inf
         for i in range(n):
-            large[i] = nums[i] if(i == 0) else max(nums[i], large[i - 1])
-            small[n - i - 1] = nums[n - i - 1] if(i == 0)\
-            else min(nums[n - i - 1], small[n - i])
+            max_v = max(max_v, nums[i])
+            state[i] = max_v <= nums[i]
         
         counts = 0
-        for v1, v2 in zip(small, large):
-            counts += (v1 == v2)
+        for i in range(n - 1, -1, -1):
+            min_v = min(min_v, nums[i])
+            counts += state[i] and min_v >= nums[i]
         return counts
