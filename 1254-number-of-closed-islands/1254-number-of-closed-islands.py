@@ -9,14 +9,9 @@ class Solution:
                 return True
             
             grid[x][y] = -1
-            res = True
-            for dx, dy in [(1, 0), (0, 1), (-1, 0), (0, -1)]:
-                nx, ny = x + dx, y + dy
-                if(not dfs(nx, ny)):
-                    res = False
-            return res
-            
+            return sum(dfs(x + dx, y + dy) for dx, dy in dic) == 4
         
+        dic = [(1, 0), (0, 1), (-1, 0), (0, -1)]
         m = len(grid)
         n = len(grid[0])
         counts = 0
