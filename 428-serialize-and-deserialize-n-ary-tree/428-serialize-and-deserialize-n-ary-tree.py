@@ -13,22 +13,21 @@ class Codec:
         :type root: Node
         :rtype: str
         """
-        if(not root):
-            return "()"
+        encode = lambda x: chr(x + 48)
         
-        convertInString = lambda lst: "(" + ",".join([str(e.val) for e in lst]) + ")"
-        res = ""
-        q = deque([[root]])
-        while(q):
-            temp = []
-            for _ in range(len(q)):
-                poped = q.popleft()
-                for p in poped:
-                    q.append(p.children if(p.children) else [])
-                temp.append(convertInString(poped))
-            res += ".".join(temp)
-            res += "|"
-        return res[:-1]
+        def doSerial(root):
+            if(not root):
+                return
+            
+            output.append(encode(root.val))
+            for c in root.children:
+                doSerial(c)
+            output.append("$")
+        
+        output = []
+        doSerial(root)
+        return "".join(output)
+        
     
     def deserialize(self, data: str) -> 'Node':
         """Decodes your encoded data to tree.
@@ -36,25 +35,23 @@ class Codec:
         :type data: str
         :rtype: Node
         """
-        convertInList = lambda string: string[1:-1].split(",")
+        decode = lambda x: ord(x) - 48
+        def doDeserial():
+            nonlocal idx, data
+            if(idx == len(data)):
+                return
         
-        levels = deque(data.split("|"))
-        node = convertInList(levels.popleft())
-        if(not node[0]):
-            return None
-        root = Node(int(node[0]), [])
-        q = deque([root])
-        while(levels):
-            nextLevel = levels.popleft().split(".")
-            for i in range(len(q)):
-                node = q.popleft()
-                childs = convertInList(nextLevel[i])
-                if(childs[0]):
-                    for c in childs:
-                        temp = Node(int(c), [])
-                        q.append(temp)
-                        node.children.append(temp)
-        return root
+            node = Node(decode(data[idx]), [])
+            idx += 1
+            while(data[idx] != "$"):
+                node.children.append(doDeserial())
+            idx += 1
+            return node
+        
+        idx = 0
+        return doDeserial()
+        
+        
 
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
