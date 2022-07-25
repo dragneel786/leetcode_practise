@@ -18,15 +18,15 @@ class Solution:
         res = []
         while(st):
             tempQ = deque()
-            tempL = deque()
+            tempL = []
             for _ in range(len(st)):
                 node = st.pop()
-                tempL.appendleft(node.val)
+                tempL.append(node.val)
                 for child in popper(node, l & 1):
                     if(child):
                         tempQ.append(child)
             l += 1
-            res.append(tempL)
+            res.append(tempL[::-1])
             st = tempQ
             
         return res
