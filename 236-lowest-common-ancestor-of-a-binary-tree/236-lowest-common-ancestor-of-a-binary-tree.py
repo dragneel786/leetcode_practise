@@ -10,12 +10,12 @@ class Solution:
         if(not root):
             return None
         
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+        if(left and right):
+            return root
+        
         if(root.val == p.val or root.val == q.val):
             return root
-        
-        res1 = self.lowestCommonAncestor(root.left, p, q)
-        res2 = self.lowestCommonAncestor(root.right, p, q)
-        if(res1 and res2):
-            return root
-        return res1 if res1 else res2
-        
+    
+        return left if(left) else right
