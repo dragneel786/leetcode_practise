@@ -8,39 +8,31 @@ class CBTInserter:
 
     def __init__(self, root: Optional[TreeNode]):
         self.root = root
-        self.q = deque(self.populate(root))
-        self.leftmost = self.q.popleft()
+        self.q = deque()
+        tempq = deque([root])
+        while(tempq):
+            node = tempq.popleft()
+            if(node.left):
+                tempq.append(node.left)
+            if(node.right):
+                tempq.append(node.right)
+            else:
+                self.q.append(node)
         
     def insert(self, val: int) -> int:
         node = TreeNode(val)
         self.q.append(node)
-        l = self.leftmost
-        ret = l.val
-        if(not l.left):
-            l.left = node
+        top = self.q[0]
+        if(not top.left):
+            top.left = node
         else:
-            l.right = node
-            self.leftmost = self.q.popleft()
-        return ret
+            top.right = node
+            self.q.popleft()
+        return top.val
         
 
     def get_root(self) -> Optional[TreeNode]:
         return self.root
-    
-    def populate(self, root) -> list:
-        q = deque([root])
-        res = []
-        while(q):
-            node = q.popleft()
-            if(node.left):
-                q.append(node.left)
-            
-            if(node.right):
-                q.append(node.right)
-            else:
-                res.append(node)
-        return res
-
 
 # Your CBTInserter object will be instantiated and called as such:
 # obj = CBTInserter(root)
