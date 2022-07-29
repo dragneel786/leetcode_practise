@@ -1,16 +1,11 @@
 class Solution:
     def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
-        n = len(hand)
-        if(n % groupSize > 0):
-            return False
-        
         C = Counter(hand)
-        for h in sorted(hand):
-            if(C[h] > 0):
-                for j in range(groupSize - 1, -1, -1):
-                    C[h + j] -= C[h]
-                    if(C[h + j] < 0):
-                        return False
-        return True
-                
-            
+        prev, opened = -1, 0
+        start = deque()
+        for h in sorted(C):
+            if(opened > C[h] or (opened > 0 and h > prev + 1)): return False
+            start.append(C[h] - opened)
+            prev, opened = h, C[h]
+            if(len(start) == groupSize): opened -= start.popleft()
+        return opened == 0
