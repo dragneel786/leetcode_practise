@@ -4,18 +4,13 @@ class Solution:
         if(n % groupSize > 0):
             return False
         
-        hand.sort()
         C = Counter(hand)
-        for h in hand:
-            count = 0
-            while(C[h] and count < groupSize):
-                C[h] -= 1
-                count += 1
-                h += 1
-                
-            if(count != 0 and count != groupSize):
-                return False
-            
+        for h in sorted(hand):
+            if(C[h] > 0):
+                for j in range(groupSize - 1, -1, -1):
+                    C[h + j] -= C[h]
+                    if(C[h + j] < 0):
+                        return False
         return True
                 
             
