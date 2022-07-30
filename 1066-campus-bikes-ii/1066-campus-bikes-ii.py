@@ -4,25 +4,25 @@ class Solution:
         manhattan_dist = lambda x, y: abs(x[0] - y[0]) + abs(x[1] - y[1])
         xor = lambda w, t: w ^ (1 << t)
         
-        @lru_cache(None)
-        def getMinDist(worker_idx, b_masks, dist = 0):
-            nonlocal minSoFar, n
+        def getMinDist(worker_idx, b_masks, memo = {}):
+            nonlocal n
+            key = (worker_idx, b_masks)
             
             if(worker_idx >= n):
-                minSoFar = min(dist, minSoFar)
-                return
+                return 0
+        
+            if(key in memo):
+                return memo[key]
             
-            if(dist >= minSoFar):
-                return
-            
+            min_dist = inf
             for j, b in enumerate(bikes):
                 if(b_masks & (1 << j)):
                     val = manhattan_dist(workers[worker_idx], b)
-                    getMinDist(worker_idx + 1, xor(b_masks, j), dist + val)
-        
+                    min_dist = min(min_dist, getMinDist(worker_idx + 1, xor(b_masks, j)) + val)
+            
+            memo[key] = min_dist
+            return min_dist
         
         n = len(workers)
         m = len(bikes)
-        minSoFar = inf
-        getMinDist(0, (1 << m) - 1)
-        return minSoFar
+        return getMinDist(0, (1 << m) - 1)
