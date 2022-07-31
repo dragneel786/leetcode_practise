@@ -1,14 +1,10 @@
 class Solution:
     def probabilityOfHeads(self, prob: List[float], target: int) -> float:
+        dp = [1] + [0] * target
+        for i,p in enumerate(prob):
+            for t in range(min(target, i + 1), -1 , -1):
+                dp[t] = ((dp[t - 1] if(t) else 0) * p) + (dp[t] * (1 - p))
         
-        @lru_cache(None)
-        def probs(index, target):
-            if(target < 0): return 0
-            if(index == 0): return target == 0
-            
-            return (probs(index - 1, target - 1) * prob[index - 1])\
-        + (probs(index - 1, target) * (1 - prob[index - 1]))
-        
-        return probs(len(prob), target)
+        return dp[target]
             
             
