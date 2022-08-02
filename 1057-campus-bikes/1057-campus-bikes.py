@@ -3,21 +3,27 @@ class Solution:
         
         man_distance = lambda x, y: abs(x[0] - y[0]) + abs(x[1] - y[1])
         
+        heap = []
         combos = []
         for i,w in enumerate(workers):
-            for j,b in enumerate(bikes):
-                combos.append((man_distance(w, b), i, j))
-                
-        combos.sort()
-        bikes_assigned = set()
-        workers_assigned = set()
-        res = [0] * len(workers)
-        for c in combos:
-            _, w, b = c
-            if(w not in workers_assigned and\
-              b not in bikes_assigned):
-                res[w] = b
-                workers_assigned.add(w)
-                bikes_assigned.add(b)
+            temp = sorted([(man_distance(w, b), i, j)\
+                    for j, b in enumerate(bikes)], reverse=True)
+            heap.append(temp.pop())
+            combos.append(temp)
         
+        heapify(heap)
+        bikes_assigned = set()
+        res = [-1] * len(workers)
+        while(len(bikes_assigned) < len(workers)):
+            _, w, b = heappop(heap)
+            if(b not in bikes_assigned):
+                bikes_assigned.add(b)
+                res[w] = b
+            else:
+                heappush(heap, combos[w].pop())
         return res
+            
+                
+            
+                
+        
