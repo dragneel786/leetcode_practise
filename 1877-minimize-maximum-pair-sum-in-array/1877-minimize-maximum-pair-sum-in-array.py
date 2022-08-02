@@ -1,8 +1,8 @@
 class Solution:
     def minPairSum(self, nums: List[int]) -> int:
-        nums.sort()
+        heap1, heap2 = nums[:], [-v for v in nums]
+        heapify(heap1), heapify(heap2)
         ans = -inf
-        n = len(nums)
-        for i in range(n // 2):
-            ans = max(ans, nums[i] + nums[n - i - 1])
+        for _ in range(len(nums) // 2):
+            ans = max(ans, heappop(heap1) - heappop(heap2))
         return ans
