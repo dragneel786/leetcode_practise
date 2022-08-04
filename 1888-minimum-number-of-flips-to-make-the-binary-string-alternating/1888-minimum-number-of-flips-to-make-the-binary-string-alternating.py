@@ -12,7 +12,7 @@ class Solution:
             min_flip = min(flip1, flip2, min_flip) if(i >= n) else inf
 
             flip1 += (start != s[i]) - decrement(i, s[i - n], prev)
-            flip2 += (switch(start) != s[i]) - decrement(i, s[i - n], switch(prev))
+            flip2 += (start == s[i]) - decrement(i, s[i - n], switch(prev))
 
             prev = switch(prev) if(i >= n) else prev
             start = switch(start)
