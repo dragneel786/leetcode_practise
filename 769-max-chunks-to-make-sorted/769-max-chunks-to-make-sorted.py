@@ -1,15 +1,11 @@
 class Solution:
     def maxChunksToSorted(self, arr: List[int]) -> int:
-        start = 0
-        seen = set()
+        max_val = -inf
         chunks = 0
         for i,a in enumerate(arr):
-            seen.add(a)
-            while(start in seen): start += 1
-                
-            if(start == i + 1):
+            max_val = max(a, max_val)
+            if(max_val == i):
                 chunks += 1
-                
         return chunks
             
             
