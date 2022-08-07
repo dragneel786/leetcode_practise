@@ -7,9 +7,4 @@ class Solution:
                 ones += 1
             return ones
         
-        if(start > goal): return self.minBitFlips(goal, start)
-        count = 0
-        while(start > 0 and goal > 0):
-            count += start & 1 != goal & 1
-            start, goal = start >> 1, goal >> 1
-        return count + numOfOne(goal)
+        return numOfOne(start ^ goal)
