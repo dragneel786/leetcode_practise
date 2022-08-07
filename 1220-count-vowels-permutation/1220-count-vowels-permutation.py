@@ -6,10 +6,7 @@ class Solution:
     
         dp = [1] * 5
         for _ in range(n - 1):
-            temp = [0] * 5
-            for i in range(5):
-                temp[i] = sum(dp[v] for v in paths[i]) % M
-            dp = temp
+            dp = [sum(dp[v] for v in paths[i]) % M for i in range(5)] 
         return sum(dp) % M
         
             
