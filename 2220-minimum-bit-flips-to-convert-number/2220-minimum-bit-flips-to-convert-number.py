@@ -4,7 +4,6 @@ class Solution:
         
         count = 0
         while(start > 0 or goal > 0):
-            if(start & 1 != goal & 1):
-                count += 1
+            count += start & 1 != goal & 1
             start, goal = start >> 1, goal >> 1
         return count
