@@ -14,7 +14,7 @@ class Solution:
             
             if(s[start] == '{'):
                 options, idx = get_options(s, start)
-                for option in sorted(options):
+                for option in options:
                     allCombos(idx + 1, op + option)
             else:
                 allCombos(start + 1, op + s[start])
@@ -22,7 +22,7 @@ class Solution:
         n = len(s)
         res = []
         allCombos(0)
-        return res
+        return sorted(res)
         
         
             
