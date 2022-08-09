@@ -1,6 +1,12 @@
 class Solution:
     def numFactoredBinaryTrees(self, arr: List[int]) -> int:
-        dp = {}
-        for a in sorted(arr):
-            dp[a] = sum(dp[b] * dp.get(a / b, 0) for b in dp if a % b == 0) + 1
-        return sum(dp.values()) % (10**9 + 7)
+        trees = {a:1 for a in arr}
+        arr.sort()
+        M = 10 ** 9 + 7
+        for i, a in enumerate(arr):
+            for b in arr[:i]:
+                key = a / b
+                if(key in trees):
+                    trees[a] += trees[key] * trees[b]
+        return sum(trees.values()) % M
+            
