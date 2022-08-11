@@ -7,15 +7,20 @@
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         
-        def check_validity(root, lower = None, upper = None):
+        def check_validity(root):
+            nonlocal prev
             if(not root):
                 return True
             
-            return (lower == None or lower < root.val)\
-            and (upper == None or upper > root.val)\
-            and check_validity(root.left, lower, root.val) \
-            and check_validity(root.right, root.val, upper)
+            if(not check_validity(root.left) or\
+               (prev != None and prev >= root.val)):
+                return False
+            
+            prev = root.val
+            return check_validity(root.right)
+            
         
+        prev = None
         return check_validity(root)
             
             
