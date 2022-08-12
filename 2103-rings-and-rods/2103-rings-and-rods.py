@@ -1,16 +1,11 @@
 class Solution:
     def countPoints(self, rings: str) -> int:
-        rods = defaultdict(set)
-        for i in range(0, len(rings), 2):
-            color, rod = rings[i], int(rings[i + 1])
-            rods[rod].add(color)
+        rods = [0] * 10
+        c_map = {'R':1, 'G':2, 'B':4}
+        for color, rod in zip(rings[::2], rings[1::2]):
+            rods[int(rod)] |= c_map[color]
         
-        counts = 0
-        for i in range(10):
-            if(len(rods[i]) >= 3):
-                counts += 1
-        
-        return counts
+        return sum(1 for r in rods if(r == 7))
         
         
         
