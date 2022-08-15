@@ -1,22 +1,15 @@
 class Solution:
     def findTheWinner(self, n: int, k: int) -> int:
-        removed = set()
-        people = set([i for i in range(n)])
+        q = deque([i for i in range(1, n + 1)])
         
-        def next_val(start):
-            while(start in removed):
-                start = (start + 1) % n
-            return start
-        
-        start = 0
-        while(len(removed) < n - 1):
+        while(len(q) > 1):
+            
             for _ in range(k - 1):
-                start = next_val((start + 1) % n)
-                
-            removed.add(start)
-            people.discard(start)
-            start = next_val(start)
+                q.append(q.popleft())
+            
+            q.popleft()
         
-        return people.pop() + 1
+        return q[0]
+        
         
         
