@@ -1,4 +1,7 @@
 class Solution:
+    def __init__(self):
+        self.op = {'+': operator.add, '-':operator.sub, '*':operator.mul}
+        
     def diffWaysToCompute(self, expression: str) -> List[int]:
         
         ret = []
@@ -9,7 +12,7 @@ class Solution:
                 
                 for p1 in part1:
                     for p2 in part2:
-                        ret.append(eval(str(p1) + c + str(p2)))
+                        ret.append(self.op[c](p1, p2))
         
         if(not ret):
             ret.append(int(expression))
