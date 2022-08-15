@@ -1,6 +1,7 @@
 class Solution:
     def findTheWinner(self, n: int, k: int) -> int:
         removed = set()
+        people = set([i for i in range(n)])
         
         def next_val(start):
             while(start in removed):
@@ -13,10 +14,9 @@ class Solution:
                 start = next_val((start + 1) % n)
                 
             removed.add(start)
+            people.discard(start)
             start = next_val(start)
         
-        for i in range(n):
-            if(i not in removed):
-                return i + 1
+        return people.pop() + 1
         
         
