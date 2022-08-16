@@ -21,17 +21,5 @@ class Node:
     
 class Solution:
     def kthLargestNumber(self, nums: List[str], k: int) -> str:
-        heap = []
-        def push_in_heap(heap, node):
-            if(len(heap) < k or heap[0] < node):
-                heappush(heap, node)
-            
-            if(len(heap) > k):
-                heappop(heap)
-                
-        for num in nums:
-            node = Node(num)
-            push_in_heap(heap, node)
-        
-        return heap[0].num
+        return nlargest(k, [Node(num) for num in nums])[-1].num
         
