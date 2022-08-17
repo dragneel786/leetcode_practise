@@ -9,9 +9,6 @@ class Solution:
             return "".join([morse_code[ord(c) - 97] for c in word])
         
         
-        unique = set()
-        for word in words:
-            unique.add(transform(word))
-        
+        unique = {transform(word) for word in words}
         return len(unique)
         
