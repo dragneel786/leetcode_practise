@@ -1,15 +1,21 @@
 class Solution:
     def minSetSize(self, arr: List[int]) -> int:
-        heap = [-c for c in Counter(arr).values()]
-        heapify(heap)
+        counts = Counter(arr)
         
-        choosed = 0
-        remain = len(arr)
-        while(heap):
-            c = -heappop(heap)
-            remain -= c
-            choosed += 1
-            
-            if(remain <= (len(arr) // 2)):
-                return choosed
+        max_bucket = max(counts.values())
+        buckets = [0] * (max_bucket + 1)
         
+        for c in counts.values():
+            buckets[c] += 1
+        
+        
+        needed_to_remove = len(arr) // 2
+        set_size= 0
+        while(needed_to_remove > 0):
+            needed_from_bucket = ceil(needed_to_remove / max_bucket)
+            set_size_added = min(buckets[max_bucket], needed_from_bucket)
+            needed_to_remove -= set_size_added * max_bucket
+            set_size += set_size_added
+            max_bucket -= 1
+        
+        return set_size
