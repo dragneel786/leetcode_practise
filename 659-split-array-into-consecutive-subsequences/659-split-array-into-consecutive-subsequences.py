@@ -1,38 +1,25 @@
-class Node:
-    def __init__(self, start = -1, end = -1):
-        self.start = start
-        self.end = end
-        
-    def __lt__(self, other):
-        return other.end > self.end or\
-    (other.end == self.end and (other.end - other.start + 1)\
-     > (self.end - self.start + 1))
-        
-
-
 class Solution:
     def isPossible(self, nums: List[int]) -> bool:
-        heap = []
-        # print(heap[0].start, heap[0].end)
-        for n in nums:
-            while(heap and heap[0].end + 1 < n):
-                node = heappop(heap)
-                start, end = node.start, node.end
-                if((end - start + 1) < 3): return False
-            
-            if(not heap or heap[0].end == n):
-                heappush(heap, Node(n, n))
-            elif(heap[0].end + 1 == n):
-                node = heappop(heap)
-                heappush(heap, Node(node.start, n))
+        freq_map = Counter(nums)
+        hypo_map = Counter()
         
-        for h in heap:
-            if((h.end - h.start + 1) < 3):
-                return False
-        return True
-            
+        for num in nums:
+            if(freq_map[num]):
+                if(hypo_map[num]):
+                    hypo_map[num] -= 1
+                    hypo_map[num + 1] += 1
+                    
+                elif(freq_map[num + 1] and freq_map[num + 2]):
+                    freq_map[num + 1] -= 1
+                    freq_map[num + 2] -= 1
+                    
+                    hypo_map[num + 3] += 1
                 
-            
-            
-            
+                else:
+                    return False
+                
+                freq_map[num] -= 1
+                    
+        return True
+                    
                 
