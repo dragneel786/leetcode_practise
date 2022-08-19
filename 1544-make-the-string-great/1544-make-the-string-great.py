@@ -3,12 +3,13 @@ class Solution:
         
         check_validity = lambda a, b: abs(ord(a) - ord(b)) == 32
         
-        st = deque([s[0]])
-        
-        for c in s[1:]:
-            if(st and check_validity(st[-1], c)):
-                st.pop()   
+        p = 0
+        s = list(s)
+        for i in range(len(s)):
+            if(p > 0 and check_validity(s[p - 1], s[i])):
+                p -= 1
             else:
-                st.append(c)
+                s[p] = s[i]
+                p += 1
         
-        return "".join(st)
+        return "".join(s[:p])
