@@ -14,8 +14,7 @@ class Solution:
         
         memo = {}
         res = [(get_steps_count(num), num) for num in range(lo, hi + 1)]
-        res.sort()
-        return res[k - 1][1]
+        return nsmallest(k, res)[k - 1][1]
         
         
         
