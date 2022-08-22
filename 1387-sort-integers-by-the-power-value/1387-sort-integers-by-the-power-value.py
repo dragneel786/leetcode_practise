@@ -13,8 +13,8 @@ class Solution:
             return memo[val]
         
         memo = {}
-        res = [(get_steps_count(num), num) for num in range(lo, hi + 1)]
-        return nsmallest(k, res)[k - 1][1]
+        return nsmallest(k, ((get_steps_count(num), num) \
+                             for num in range(lo, hi + 1)))[k - 1][1]
         
         
         
