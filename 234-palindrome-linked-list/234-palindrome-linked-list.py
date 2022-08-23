@@ -6,12 +6,14 @@
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         
-        def check_palindrome(left, right):
-            if(not right.next):
-                return left.next, left.val == right.val
-                
-            left, is_valid = check_palindrome(left, right.next)
-            return left.next, (is_valid and left.val == right.val)
-        
-        return check_palindrome(head, head)[1]
+        def check(fast, slow):
+            if(not fast or not fast.next):
+                node = slow if(not fast) else slow.next
+                return True, node
             
+            ret, node = check(fast.next.next, slow.next)
+            return (ret and node.val == slow.val), node.next
+        
+        
+        return check(head, head)[0]
+                      
