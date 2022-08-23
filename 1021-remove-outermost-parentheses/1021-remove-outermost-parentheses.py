@@ -1,15 +1,14 @@
 class Solution:
     def removeOuterParentheses(self, s: str) -> str:
         
+        add_sub = lambda c: 1 if(c == ')') else -1
+        
         res = ""
-        prev = open_para = close_para = 0
+        prev = paras = 0
         for i, c in enumerate(s):
+            paras += add_sub(c)
             
-            open_para += c == '('
-            close_para += c == ')'
-            
-            if(open_para == close_para):
-                open_para = close_para = 0
+            if(not paras):
                 res += s[prev + 1: i]
                 prev = i + 1
             
