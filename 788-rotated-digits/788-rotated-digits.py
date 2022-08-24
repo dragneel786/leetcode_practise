@@ -1,21 +1,21 @@
 class Solution:
     def rotatedDigits(self, n: int) -> int:
         
-        s1 = set([2, 5, 6, 9])
+        s1 = set([1, 8, 0, 2, 5, 6, 9])
         s2 = set([1, 8, 0])
+        s = set()
+        N = list(map(int, str(n)))
+        res = 0
+        for i, v in enumerate(N):
+            for j in range(v):
+                if(s.issubset(s1) and j in s1):
+                    res += 7 ** (len(N) - i - 1)
+                if(s.issubset(s2) and j in s2):
+                    res -= 3 ** (len(N) - i - 1)
+            
+            if(v not in s1):
+                return res
         
-        def is_valid(val):
-            valid = False
-            for c in str(val):
-                v = int(c)
-                if(v not in s1 and v not in s2):
-                    return False
-                valid = valid or v in s1
-                
-            return valid
+            s.add(v)
         
-        counts = 0
-        for num in range(n + 1):
-            counts += is_valid(num)
-        
-        return counts
+        return res + (s.issubset(s1) and not s.issubset(s2))
