@@ -8,11 +8,15 @@ class Solution:
             if(slots & d2): return d2
             return -1
         
-        @lru_cache(None)
+        
         def max_and_sum(index, slots):
             nonlocal numSlots
             if(index == len(nums)):
                 return 0
+            
+            key = (index, slots)
+            if(key in memo):
+                return memo[key]
 
             max_sum = 0
             for i in range(1, numSlots + 1):
@@ -24,8 +28,10 @@ class Solution:
                               max_and_sum(index + 1,
                                           slots ^ value))
                 
+            memo[key] = max_sum
             return max_sum
-
+        
+        memo = {}
         slots = (1 << (numSlots * 2)) - 1
         return max_and_sum(0, slots)
         
