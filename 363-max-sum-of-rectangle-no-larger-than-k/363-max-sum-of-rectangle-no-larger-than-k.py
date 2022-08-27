@@ -1,26 +1,33 @@
 from sortedcontainers import SortedList
 class Solution:
     def maxSumSubmatrix(self, matrix: List[List[int]], k: int) -> int:
-        def maxSumSubarray(arr):
-            sub_s_max = float('-inf')
-            s_curr = 0
-            prefix_sums = [float('inf')]
-            for x in arr:
-                bisect.insort(prefix_sums, s_curr)
-                s_curr += x
-                i = bisect.bisect_left(prefix_sums, s_curr - k)
-                sub_s_max = max(sub_s_max, s_curr - prefix_sums[i])
-            return sub_s_max
-        
-        m, n = len(matrix), len(matrix[0])
-        for x in range(m):
-            for y in range(n - 1):
-                matrix[x][y+1] += matrix[x][y]
-        res = float('-inf')
-        for y1 in range(n):
-            for y2 in range(y1, n):
-                arr = [matrix[x][y2] - (matrix[x][y1-1] if y1 > 0 else 0) for x in range(m)]
-                res = max(res, maxSumSubarray(arr))
+        def find(sums, k):
+            nonlocal cols
+            temp_res = -inf
+            prefix_sum = 0
+            prefix_list = [inf]
+
+            for s in sums:
+                insort(prefix_list, prefix_sum)
+                prefix_sum += s
+                idx = bisect_left(prefix_list, prefix_sum - k)
+                temp_res = max(temp_res, prefix_sum - prefix_list[idx])
+                prefix_list.append(prefix_sum)
+
+            return temp_res
+
+
+        rows, cols = len(matrix), len(matrix[0])
+        for r in range(rows):
+            for c in range(cols - 1):
+                matrix[r][c + 1] += matrix[r][c]
+
+        res = -inf
+        for i in range(cols):
+            for c in range(i, cols):
+                sums = [matrix[r][c] - (matrix[r][i - 1]\
+                                        if(i > 0) else 0) for r in range(rows)]
+                res = max(res, find(sums, k))
+
         return res
-        
-                    
+
