@@ -5,8 +5,7 @@ class Solution:
         beans.sort()
         prefix_sum = [0]
         n = len(beans)
-        min_value = lambda idx, bean: prefix_sum[idx] +\
-        (prefix_sum[-1] - prefix_sum[idx] - (bean * (n - idx)))
+        min_value = lambda idx, bean: prefix_sum[-1] - (bean * (n - idx))
         
         for b in beans:
             prefix_sum.append(prefix_sum[-1] + b)
