@@ -2,12 +2,13 @@ class Solution:
     def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
         def sort_and_update(x, y):
             temp = []
-            for a in range(max(m, n)):
+            digonal_size = min(m - x, n - y)
+            for a in range(digonal_size):
                 if(x + a < m and y + a < n):
                     temp.append(mat[x + a][y + a])
             
             temp.sort()
-            for a in range(max(m, n)):
+            for a in range(digonal_size):
                 if(x + a < m and y + a < n):
                     mat[x + a][y + a] = temp[a]
             
