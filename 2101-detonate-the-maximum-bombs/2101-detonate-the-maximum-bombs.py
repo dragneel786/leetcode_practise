@@ -6,13 +6,10 @@ class Solution:
         
         def construct_graph():
             g = defaultdict(list)
-            
             for i in range(len(bombs)):
                 for j in range(len(bombs)):
-                    if(i == j): continue
-                    if(intersects(bombs[i], bombs[j])):
+                    if(i != j and intersects(bombs[i], bombs[j])):
                         g[i].append(j)
-            
             return g
         
         
