@@ -3,18 +3,6 @@ class Solution:
         if(k == 0): 
             return 0
         
-        def update(uniq, start):
-            for idx, ch in enumerate(s[start: i]):
-                uniq[ch] -= 1
-                if(not uniq[ch]):
-                    del uniq[ch]
-                
-                if(len(uniq) == k):
-                    return idx + 1
-            
-            return idx + 1
-        
-        
         j = 0
         uniq = Counter()
         longest = 0
@@ -22,8 +10,11 @@ class Solution:
             uniq[c] += 1
             longest = max(longest, i - j)
             
-            if(len(uniq) > k):
-                j += update(uniq, j)
+            while(len(uniq) > k):
+                uniq[s[j]] -= 1
+                if(not uniq[s[j]]):
+                    del uniq[s[j]]
+                j += 1
         
         return longest
         
