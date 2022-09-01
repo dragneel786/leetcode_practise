@@ -7,17 +7,17 @@
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
         
-        def counts_good(root, value = -inf):
-            nonlocal counts
-            if(not root):
-                return
-            
-            if(root.val >= value):
+        stack = deque([(root, -inf)])
+        counts = 0
+        
+        while(stack):
+            node, val = stack.pop()
+            if(node.val >= val):
                 counts += 1
             
-            counts_good(root.left, max(value, root.val))
-            counts_good(root.right, max(value, root.val))
+            if(node.left): 
+                stack.append((node.left, max(node.val, val)))
+            if(node.right):
+                stack.append((node.right, max(node.val, val)))
         
-        counts = 0
-        counts_good(root)
         return counts
