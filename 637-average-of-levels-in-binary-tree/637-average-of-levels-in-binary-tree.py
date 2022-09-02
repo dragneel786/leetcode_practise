@@ -7,23 +7,20 @@
 class Solution:
     def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
         
-        q = deque([root])
-        res = []
-        
-        while(q):
-            temp = 0
-            size = len(q)
+        def dfs(root, level = 0):
+            if(not root):
+                return 
             
-            for _ in range(size):
-                node = q.popleft()
-                temp += node.val
-                if(node.left): q.append(node.left)
-                if(node.right): q.append(node.right)
+            val, size = sum_count[level]
+            sum_count[level] = [val + root.val, size + 1]
             
-            res.append(temp / size)
-        
-        return res
-                    
+            dfs(root.left, level + 1)
+            dfs(root.right, level + 1)
+            
+            
+        sum_count = defaultdict(lambda:[0, 0])
+        dfs(root)
+        return [val / size for val, size in sum_count.values()]         
                 
             
             
