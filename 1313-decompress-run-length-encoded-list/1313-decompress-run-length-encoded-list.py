@@ -1,3 +1,3 @@
 class Solution:
     def decompressRLElist(self, nums: List[int]) -> List[int]:
-        return [v for f, v in zip(nums[::2], nums[1::2]) for _ in range(f)]
+        return [nums[i + 1] for i in range(0, len(nums), 2) for _ in range(nums[i])]
