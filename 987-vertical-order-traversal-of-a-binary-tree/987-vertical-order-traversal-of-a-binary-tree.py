@@ -11,7 +11,7 @@ class Solution:
             if(not node):
                 return
             
-            memo[col].append((row, col, node.val))
+            memo[col].append((row, node.val))
             traverse_vertical(node.left, row + 1, col - 1)
             traverse_vertical(node.right, row + 1, col + 1)
             
@@ -19,7 +19,7 @@ class Solution:
         
         memo = defaultdict(list)
         traverse_vertical(root)
-        return [[v for _,_,v in sorted(memo[key])] for key in sorted(memo.keys())]
+        return [[v for _,v in sorted(memo[key])] for key in sorted(memo.keys())]
         
         
         
