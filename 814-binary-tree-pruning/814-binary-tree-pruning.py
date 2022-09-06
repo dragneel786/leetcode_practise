@@ -9,18 +9,15 @@ class Solution:
         
         def prune_tree(root):
             if(not root):
-                return False
+                return None
             
-            left = prune_tree(root.left)
-            right = prune_tree(root.right)
+            root.left = prune_tree(root.left)
+            root.right = prune_tree(root.right)
             
-            if(not left):
-                root.left = None
+            if(root.val == 1 or root.left or root.right):
+                return root
             
-            if(not right):
-                root.right = None
-            
-            return left or right or root.val == 1
+            return None
         
         
         return root if(prune_tree(root)) else None
