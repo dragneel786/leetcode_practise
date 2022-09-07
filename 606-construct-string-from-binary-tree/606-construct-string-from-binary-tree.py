@@ -10,14 +10,13 @@ class Solution:
         def construct_string(root):
             if(not root): return ''
             
-            left = construct_string(root.left)
-            right = construct_string(root.right)
+            if(not root.left and not root.right):
+                return str(root.val) + ''
             
-            if(left or right): left = f'({left})'
-            if(right): right = f'({right})'
+            if(not root.right):
+                return str(root.val) + f'({construct_string(root.left)})'
             
-            return str(root.val) + left + right
-            
+            return str(root.val) + f'({construct_string(root.left)})({construct_string(root.right)})'
         return construct_string(root)
             
             
