@@ -1,33 +1,34 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        target = Counter(t)
-        res = (math.inf, 0, 0)
-        req = len(target)
+        
+        tmap = Counter(t)
+        cindex = [(i, c) for i, c in\
+             enumerate(s) if(c in tmap)]
+        if(not cindex): return ''
+        
+        smap = Counter()
 
-        window = defaultdict(lambda:0)
-        formed = 0
-        l, r = 0, 0
-        n = len(s)
-        while(r < n):
-            ch = s[r]
-            window[ch] += 1
+        needed = len(tmap)
+        made = left = 0
+        ans = (inf, None, None)
 
-            if(ch in target and target[ch] == window[ch]):
-                formed += 1
+        for index, char in cindex:
+            smap[char] += 1
+            if(smap[char] == tmap[char]):
+                made += 1
 
-            while(l <= r and formed == req):
-                ch = s[l]
+            previ, prevc = cindex[left]
+            while(smap[prevc] >= tmap[prevc] and made == needed):
+                if(ans[0] > index - previ + 1):
+                    ans = (index - previ + 1, previ, index)
 
-                if((r - l + 1) < res[0]):
-                    res = ((r - l + 1), l, r)
+                smap[prevc] -= 1
+                if(smap[prevc] < tmap[prevc]):
+                    made -= 1
 
-                if(ch in target and target[ch] == window[ch]):
-                    formed -= 1
+                left += 1
+                if(left >= len(cindex)):
+                    break
+                previ, prevc = cindex[left]
 
-                window[ch] -= 1
-                l += 1
-            r += 1
-
-        return s[res[1]: res[2] + 1] if(res[0] != math.inf) else ""
-                
-                
+        return s[ans[1]: ans[2] + 1] if(ans[0] != inf) else ''
