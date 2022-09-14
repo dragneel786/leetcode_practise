@@ -6,23 +6,17 @@
 #         self.right = right
 class Solution:
     def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
-        values = [0] * 10
         
-        count_odds = lambda values: sum(v % 2 for v in values)
-        
-        def count_pseudo(root):
+        def count_pseudo(root, path = 0):
             if(not root):
                 return 0
             
-            values[root.val] += 1
-            
-            res = count_pseudo(root.left)
-            res += count_pseudo(root.right)
+            path ^= (1 << root.val)
+            res = count_pseudo(root.left, path)
+            res += count_pseudo(root.right, path)
             
             if(not root.left and not root.right):
-                res += count_odds(values) <= 1
-            
-            values[root.val] -= 1
+                res += (path & (path - 1)) == 0
             
             return res
     
