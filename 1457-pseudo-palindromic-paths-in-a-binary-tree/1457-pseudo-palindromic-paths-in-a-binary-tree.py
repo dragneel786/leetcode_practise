@@ -8,17 +8,18 @@ class Solution:
     def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
         
         def count_pseudo(root, path = 0):
+            nonlocal res
             if(not root):
-                return 0
+                return
             
             path ^= (1 << root.val)
-            res = count_pseudo(root.left, path)
-            res += count_pseudo(root.right, path)
+            count_pseudo(root.left, path)
+            count_pseudo(root.right, path)
             
             if(not root.left and not root.right):
                 res += (path & (path - 1)) == 0
-            
-            return res
-    
-        return count_pseudo(root)
+        
+        res = 0
+        count_pseudo(root)
+        return res
             
