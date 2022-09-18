@@ -17,6 +17,6 @@ class Solution:
                 temp.next = list1
                 list1 = list1.next
         
-            if(temp.next): temp = temp.next
+            temp = temp.next
         
         return new_head.next
