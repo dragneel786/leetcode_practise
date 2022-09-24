@@ -11,22 +11,18 @@ class Solution:
             nonlocal targetSum
             if(not root): return
             
-            if(not root.left and\
-               not root.right):
-                
-                if(path_sum + root.val == targetSum):
-                    op.append(root.val)
-                    res.append(op[:])
-                    op.pop()
-                    
-                return
-            
             op.append(root.val)
-            root_to_leaf(root.left,
-                         path_sum + root.val, op)
             
-            root_to_leaf(root.right,
-                         path_sum + root.val, op)
+            if(root.left or root.right):
+                root_to_leaf(root.left,
+                             path_sum + root.val, op)
+
+                root_to_leaf(root.right,
+                             path_sum + root.val, op)
+            
+            elif(path_sum + root.val == targetSum):
+                res.append(op[:])
+                
             op.pop()
             
         res = []
