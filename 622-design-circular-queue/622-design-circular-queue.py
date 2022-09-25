@@ -1,54 +1,47 @@
-class Node:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-        
 class MyCircularQueue:
 
     def __init__(self, k: int):
-        self.s = 0
-        self.ms = k
-        self.front = None
-        self.rear = None
-
+        self.q = [0] * (k + 1)
+        self.front = 0
+        self.rear = 0
+        
     def enQueue(self, value: int) -> bool:
-        if(self.isFull()): return False
-        if(not self.rear):
-            self.rear = Node(value)
-            self.front = self.rear
-        else:
-            self.rear.next = Node(value, self.front)
-            self.rear = self.rear.next
-        self.s += 1
+        if(self.isFull()):
+            return False
+        
+        self.q[self.front] = value
+        self.front = self.inc(self.front)
         return True
 
     def deQueue(self) -> bool:
-        if(self.isEmpty()): return False
-        if(self.front == self.rear):
-            self.front = None
-            self.rear = None
-        else:
-            self.front = self.front.next
-            self.rear.next = self.front
-        self.s -= 1
+        if(self.isEmpty()):
+            return False
+        
+        self.rear = self.inc(self.rear)
         return True
-    
+
     def Front(self) -> int:
-        if(not self.front):
+        if(self.isEmpty()):
             return -1
-        return self.front.val
+        
+        return self.q[self.rear]
         
 
     def Rear(self) -> int:
-        if(not self.rear):
+        if(self.isEmpty()):
             return -1
-        return self.rear.val
+        
+        return self.q[self.front - 1]
 
     def isEmpty(self) -> bool:
-        return self.s == 0
+        return self.front == self.rear
 
     def isFull(self) -> bool:
-        return self.s == self.ms
+        return self.inc(self.front) == self.rear
+    
+    def inc(self, i):
+        return (i + 1) % len(self.q)
+        
 
 
 # Your MyCircularQueue object will be instantiated and called as such:
