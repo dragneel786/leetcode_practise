@@ -6,25 +6,15 @@
 #         self.right = right
 class Solution:
     def countNodes(self, root: Optional[TreeNode]) -> int:
-        lev= 0
-        temp = root
-        while(temp):
-            temp = temp.left
-            lev += 1
         
-        total = [0]
-        total[0] = (2 ** lev) - 1
+        def height(node):
+            return -1 if(not node) else 1 + height(node.left)
         
-        def findLastNode(root, curr = 1):
-            if(not root):
-                if(curr == lev):
-                    total[0] -= 1
-                return
-            
-            findLastNode(root.right, curr + 1)
-            findLastNode(root.left, curr + 1)
-            if(root and curr == lev):
-                return
         
-        findLastNode(root)
-        return total[0]
+        h = height(root)
+        if(h < 0):
+            return 0
+        
+        return (1 << h) + self.countNodes(root.right)\
+    if(height(root.right) == h - 1) else (1 << h-1) + self.countNodes(root.left) 
+        
