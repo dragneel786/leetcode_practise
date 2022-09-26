@@ -1,23 +1,32 @@
 class Solution:
     def equationsPossible(self, equations: List[str]) -> bool:
-        def find(x):
-            if(parent[x] != x):
-                parent[x] = find(parent[x])
-            return parent[x]
         
-        def union(x, y):
-            nx, ny = find(x), find(y)
-            if(nx != ny):
-                parent[ny] = nx
+        def find(a):
+            if(parent[a] != a):
+                parent[a] = find(parent[a])
+            return parent[a]
         
+        def union(a, b):
+            if(find(a) == find(b)):
+                return
+            parent[b] = find(parent[a])
+            
         
-        parent = {chr(97 + i):chr(97 + i) for i in range(26)}
-        for e in equations:
-            if(e[1] == "="):
-                union(e[0], e[3])
+        def create_disjoint():
+            for eq in equations:
+                if(eq[1] == '='):
+                    union(find(eq[0]), find(eq[3]))
+                    
         
-        for e in equations:
-            if(e[1] == '!' and find(e[0]) == find(e[3])):
+        parent = {c:c for c in string.ascii_lowercase}
+        create_disjoint()
+        print(parent)
+        
+        for eq in equations:
+            if(eq[1] == "!" and \
+              find(eq[0]) == find(eq[3])):
                 return False
+        
         return True
                 
+        
