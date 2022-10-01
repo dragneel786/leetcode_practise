@@ -1,15 +1,16 @@
 class Solution:
     def getHint(self, secret: str, guess: str) -> str:
-        s = Counter(secret)
-        g = Counter(guess)
-        bulls = 0
-        cows = 0
-        for k in g.keys():
-            cows += min(s[k], g[k]) if(k in s) else 0
+        ncount = [0] * 10
+        bull = cow = 0
         
-        for i in range(len(guess)):
-            if(secret[i] == guess[i]):
-                bulls += 1
+        for s, g in zip(secret, guess):
+            if(s == g):
+                bull += 1
+            else:
+                s, g = int(s), int(g)
+                cow += int(ncount[s] > 0) + int(ncount[g] < 0)
+                ncount[s] -= 1
+                ncount[g] += 1
         
-        return str(bulls) + "A" + str(cows - bulls) + "B"
+        return str(bull) + 'A' + str(cow) + 'B'
         
