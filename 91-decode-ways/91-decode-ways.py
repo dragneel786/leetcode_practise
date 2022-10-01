@@ -1,18 +1,19 @@
 class Solution:
     def numDecodings(self, s: str) -> int:
-        if(s[0] == '0'):
-            return 0
-        
         n = len(s)
-        dp = [1] + ([0] * n)
-        dp[1] = 1
-        for i in range(2, n + 1):
-            val1 = int(s[i - 1])
-            val2 = int(s[i - 2: i])
-            if(val1 != 0):
-                dp[i] = dp[i - 1]
-            if(10 <= val2 <= 26):
-                dp[i] += dp[i - 2]
+        dp = [0] * (n + 1)
+        dp[-1] = 1
         
-        return dp[n]
-                
+        for i in range(n - 1, -1, -1):
+            val = int(s[i])
+            if(val == 0): continue
+            
+            dp[i] = dp[i + 1]
+            if(i < n - 1):
+                double_val = int(s[i: i + 2])
+                if(double_val < 27):
+                    dp[i] += dp[i + 2]
+            
+        return dp[0]
+            
+        
