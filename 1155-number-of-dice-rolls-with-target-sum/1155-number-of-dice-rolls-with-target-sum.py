@@ -3,11 +3,11 @@ class Solution:
         
         def roll_it(n, s = 0):
             nonlocal target, k
-            if(s > target or n < 0):
-                return 0
-            
             if(s == target and n == 0):
                 return 1
+            
+            if(s >= target or n <= 0):
+                return 0
             
             key = (n, s)
             if(key in memo): return memo[key]
