@@ -10,15 +10,12 @@ class Solution:
         if(not root):
             return False
         
+        
+        targetSum -= root.val
         if(not root.left and not root.right):
-            return (targetSum - root.val) == 0
+            return  targetSum == 0
         
         
-        #Recursive body
-        if(self.hasPathSum(root.left,\
-                           targetSum - root.val)):
-            return True
-        
-        return self.hasPathSum(root.right,\
-                               targetSum - root.val)
+        return self.hasPathSum(root.left,targetSum)\
+                or self.hasPathSum(root.right, targetSum)
         
