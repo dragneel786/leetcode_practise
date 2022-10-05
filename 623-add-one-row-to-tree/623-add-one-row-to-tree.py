@@ -7,24 +7,23 @@
 class Solution:
     def addOneRow(self, root: Optional[TreeNode], val: int, depth: int) -> Optional[TreeNode]:
         
+        dummy_root = TreeNode(left=root)
+        stack = deque([(dummy_root, depth)])
         
-        def add_to_depth(node, val, dep):
-            if(not node):
-                return 
+        while(stack):
+            node, dep = stack.pop()
             
             if(dep == 1):
                 left, right = node.left, node.right
                 node.left = TreeNode(val, left=left)
                 node.right = TreeNode(val,right=right)
-                return
+                continue
             
-            add_to_depth(node.left, val, dep - 1)
-            add_to_depth(node.right, val, dep - 1)
-        
-        dummy_root = TreeNode()
-        dummy_root.left = root
-        
-        add_to_depth(dummy_root, val, depth)
+            if(node.right):
+                stack.append((node.right, dep - 1))
+            
+            if(node.left):
+                stack.append((node.left, dep - 1))
         
         return dummy_root.left
         
