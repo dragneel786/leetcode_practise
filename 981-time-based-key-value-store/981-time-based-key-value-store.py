@@ -1,14 +1,20 @@
 class TimeMap:
 
     def __init__(self):
-        self.timeMap = defaultdict(lambda:[])
+        self.time_map = defaultdict(list)
 
     def set(self, key: str, value: str, timestamp: int) -> None:
-        insort(self.timeMap[key], (timestamp, value))
+        self.time_map[key].append((timestamp, value))
 
     def get(self, key: str, timestamp: int) -> str:
-        idx = bisect_right(self.timeMap[key], (timestamp, "z" * 101))
-        return self.timeMap[key][idx - 1][1] if idx else ""
+        if(key not in self.time_map):
+            return ""
+        
+        idx = bisect_right(self.time_map[key], (timestamp, "}"))
+        
+        if(idx < 1): return ""
+        return self.time_map[key][idx - 1][1]
+        
         
 
 
