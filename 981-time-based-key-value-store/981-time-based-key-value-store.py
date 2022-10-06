@@ -7,13 +7,8 @@ class TimeMap:
         self.time_map[key].append((timestamp, value))
 
     def get(self, key: str, timestamp: int) -> str:
-        if(key not in self.time_map):
-            return ""
-        
         idx = bisect_right(self.time_map[key], (timestamp, "}"))
-        
-        if(idx < 1): return ""
-        return self.time_map[key][idx - 1][1]
+        return self.time_map[key][idx - 1][1] if idx else ""
         
         
 
