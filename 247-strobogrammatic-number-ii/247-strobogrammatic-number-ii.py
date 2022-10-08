@@ -1,24 +1,26 @@
 class Solution:
     def findStrobogrammatic(self, n: int) -> List[str]:
-        combos = {'0':'0', '1':'1', '8':'8', '6':'9', '9': '6'}
-        final_length = n
+        reverse = {'0':'0', '1':'1', '8':'8',\
+                   '9':'6', '6':'9'}
         
-        def create_storo(n):
-            nonlocal final_length
-            if(not n):
+        def gen_strob(l):
+            nonlocal n
+            if(not l):
                 return ['']
             
-            if(n == 1):
+            if(l == 1):
                 return ['0', '1', '8']
             
-            prev_combo = create_storo(n - 2)
-            curr_combo = []
+            ret = []
             
-            for p in prev_combo:
-                for i, j in combos.items():
-                    if(i != '0' or n != final_length):
-                        curr_combo.append(i + p + j)
+            for num in gen_strob(l - 2):
+                for k, v in reverse.items():
+                    if(l == n and k == '0'):
+                        continue
+                    
+                    new_num = k + num + v
+                    ret.append(new_num)
             
-            return curr_combo
-        
-        return create_storo(n)
+            return ret
+    
+        return gen_strob(n)
