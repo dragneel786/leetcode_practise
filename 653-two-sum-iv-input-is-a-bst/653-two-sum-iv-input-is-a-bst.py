@@ -6,19 +6,18 @@
 #         self.right = right
 class Solution:
     def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
+        needed = set()
+        que = deque([root])
         
-        
-        def is_possible(node, k):
-            if(not node):
-                return False
+        while(que):
+            node = que.popleft()
+            if(not node): continue
             
             if(node.val in needed):
                 return True
             
             needed.add(k - node.val)
-            return is_possible(node.left, k) or\
-        is_possible(node.right, k)
-            
-            
-        needed = set()
-        return is_possible(root, k)
+            que.append(node.left)
+            que.append(node.right)
+        
+        return False
