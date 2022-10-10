@@ -11,7 +11,7 @@ class Solution:
             if(hit5):
                 res += "Buzz"
             
-            if(not hit3 and not hit5):
+            if(not res):
                 res += str(i)
             
             ans.append(res)
