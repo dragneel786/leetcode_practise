@@ -1,14 +1,20 @@
 class Solution:
     def thirdMax(self, nums: List[int]) -> int:
+        nums = set(nums)
         
-        heap = []
+        if(len(nums) < 3):
+            return max(nums)
         
-        for num in set(nums):
-            if(len(heap) < 3 or heap[0] < num):
-                heappush(heap, num)
+        first = second = third = -inf
+        for num in nums:
+            if(num > first):
+                first, second, third = \
+                num, first, second
             
-            if(len(heap) > 3):
-                heappop(heap)
+            elif(num > second):
+                second, third = num, second
+            
+            elif(num > third):
+                third = num
         
-        
-        return heap[0] if(len(heap) >= 3) else heap[-1]
+        return third
