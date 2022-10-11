@@ -1,12 +1,11 @@
 class Solution:
     def thirdMax(self, nums: List[int]) -> int:
-        nums = set(nums)
-        
-        if(len(nums) < 3):
-            return max(nums)
         
         first = second = third = -inf
         for num in nums:
+            if(first == num or second == num or third == num):
+                continue
+                
             if(num > first):
                 first, second, third = \
                 num, first, second
@@ -16,5 +15,8 @@ class Solution:
             
             elif(num > third):
                 third = num
+        
+        if(third == -inf):
+            return first
         
         return third
