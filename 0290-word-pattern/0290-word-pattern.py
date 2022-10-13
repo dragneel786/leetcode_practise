@@ -4,12 +4,11 @@ class Solution:
         if(len(pattern) != len(slist)):
             return False
         
-        pmap = dict()
-        smap = dict()
-        for p, w in zip(pattern, slist):
-            p1 = pmap.setdefault(p, w)
-            w1 = smap.setdefault(w, p)
-            if(p1 != w or w1 != p):
+        imap = dict()
+        for i, (p, w) in enumerate(zip(pattern, slist)):
+            idx1 = imap.setdefault(f'char_{p}', i)
+            idx2 = imap.setdefault(f'word_{w}', i)
+            if(idx1 != idx2):
                 return False
         
         return True
