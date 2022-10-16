@@ -15,11 +15,10 @@ class Solution:
         n = len(score)
         values = [(s, i) for i, s in enumerate(score)]
         values.sort(reverse=True)
-        res = [""] * n
         
         for i, (_, idx) in enumerate(values):
-            res[idx] = rank(i + 1)
+            score[idx] = rank(i + 1)
         
-        return res
+        return score
             
             
