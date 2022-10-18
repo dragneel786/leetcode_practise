@@ -1,16 +1,18 @@
 class Solution:
     def countAndSay(self, n: int) -> str:
-        if(n == 1):
-            return "1"
         
-        say_num = self.countAndSay(n - 1) + '-'
-        count = 1
-        ret = ""
-        for i in range(1, len(say_num)):
-            if(say_num[i - 1] != say_num[i]):
-                ret += (str(count) + say_num[i - 1])
-                count = 0
-            count += 1
+        ans = "1-"
+        for _ in range(n - 1):
+            count = 1
+            ret = ""
             
-        return ret
+            for i in range(1, len(ans)):
+                if(ans[i - 1] != ans[i]):
+                    ret += (str(count) + ans[i - 1])
+                    count = 0
+                count += 1
+                
+            ans = ret + '-'
+            
+        return ans[:-1]
             
