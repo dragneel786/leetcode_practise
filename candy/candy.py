@@ -7,14 +7,10 @@ class Solution:
             if(ratings[i] > ratings[i - 1]):
                 rates[i] = rates[i - 1] + 1
         
-        candy = rates[-1]
         for i in range(n - 2, -1, -1):
             if(ratings[i] > ratings[i + 1]\
                and rates[i] <= rates[i + 1]):
-                candy += 1
-                rates[i] = candy
-            else:
-                candy = rates[i]
+                rates[i] = rates[i + 1] + 1
         
         return sum(rates)
         
