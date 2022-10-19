@@ -15,7 +15,8 @@ class Solution:
         heap = []
         for w, c in Counter(words).items():
             new_node = Node(w, c)
-            heappush(heap, new_node)
+            if(len(heap) < k or heap[0] < new_node):
+                heappush(heap, new_node)
                 
             if(len(heap) > k):
                 heappop(heap)
