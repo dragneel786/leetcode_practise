@@ -5,10 +5,7 @@ class Solution:
         candy = 1
         for i in range(1, n):
             if(ratings[i] > ratings[i - 1]):
-                candy += 1
-            else:
-                candy = 1
-            rates[i] = candy
+                rates[i] = rates[i - 1] + 1
         
         candy = rates[-1]
         for i in range(n - 2, -1, -1):
