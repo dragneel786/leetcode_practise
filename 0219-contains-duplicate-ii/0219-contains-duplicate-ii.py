@@ -6,7 +6,7 @@ class Solution:
                 return True
             nset.add(num)
             
-            if(len(nset) > k):
+            if(i >= k):
                 nset.remove(nums[i - k])
             
         return False
