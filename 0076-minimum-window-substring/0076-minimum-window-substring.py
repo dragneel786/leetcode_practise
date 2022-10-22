@@ -18,17 +18,17 @@ class Solution:
         sindex = deque()
 
         right, ans_index = 0, None
-        curr_window = Counter()
+        scount = Counter()
         
         while(right < sn):
             if(right < sn and s[right] in tcount):
-                curr_window[s[right]] += 1
+                scount[s[right]] += 1
                 sindex.append(right)
             right += 1
 
-            while(covered(tcount, curr_window)):
+            while(not len(tcount - scount)):
                 assign_index(sindex[0], sindex[-1] + 1)
-                curr_window[s[sindex.popleft()]] -= 1
+                scount[s[sindex.popleft()]] -= 1
 
         return s[ans_index[0]: ans_index[1]] if(ans_index) else ''
 
