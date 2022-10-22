@@ -3,44 +3,32 @@ class Solution:
         
         sn, tn = len(s), len(t)
         if(sn < tn): return ''
-        min_index = lambda x, y: x if(abs(x[1] - x[0]) <\
-                                        abs(y[1] - y[0])) else y
         covered = lambda a, b: True if(not a - b) else False
-
-        def create_indexes(s, counts):
-            indexes = deque()
-            for i, c in enumerate(s):
-                if(c in counts):
-                    indexes.append(i)
-
-            return indexes
-
 
         def assign_index(left, right):
             nonlocal ans_index
+            new_index = (left, right, right - left)
             if(not ans_index):
-                ans_index = (left, right)
+                ans_index = new_index
             else:
-                ans_index = min_index(ans_index,\
-                                        (left, right))
+                ans_index = min(new_index,\
+                     ans_index, key=lambda x:x[2])
 
         tcount = Counter(t)
-        sindex = create_indexes(s, tcount)
+        sindex = deque()
 
         right, ans_index = 0, None
         curr_window = Counter()
+        
+        while(right < sn or covered(tcount, curr_window)):
+            if(right < sn and s[right] in tcount):
+                curr_window[s[right]] += 1
+                sindex.append(right)
+            right += 1
 
-        while(sindex):
-            while(not covered(tcount, curr_window)\
-                    and right < sn):
-                if(s[right] in tcount):
-                    curr_window[s[right]] += 1
-                right += 1
-
-            if(covered(tcount, curr_window)):
-                assign_index(sindex[0], right)
-
-            curr_window[s[sindex.popleft()]] -= 1
+            while(covered(tcount, curr_window)):
+                assign_index(sindex[0], sindex[-1] + 1)
+                curr_window[s[sindex.popleft()]] -= 1
 
         return s[ans_index[0]: ans_index[1]] if(ans_index) else ''
 
