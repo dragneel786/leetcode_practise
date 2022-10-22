@@ -20,7 +20,7 @@ class Solution:
         right, ans_index = 0, None
         curr_window = Counter()
         
-        while(right < sn or covered(tcount, curr_window)):
+        while(right < sn):
             if(right < sn and s[right] in tcount):
                 curr_window[s[right]] += 1
                 sindex.append(right)
