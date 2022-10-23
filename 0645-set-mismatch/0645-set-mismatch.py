@@ -8,7 +8,7 @@ class Solution:
             if(nums[val - 1] < 0):
                 repeat = val
             else:
-                nums[val - 1] = (~(nums[val - 1]) + 1)
+                nums[val - 1] = (~nums[val - 1] + 1)
             
             xor_nums ^= (i ^ val)
             
