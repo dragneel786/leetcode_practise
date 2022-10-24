@@ -48,16 +48,16 @@ class Solution:
                     visited.add((nx, ny))
                     move_robot(nx, ny, ndin)
                 
-                robot.turnLeft()
+                robot.turnRight()
             
-            robot.turnLeft()
-            robot.turnLeft()
+            robot.turnRight()
+            robot.turnRight()
             robot.move()
-            robot.turnLeft()
-            robot.turnLeft()
+            robot.turnRight()
+            robot.turnRight()
             
         visited = set([(0, 0)])
-        faces = [(-1, 0), (0, 1), (1, 0), (0, -1)]
+        faces = [(-1, 0), (0, -1), (1, 0), (0, 1)]
         move_robot(0, 0, 0)
         
         
