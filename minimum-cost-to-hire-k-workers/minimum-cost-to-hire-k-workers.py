@@ -2,7 +2,7 @@ class Solution:
     def mincostToHireWorkers(self, quality: List[int], wage: List[int], k: int) -> float:
         from fractions import Fraction
         
-        combos = sorted((Fraction(w / q), q, w)\
+        combos = sorted((w / q, q, w)\
                         for w, q in zip(wage, quality))
         sumq = 0
         heap = []
