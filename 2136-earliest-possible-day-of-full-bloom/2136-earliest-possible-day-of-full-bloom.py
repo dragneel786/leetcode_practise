@@ -1,14 +1,15 @@
 class Solution:
     def earliestFullBloom(self, plantTime: List[int], growTime: List[int]) -> int:
-        pg = [(p, g) for p, g in zip(plantTime, growTime)]
-        pg.sort(key=lambda x: -x[1])
         
-        ans, gb = pg[0]
-        gb += 1
-        for p, g in pg[1:]:
-            ans += p
-            gb -= p
-            gb = max(gb, g + 1)
-            
-        return ans + gb - 1
+        
+        indices = sorted(range(len(plantTime)),\
+                          key=lambda i: -growTime[i])
+        
+        ans = 0
+        curr_time = 0
+        for i in indices:
+            curr_time += plantTime[i]
+            ans = max(ans, curr_time + growTime[i])
+        
+        return ans
             
