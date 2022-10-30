@@ -11,12 +11,6 @@ class Solution:
                 pe += end[pe] == 'X'
             
             else:
-                if(ps == sn and pe == en):
-                    return True
-
-                if(ps == sn or pe == en):
-                    return False
-
                 if(start[ps] == 'L' and ps < pe):
                     return False
 
@@ -26,4 +20,4 @@ class Solution:
                 ps += 1
                 pe += 1
         
-        return True
+        return (ps == sn or pe == en)
