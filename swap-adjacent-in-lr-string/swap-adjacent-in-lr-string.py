@@ -20,4 +20,4 @@ class Solution:
                 ps += 1
                 pe += 1
         
-        return (ps == sn or pe == en)
+        return True
