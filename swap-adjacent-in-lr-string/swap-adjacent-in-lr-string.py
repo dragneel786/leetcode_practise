@@ -1,37 +1,34 @@
 class Solution:
     def canTransform(self, start: str, end: str) -> bool:
+        if(start.replace('X', '') != end.replace('X', '')):
+            return False
         
-        def find_and_swap(pos, char_needed, char_has):
-            if(not pos):
+        ps = pe = 0
+        sn, en = len(start), len(end)
+        while(ps < sn and pe < en):
+            while(ps < sn and start[ps] == 'X'):
+                ps += 1
+            
+            while(pe < en and end[pe] == 'X'):
+                pe += 1
+            
+            if(ps == sn and pe == en):
+                return True
+            
+            if(ps == sn or pe == en):
                 return False
             
-            j = pos
-            while(j > -1):
-                if(char_needed == start[j]):
-                    start[j], start[pos] = start[pos], start[j]
-                    return True
-                
-                if(char_has != start[j]):
-                    return False
-                
-                j -= 1
+            s, e = start[ps], end[pe]
+            if(s != e):
+                return False
             
-            return False
-                    
+            if(s == 'L' and ps < pe):
+                return False
             
-        start = list(start)
-        end = list(end)
-        for i in range(len(start) - 1, -1, -1):
-            if(start[i] != end[i]):
-                if(start[i] == 'L' and end[i] == 'X'):
-                    if(not find_and_swap(i, 'X', start[i])):
-                        return False
-                
-                elif(start[i] == 'X' and end[i] == 'R'):
-                    if(not find_and_swap(i, 'R', start[i])):
-                        return False
-                else:
-                    return False
+            if(s == 'R' and ps > pe):
+                return False
+            
+            ps += 1
+            pe += 1
         
         return True
-        
