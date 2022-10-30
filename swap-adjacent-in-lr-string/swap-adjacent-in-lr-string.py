@@ -6,16 +6,18 @@ class Solution:
         ps = pe = 0
         sn, en = len(start), len(end)
         while(ps < sn and pe < en):
-            if(start[ps] != 'X' and end[pe] != 'X'):
-                if(start[ps] == 'L' and ps < pe):
-                    return False
-
-                if(start[ps] == 'R' and ps > pe):
-                    return False
-                ps, pe = ps + 1, pe + 1
+            s, e = start[ps], end[pe]
+            if(s == e == 'L' and ps >= pe or \
+               s == e == 'R' and ps <= pe):
+                ps += 1
+                pe += 1
                 continue
             
-            ps += start[ps] == 'X'
-            pe += end[pe] == 'X'
+            elif(s != 'X' and e != 'X'):
+                return False
+            
+            else:
+                ps += s == 'X'
+                pe += e == 'X'
         
         return True
