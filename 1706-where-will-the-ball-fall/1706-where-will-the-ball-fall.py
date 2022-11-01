@@ -1,22 +1,23 @@
 class Solution:
     def findBall(self, grid: List[List[int]]) -> List[int]:
         rows, cols = len(grid), len(grid[0])
-        res = []
+        memo = [[c for c in range(cols)]\
+                for _ in range(rows + 1)]
         
-        for c in range(cols):
-            x, y = 0, c
-            while(x != rows):
-                val = grid[x][y]
-                y += val
-                if(y < 0 or y == cols or\
-                   grid[x][y - val] != grid[x][y]):
-                    res.append(-1)
-                    break
+        for r in range(rows - 1, -1, -1):
+            for c in range(cols - 1, -1, -1):
+                nc = c + grid[r][c]
+                if(nc < 0 or nc == cols or \
+                   grid[r][c] != grid[r][nc]):
+                    memo[r][c] = -1
+                    continue
                 
-                x += 1
-            else:
-                res.append(y)
+                memo[r][c] = memo[r + 1][nc]
         
-        return res
+        return memo[0]
+                
+                
+                
+        
         
             
