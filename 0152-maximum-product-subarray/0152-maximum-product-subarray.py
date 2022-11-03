@@ -5,10 +5,8 @@ class Solution:
         ans = max_so_far
         
         for num in nums[1:]:
-            temp =  max(num, max_so_far * num, min_so_far * num)
-            min_so_far = min(num, max_so_far * num, min_so_far * num)
-            
-            max_so_far = temp
+            val =  (max_so_far * num, min_so_far * num)
+            max_so_far, min_so_far = max(num, max(val)), min(num, min(val))
             
             ans = max(ans, max_so_far)
         
