@@ -6,7 +6,7 @@ class Solution:
         
         for num in nums[1:]:
             val =  (max_so_far * num, min_so_far * num)
-            max_so_far, min_so_far = max(num, max(val)), min(num, min(val))
+            max_so_far, min_so_far = max(num, *val), min(num, *val)
             
             ans = max(ans, max_so_far)
         
