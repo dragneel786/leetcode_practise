@@ -3,20 +3,19 @@ class Solution:
         wcounts = Counter(words)
         length = single = 0
         
-        for key, value in wcounts.items():
+        for key, count in wcounts.items():
             rkey = key[::-1]
             minv = 0
          
             if(wcounts[rkey]):
+                minv = min(count, wcounts[rkey])
+                
                 if(key == rkey):
-                    minv = value // 2
-                    single = 2 if(wcounts[key] - (minv * 2)) else single
-                else:
-                    minv = min(value, wcounts[rkey])
-                
-                wcounts[key] -= minv
-                wcounts[rkey] -= minv
-                
+                    if(minv & 1):
+                        single = 2
+                    minv //= 2
+                    
+                wcounts[key] = wcounts[rkey] =  0 
             length += (4 * minv)
         
         return length + single
