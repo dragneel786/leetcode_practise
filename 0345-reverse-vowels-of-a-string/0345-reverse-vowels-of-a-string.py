@@ -6,14 +6,17 @@ class Solution:
         s = list(s)
         
         while(left < right):
-            if(s[left].lower() in vowels):
-                while(s[right].lower() not in vowels):
-                    right -= 1
-                
+            check1 = s[left].lower() not in vowels
+            check2 = s[right].lower() not in vowels
+            
+            if(not check1 and not check2):
                 s[left], s[right] = s[right], s[left]
+                left += 1
                 right -= 1
                 
-            left += 1
+            left += check1
+            right -= check2
+            
         
         return "".join(s)
         
