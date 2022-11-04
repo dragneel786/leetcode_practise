@@ -3,9 +3,8 @@ class Solution:
         res = 0
         step = 0
         while(num):
-            end = 0 if(num & 1) else 1
+            res = ((not num & 1) << step) + res
             num >>= 1
-            res = (end << step) + res
             step += 1
         
         return res
