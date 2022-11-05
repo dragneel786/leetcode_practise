@@ -6,11 +6,11 @@ class Solution:
         word += word[-1]
         upper = True
         for i in range(1, n):
-            if(word[i].islower() !=\
-               word[i + 1].islower()):
+            up = word[i].isupper()
+            if(up != word[i + 1].isupper()):
                 return False
             
-            upper &= word[i].isupper()
+            upper &= up
         
         fup = word[0].isupper()
         return fup if(upper) else True
