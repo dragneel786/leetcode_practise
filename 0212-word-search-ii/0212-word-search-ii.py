@@ -1,50 +1,49 @@
 class Solution:
     def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
         
-        def create_word_trie(words):
-            tries = dict()
+        def words_trie(words):
+            trie = dict()
             for word in words:
-                temp = tries
+                t = trie
                 for c in word:
-                    temp[c] = temp.get(c, dict())
-                    temp = temp[c]
-                temp['$'] = word
+                    t[c] = t.get(c, {})
+                    t = t[c]
                 
-            return tries
+                t['$'] = word
+        
+            return trie
         
         
-        def dfs(x, y, t):
-            letter = board[x][y]
-            node = t[letter]
+        def dfs(x, y, triee, visited):
+            if('$' in triee):
+                res.append(triee['$'])
+                del triee['$']
             
-            val = node.pop('$', False)
-            if(val):
-                ans.append(val)
-            
-            board[x][y] = None
-                
-            for dx, dy in [(1, 0), (0, 1),\
-                           (-1, 0), (0, -1)]:
+            visited.add((x, y))
+            for dx, dy in [(0, 1), (1, 0),
+                           (0, -1), (-1, 0)]:
                 nx, ny = x + dx, y + dy
-                
-                if(0 <= nx < m and 0 <= ny < n\
-                   and board[nx][ny] in node):
-                    dfs(nx, ny, node)
+                if(0 <= nx < rows and 0 <= ny < cols\
+                   and (nx, ny) not in visited and\
+                   triee.get(board[nx][ny], None)):
                     
-            board[x][y] = letter
+                    dfs(nx, ny, triee[board[nx][ny]], visited)
+                    if(not triee[board[nx][ny]]):
+                        del triee[board[nx][ny]]
             
-            if(not node):
-                t.pop(letter)  
-        
-        
-        trie = create_word_trie(words)
-        m, n = len(board), len(board[0])
-        ans = []
-        for r in range(m):
-            for c in range(n):
-                if(board[r][c] in trie):
-                    dfs(r, c, trie)
-        
-        return ans
+            visited.remove((x, y))
                     
         
+        trie = words_trie(words)
+        rows, cols = len(board), len(board[0])
+        res = []
+        
+        for r in range(rows):
+            for c in range(cols):
+                if(board[r][c] in trie):
+                    dfs(r, c, trie[board[r][c]], set())
+        
+        return res
+        
+        
+            
