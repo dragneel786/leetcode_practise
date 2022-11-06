@@ -1,26 +1,25 @@
 class MinStack:
 
     def __init__(self):
-        self.s = deque()
-        self.m = float('inf')
+        self.st = deque()
+        self.minv = inf
 
     def push(self, val: int) -> None:
-        self.m = min(self.m, val)
-        self.s.append([val, self.m])
-
+        self.st.append(val)
+        self.minv = min(self.minv, val)
+        
     def pop(self) -> None:
-        node = self.s.pop()
-        if(len(self.s)):
-            self.m = self.s[-1][1]
-        else:
-            self.m = float('inf')
-        return node[0]
+        if(self.minv == self.st.pop()):
+            if(self.st):
+                self.minv = min(self.st)
+            else:
+                self.minv = inf
 
     def top(self) -> int:
-        return self.s[-1][0]
+        return self.st[-1]
 
     def getMin(self) -> int:
-        return self.s[-1][1]
+        return self.minv
 
 
 # Your MinStack object will be instantiated and called as such:
