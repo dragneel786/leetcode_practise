@@ -20,24 +20,21 @@ class Solution:
             return ret
         
         
-        def dfs(curr):
+        def dfs(curr, visited):
             visits = 0
             
             for node in graph[curr]:
                 if(node not in visited):
                     visited.add(node)
-                    visits += (dfs(node) + 1)
+                    visits += (dfs(node, visited) + 1)
             
+            graph[curr].clear()
             return visits
         
-        grouped = group()
-        graph = create_graph(grouped)
-        grouped.clear()
-        visited = set()
+        graph = create_graph(group())
         deleted = 0
         for i in range(len(stones)):
-            if(i not in visited):
-                visited.add(i)
-                deleted += dfs(i)
+            if(graph[i]):
+                deleted += dfs(i, set([i]))
         
         return deleted
