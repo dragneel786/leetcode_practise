@@ -30,7 +30,9 @@ class Solution:
             
             return visits
         
-        graph = create_graph(group())
+        grouped = group()
+        graph = create_graph(grouped)
+        grouped.clear()
         visited = set()
         deleted = 0
         for i in range(len(stones)):
