@@ -11,9 +11,7 @@ class Solution:
                 return
             
             if(not root.left and not root.right):
-                if(op):
-                    q.append(root.val)
-                elif(q and q[0] == root.val):
+                if(not op and q and q[0] == root.val):
                     q.popleft()
                 else:
                     q.append(root.val)
