@@ -2,7 +2,7 @@ class Solution:
     def highFive(self, items: List[List[int]]) -> List[List[int]]:
         scores = defaultdict(list)
         for ide, score in items:
-            heappush(scores[ide], score)
+            scores[ide].append(score)
         
         res = []
         for ide, sc in scores.items():
