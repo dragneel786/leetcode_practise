@@ -16,8 +16,8 @@ class Solution:
                 if(0 <= nx < rows and 0 <= ny < cols\
                    and maze[nx][ny] != '+'):
                     
-                    if((nx in [0, rows - 1] or\
-                        ny in [0, cols - 1])):
+                    if(nx == 0 or nx == rows - 1 or\
+                       ny == 0 or ny == cols - 1):
                         return steps + 1
                     
                     maze[nx][ny] = '+'
