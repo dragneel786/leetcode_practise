@@ -1,4 +1,5 @@
 class Solution:
     def findMaxK(self, nums: List[int]) -> int:
-        seq = list(filter(lambda x: -x in set(nums), nums))
+        values = set(nums)
+        seq = list(filter(lambda x: -x in values, nums))
         return max(seq) if(len(seq)) else -1
