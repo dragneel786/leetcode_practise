@@ -5,8 +5,8 @@ class Solution:
         for num in range(left, right + 1):
             count = 0
             while(num):
-                count += (num & 1)
-                num >>= 1
+                num &= (num - 1)
+                count += 1
             
             res += (count in primes)
         
