@@ -4,7 +4,7 @@ class Solution:
             if(val == 2):
                 return True
             
-            for d in range(2, val):
+            for d in range(2, ceil(sqrt(val)) + 1):
                 if(val % d == 0):
                     return False
                 
