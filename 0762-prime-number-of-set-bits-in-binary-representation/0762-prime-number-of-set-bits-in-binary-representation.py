@@ -10,7 +10,7 @@ class Solution:
                 
             return val != 1
         
-        # primes = {i for i in range(1, (10 ** 6) + 1) if(isprime(i))}
+        primes = {i for i in range(1, 32) if(isprime(i))}
         res = 0
         for num in range(left, right + 1):
             count = 0
@@ -18,7 +18,7 @@ class Solution:
                 count += (num & 1)
                 num >>= 1
             
-            res += (isprime(count))
+            res += (count in primes)
         
         return res
         
