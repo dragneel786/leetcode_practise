@@ -1,16 +1,6 @@
 class Solution:
     def countPrimeSetBits(self, left: int, right: int) -> int:
-        def isprime(val):
-            if(val == 2):
-                return True
-            
-            for d in range(2, ceil(sqrt(val)) + 1):
-                if(val % d == 0):
-                    return False
-                
-            return val != 1
-        
-        primes = {i for i in range(1, 20) if(isprime(i))}
+        primes = {2, 3, 5, 7, 11, 13, 17, 19}
         res = 0
         for num in range(left, right + 1):
             count = 0
