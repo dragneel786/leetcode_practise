@@ -12,7 +12,6 @@ class Solution:
                                str(k + (c//3))]:
                         
                         if(val in hash_board[st]):
-                            print(st, hash_board)
                             return False
 
                         hash_board[st].add(val)
