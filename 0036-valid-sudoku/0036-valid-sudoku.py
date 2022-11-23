@@ -9,7 +9,7 @@ class Solution:
                 val = board[r][c]
                 if(val != '.'):
                     for st in ['r' + str(r), 'c' + str(c),\
-                               str(k + (c//3))]:
+                               str((r//3) * 3 + (c//3))]:
                         
                         if(val in hash_board[st]):
                             return False
