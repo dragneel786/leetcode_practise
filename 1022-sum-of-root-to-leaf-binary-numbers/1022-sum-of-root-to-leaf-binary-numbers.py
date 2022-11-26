@@ -19,9 +19,9 @@ class Solution:
                     continue
                 
                 if(node.left):
-                    que.append((node.left, (val << 1) + node.left.val))
+                    que.append((node.left, (val << 1) | node.left.val))
                 if(node.right):
-                    que.append((node.right, (val << 1) + node.right.val))
+                    que.append((node.right, (val << 1) | node.right.val))
             
         return ans
         
