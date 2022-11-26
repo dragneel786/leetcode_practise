@@ -7,21 +7,18 @@
 class Solution:
     def sumRootToLeaf(self, root: Optional[TreeNode]) -> int:
         
-        que = deque([(root, root.val)])
-        ans = 0
-                     
-        while(que):
-            for _ in range(len(que)):
-                node, val = que.popleft()
-                
-                if(not node.left and not node.right):
+        def sums(root, curr_val):
+            nonlocal ans
+            if(root):
+                val = (curr_val << 1) | root.val
+                if(not root.left and not root.right):
                     ans += val
-                    continue
+                    return
                 
-                if(node.left):
-                    que.append((node.left, (val << 1) | node.left.val))
-                if(node.right):
-                    que.append((node.right, (val << 1) | node.right.val))
-            
+                sums(root.left, val)
+                sums(root.right, val)
+        
+        ans = 0
+        sums(root, 0)
         return ans
         
