@@ -7,7 +7,7 @@
 class Solution:
     def sumRootToLeaf(self, root: Optional[TreeNode]) -> int:
         
-        que = deque([(root, str(root.val))])
+        que = deque([(root, root.val)])
         ans = 0
                      
         while(que):
@@ -15,13 +15,13 @@ class Solution:
                 node, val = que.popleft()
                 
                 if(not node.left and not node.right):
-                    ans += int(val, 2)
+                    ans += val
                     continue
                 
                 if(node.left):
-                    que.append((node.left, val + str(node.left.val)))
+                    que.append((node.left, (val << 1) + node.left.val))
                 if(node.right):
-                    que.append((node.right, val + str(node.right.val)))
+                    que.append((node.right, (val << 1) + node.right.val))
             
         return ans
         
