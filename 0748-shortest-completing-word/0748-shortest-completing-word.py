@@ -5,9 +5,7 @@ class Solution:
                            licensePlate if(c.isalpha())])
         
         res = None
+        words.sort(key=lambda x: len(x))
         for word in words:
-            if(not letters - Counter(word)\
-               and (not res or len(word) < len(res))):
-                res = word
-        
-        return res
+            if(not letters - Counter(word)):
+                return word
