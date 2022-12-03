@@ -1,5 +1,9 @@
 class Solution:
     def frequencySort(self, s: str) -> str:
-        count = [(c, v) for c, v in Counter(s).items()]
-        return ''.join([c * v for c, v in sorted(count, key=lambda x:-x[1])])
+        bucket = defaultdict(list)
+        for c, v in Counter(s).items():
+            bucket[v].append(c)
+            
+        return ''.join([k * a for k in range(len(s), 0, -1)\
+                        for a in bucket[k]])
         
