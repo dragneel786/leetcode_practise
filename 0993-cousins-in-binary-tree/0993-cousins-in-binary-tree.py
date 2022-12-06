@@ -8,24 +8,28 @@ class Solution:
     def isCousins(self, root: Optional[TreeNode], x: int, y: int) -> bool:
         
         q = deque([root])
-        parent = dict()
+        
         while(q):
-            level = set()
-            for _ in range(len(q)):
-                ele = q.popleft()
-                level.add(ele.val)
-                
-                if(ele.left):
-                    parent[ele.left.val] = ele.val
-                    q.append(ele.left)
-                
-                if(ele.right):
-                    parent[ele.right.val] = ele.val
-                    q.append(ele.right)
+            sibling = cousin = False
             
-            if(x in level and y in level):
-                return parent[x] != parent[y]
+            for _ in range(len(q)):
+                node = q.popleft()
                 
+                if(not node):
+                    sibling = False
+                else:
+                    if(node.val == x or node.val == y):
+                        if(not cousin):
+                            sibling = cousin = True
+                        else:
+                            return not sibling
+                
+                    q.append(node.left)
+                    q.append(node.right)
+                    q.append(None)
+            
+            if(cousin):
+                return False
         
         return False
                 
