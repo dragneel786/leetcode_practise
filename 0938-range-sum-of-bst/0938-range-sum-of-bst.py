@@ -15,12 +15,11 @@ class Solution:
             if(low <= root.val <= high):
                 sums += root.val
             
-            if(root.val >= low):
+            if(root.val > low):
                 sum_it(root.left)
             
-            if(root.val <= high):
+            if(root.val < high):
                 sum_it(root.right)
-            
         
         sums = 0
         sum_it(root)
