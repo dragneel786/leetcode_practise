@@ -6,20 +6,19 @@
 #         self.right = right
 class Solution:
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
-        def inorder(root):
-            if(not root):
-                return
+        
+        def traverse(node, res):
+            if(not node):
+                return 
             
-            if(not root.left and not root.right):
-                yield root.val
-
-            for v in inorder(root.left): yield v
-            for v in inorder(root.right): yield v
+            if(not node.left and not node.right):
+                res.append(node.val)
             
+            traverse(node.left, res)
+            traverse(node.right, res)
         
-        for a, b in itertools.zip_longest(inorder(root1), inorder(root2)):
-            if(a != b):
-                return False
-        
-        return True
-        
+        r1 = []
+        r2 = []
+        traverse(root1, r1)
+        traverse(root2, r2)
+        return r1 == r2
