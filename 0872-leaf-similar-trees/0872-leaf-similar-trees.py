@@ -7,18 +7,13 @@
 class Solution:
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
         
-        def traverse(node, res):
-            if(not node):
-                return 
-            
-            if(not node.left and not node.right):
-                res.append(node.val)
-            
-            traverse(node.left, res)
-            traverse(node.right, res)
+        def traverse(node):
+            if(node):
+                if(not node.left and not node.right):
+                    yield node.val
+
+                yield from traverse(node.left)
+                yield from traverse(node.right)
         
-        r1 = []
-        r2 = []
-        traverse(root1, r1)
-        traverse(root2, r2)
-        return r1 == r2
+        return list(traverse(root1)) == list(traverse(root2))
+       
