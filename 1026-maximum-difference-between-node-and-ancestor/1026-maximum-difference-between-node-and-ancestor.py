@@ -13,21 +13,15 @@ class Solution:
             if(not node):
                 return
             
-            if(node.left):
-                find_diff(node.left,\
-                          min(minv, node.left.val),\
-                          max(maxv, node.left.val))
-            
-            if(node.right):
-                find_diff(node.right,\
-                          min(minv, node.right.val),\
-                          max(maxv, node.right.val))
-            
             ans = max(abs(minv - node.val),\
                       abs(maxv - node.val),\
                       ans)
             
-        
+            maxv = max(maxv, node.val)
+            minv = min(minv, node.val)
+            find_diff(node.left, minv, maxv)
+            find_diff(node.right, minv, maxv)
+            
         ans = 0
         find_diff(root, root.val, root.val)
         return ans
