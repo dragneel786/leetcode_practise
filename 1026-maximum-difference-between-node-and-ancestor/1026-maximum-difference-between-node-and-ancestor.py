@@ -9,19 +9,14 @@ class Solution:
         
         
         def find_diff(node, minv, maxv):
-            nonlocal ans
             if(not node):
-                return
-            
-            ans = max(abs(minv - node.val),\
-                      abs(maxv - node.val),\
-                      ans)
+                return maxv - minv
             
             maxv = max(maxv, node.val)
             minv = min(minv, node.val)
-            find_diff(node.left, minv, maxv)
-            find_diff(node.right, minv, maxv)
+            left = find_diff(node.left, minv, maxv)
+            right = find_diff(node.right, minv, maxv)
             
-        ans = 0
-        find_diff(root, root.val, root.val)
-        return ans
+            return max(left, right)
+            
+        return find_diff(root, root.val, root.val)
