@@ -6,28 +6,20 @@
 #         self.right = right
 class Solution:
     def maxProduct(self, root: Optional[TreeNode]) -> int:
-        
-        def sum_root(node):
-            if(not node):
-                return 0
-            
-            left = sum_root(node.left)
-            right = sum_root(node.right)
-            return left + right + node.val
-        
-        
         def postorder(node):
-            nonlocal maxprod, sums
             if(not node):
                 return 0
             
-            left = postorder(node.left)
-            right = postorder(node.right)
-            maxprod = max(maxprod, left * (sums - left), right * (sums - right))
-            return left + right + node.val
+            ret = postorder(node.left) +\
+            postorder(node.right) +\
+            node.val
+            sums.append(ret)
+            return ret
         
-        sums = sum_root(root)
-        maxprod = 0
-        postorder(root)
-        return maxprod % (10 ** 9 + 7)
+        sums = []
+        total = postorder(root)
+        best = 0
+        for s in sums:
+            best = max(best, s * (total - s))
         
+        return best % (10 ** 9 + 7)
