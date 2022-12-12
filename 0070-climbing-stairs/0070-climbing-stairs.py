@@ -1,11 +1,9 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
         
-        @lru_cache(None)
-        def climb_it(n):
-            if(n <= 0):
-                return n == 0
-            
-            return climb_it(n - 1) + climb_it(n - 2)
+        dp = [0] * (n + 1)
+        dp[0:2] = [1, 1]
+        for i in range(2, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
         
-        return climb_it(n)
+        return dp[n]
