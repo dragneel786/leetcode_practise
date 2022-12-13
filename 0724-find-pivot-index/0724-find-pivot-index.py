@@ -4,10 +4,10 @@ class Solution:
         prefix = 0
         
         for i, num in enumerate(nums):
-            if(prefix == tot - num):
-                return i
-            
-            prefix += num
             tot -= num
+            if(prefix == tot):
+                return i
+            prefix += num
+            
         
         return -1
