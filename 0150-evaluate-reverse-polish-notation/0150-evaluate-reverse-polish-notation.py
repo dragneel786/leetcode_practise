@@ -6,8 +6,7 @@ class Solution:
                 st.append(c)
             else:
                 b, a = st.pop(), st.pop()
-                val = int(eval(a + c + b))
-                st.append(str(val))
+                st.append(str(int(eval(a + c + b))))
         
         return int(st.pop())
             
