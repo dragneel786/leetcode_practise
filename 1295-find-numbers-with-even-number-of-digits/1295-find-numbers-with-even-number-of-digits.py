@@ -1,3 +1,3 @@
 class Solution:
     def findNumbers(self, nums: List[int]) -> int:
-        return sum([len(str(num)) % 2 == 0 for num in nums])
+        return len(list(filter(lambda x: len(str(x)) % 2 == 0, nums)))
