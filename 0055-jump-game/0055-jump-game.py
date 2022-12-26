@@ -2,10 +2,10 @@ class Solution:
     def canJump(self, nums: List[int]) -> bool:
         
         n = len(nums)
-        dp = [False] * n
-        dp[-1] = True
+        true_idx = n - 1
         
         for i in range(len(nums) - 2, -1, -1):
-            dp[i] = any(dp[i + 1: i + nums[i] + 1])
+            if(i + nums[i] >= true_idx):
+                true_idx = i
             
-        return dp[0]
+        return true_idx == 0
