@@ -14,7 +14,7 @@ class Solution:
         i = red = 0
         blue = n - 1
         
-        while(red != blue and i < n):
+        while(i < n):
             while(red < n and nums[red] == 0):
                 red += 1
             
@@ -23,7 +23,6 @@ class Solution:
             
             swap(red, blue, i)
             swap(red, blue, i)
-                
             i += 1
         
         
