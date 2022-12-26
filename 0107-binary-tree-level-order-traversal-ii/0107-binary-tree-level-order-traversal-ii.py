@@ -8,21 +8,17 @@ class Solution:
     def levelOrderBottom(self, root: Optional[TreeNode]) -> List[List[int]]:
         
         levels = []
-        q = deque([root])
         
-        while(root and q):
-            l = []
-            for _ in range(len(q)):
-                node = q.popleft()
-                l.append(node.val)
-                
-                if(node.left):
-                    q.append(node.left)
-                
-                if(node.right):
-                    q.append(node.right)
+        def postorder(node, l = 0):
+            if(not node):
+                return
             
-            levels.append(l)
+            if(len(levels) == l):
+                levels.append([])
+                
+            levels[l].append(node.val)
+            postorder(node.left, l + 1)
+            postorder(node.right, l + 1)
         
+        postorder(root)
         return levels[::-1]
-            
