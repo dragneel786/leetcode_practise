@@ -12,16 +12,13 @@ class Solution:
             ans.append(idx)
             curr_time += ptime
         
-            while(ti < n and curr_time >= task_idx[ti][0]):
-                _, pro, index = task_idx[ti]
+            while((ti < n and curr_time >= task_idx[ti][0])\
+                  or (not heap and ti < n)):
+                ptime, pro, index = task_idx[ti]
+                curr_time = max(ptime, curr_time)
                 heappush(heap, (pro, index))
                 ti += 1
-            
-            if(not heap and ti < n):
-                curr_time, pro, index = task_idx[ti]
-                heappush(heap, (pro, index))
-                ti += 1
-
+                
         return ans[1:]
             
             
