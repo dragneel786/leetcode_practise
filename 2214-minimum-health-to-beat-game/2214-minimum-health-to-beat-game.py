@@ -1,11 +1,10 @@
 class Solution:
     def minimumHealth(self, damage: List[int], armor: int) -> int:
-        damage.sort()
-        idx = bisect_right(damage, armor)
-        if(idx == len(damage)):
-            damage[-1] -= min(armor, damage[-1])
-        else:
-            damage[idx] -= min(armor, damage[idx])
+        maxv = 0
+        sums = 0
+        for d in damage:
+            maxv = max(d, maxv)
+            sums += d
         
-        return sum(damage) + 1
+        return (sums - min(maxv, armor) + 1)
         
