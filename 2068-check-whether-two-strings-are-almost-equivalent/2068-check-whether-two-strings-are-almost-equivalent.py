@@ -1,10 +1,8 @@
 class Solution:
     def checkAlmostEquivalent(self, word1: str, word2: str) -> bool:
-        c1 = Counter(word1)
-        c2 = Counter(word2)
-        for c in list(c2.keys()) + list(c1.keys()):
-            if(abs(c1[c] - c2[c]) > 3):
-                return False
-        
-        
-        return True
+        counts = [0] * 26
+        for c1, c2 in zip(word1, word2):
+            counts[ord(c1) - 97] += 1
+            counts[ord(c2) - 97] -= 1
+            
+        return list(filter(lambda x: abs(x) > 3, counts)) == []
