@@ -1,14 +1,16 @@
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
-        slist = s.split()
-        if(len(pattern) != len(slist)):
+        
+        splits = s.split()
+        if(len(splits) != len(pattern)):
             return False
         
-        imap = dict()
-        for i, (p, w) in enumerate(zip(pattern, slist)):
-            idx1 = imap.setdefault(f'char_{p}', i)
-            idx2 = imap.setdefault(f'word_{w}', i)
-            if(idx1 != idx2):
+        pmap = dict()
+        for a, b in zip(pattern, s.split()):
+            if(pmap.get('1' + a, None) not in [b, None]\
+               or pmap.get('2' + b, None) not in [a, None]):
                 return False
+            pmap['1' + a] = b
+            pmap['2' + b] = a
         
         return True
