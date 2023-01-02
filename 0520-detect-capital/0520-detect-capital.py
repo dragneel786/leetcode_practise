@@ -1,24 +1,14 @@
 class Solution:
     def detectCapitalUse(self, word: str) -> bool:
-        n = len(word)
-        if(n == 1): return True
-        
-        word += word[-1]
-        upper = True
-        for i in range(1, n):
-            up = word[i].isupper()
-            if(up != word[i + 1].isupper()):
-                return False
+        all_upper = True
+        all_lower = True
+        first_char = word[0].isupper()
+        for c in word[1:]:
+            all_upper = all_upper and c.isupper()
+            all_lower = all_lower and c.islower()
             
-            upper &= up
         
-        fup = word[0].isupper()
-        return fup if(upper) else True
-    
-        
-        
-    
-        
-        
-        
+        return (first_char and (all_upper or all_lower)) or all_lower
+            
+            
         
