@@ -6,10 +6,9 @@ class Solution:
         frogs = 0
         countMap = Counter({'#': inf})
         for c in croakOfFrogs:
-            prevc = cmap[c]
-            countMap[c] += 1
-        
-            if(countMap[prevc] < countMap[c]):
+            if(countMap[cmap[c]] > countMap[c]):
+                countMap[c] += 1
+            else:
                 return -1
             
             if(c == 'k'):
