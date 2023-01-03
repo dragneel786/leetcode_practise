@@ -16,4 +16,4 @@ class Solution:
                 for ch in 'croak':
                     countMap[ch] -= countMap['k']
             
-        return -1 if(countMap['c'] != countMap['k']) else frogs
+        return -1 if(countMap['c']) else frogs
