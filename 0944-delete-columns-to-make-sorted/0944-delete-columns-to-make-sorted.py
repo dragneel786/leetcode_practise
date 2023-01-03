@@ -6,8 +6,6 @@ class Solution:
             for i, (a, b) in enumerate(zip(prev, curr)):
                 if(a > b):
                     delete_col.add(i)
-                print(a, b)
-            
             if(len(delete_col) == len(strs[0])):
                 break
             
