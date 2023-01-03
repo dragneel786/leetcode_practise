@@ -4,9 +4,10 @@ class Solution:
                 'a':'o', 'k':'a'}
         
         frogs = 0
-        countMap = Counter({'#': inf})
+        countMap = Counter()
         for c in croakOfFrogs:
-            if(countMap[cmap[c]] > countMap[c]):
+            if(c == 'c' or\
+               countMap[cmap[c]] > countMap[c]):
                 countMap[c] += 1
             else:
                 return -1
