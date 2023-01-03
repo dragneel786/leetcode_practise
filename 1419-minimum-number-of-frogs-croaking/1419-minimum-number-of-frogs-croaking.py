@@ -11,9 +11,8 @@ class Solution:
             else:
                 return -1
             
-            if(c == 'k'):
-                for ch in 'croak':
-                    frogs = max(countMap[ch], frogs)
-                    countMap[ch] -= countMap['k']
+            for ch in ('croak' if(c == 'k') else ''):
+                frogs = max(countMap[ch], frogs)
+                countMap[ch] -= countMap['k']
             
         return -1 if(countMap['c'] != countMap['k']) else frogs
