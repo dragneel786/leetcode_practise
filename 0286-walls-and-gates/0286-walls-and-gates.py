@@ -18,11 +18,8 @@ class Solution:
                                (-1, 0), (0, -1)]:
                     nr, nc = r + dr, c + dc
                     if(0 <= nr < rows and 0 <= nc < cols\
-                       and rooms[nr][nc] != -1 and\
-                       rooms[r][c] + 1 < rooms[nr][nc]):
+                       and rooms[nr][nc] == 2147483647):
                     
                         rooms[nr][nc] = rooms[r][c] + 1
-                        if((nr, nc) not in visited):
-                            q.append((nr, nc))
-                            visited.add((nr, nc))
+                        q.append((nr, nc))
         
