@@ -46,13 +46,12 @@ class Solution:
         
         def index_and_max(nl, d = 0):
             if(nl.isInteger()):
-                dmap[nl.getInteger()].append(d)
+                st.append((nl.getInteger(), d))
                 return d
             
             maxd = d
             for e in nl.getList():
                 maxd = max(maxd, index_and_max(e, d + 1))
-            
             return maxd
             
             
@@ -60,12 +59,11 @@ class Solution:
         for e in nestedList:
             ns_ele.add(e)
         
-        dmap = defaultdict(list)
+        st = deque()
         max_depth = index_and_max(ns_ele)
         ans = 0
-        for k in dmap.keys():
-            for d in dmap[k]:
-                ans += (max_depth - d + 1) * k
+        for k, d in st:
+            ans += (max_depth - d + 1) * k
         
         return ans
         
