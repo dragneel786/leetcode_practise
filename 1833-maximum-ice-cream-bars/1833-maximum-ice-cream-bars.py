@@ -1,10 +1,10 @@
 class Solution:
     def maxIceCream(self, costs: List[int], coins: int) -> int:
+        heapify(costs)
         counts = 0
-        for c in sorted(costs):
-            if(coins < c):
-                break
-            coins -= c
+        
+        while(costs and costs[0] <= coins):
+            coins -= heappop(costs)
             counts += 1
         
         return counts
