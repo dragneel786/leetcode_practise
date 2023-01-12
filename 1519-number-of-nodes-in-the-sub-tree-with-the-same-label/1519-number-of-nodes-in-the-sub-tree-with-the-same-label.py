@@ -6,16 +6,15 @@ class Solution:
             for a, b in edges:
                 tree[a].append(b)
                 tree[b].append(a)
-            
             return tree
         
         def count_labels(s = 0, p = -1):
-            lcount = Counter(labels[s])
+            cnts = Counter(labels[s])
             for v in tree[s]:
                 if(v != p):
-                    lcount.update(count_labels(v, s))
-            ans[s] += lcount[labels[s]]
-            return lcount
+                    cnts += count_labels(v, s)
+            ans[s] += cnts[labels[s]]
+            return cnts
         
         
         ans = [0] * n
