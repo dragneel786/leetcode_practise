@@ -7,28 +7,25 @@ class Solution:
                 tree[p].append(i)
             return tree
         
-        
-        def find_large(paths, s, p):
-            nonlocal max_path
-            first = second = 0
-            for pa in paths:
-                if(pa > first):
-                    second = first
-                    first = pa
-                
-                elif(pa > second):
-                    second = pa
-            
-            max_path = max(max_path, first + second + 1)
-            return (first + 1) if(label[s] != label[p]) else 0
-            
     
         def long_path(s = 0, p = -1):
-            paths = []
+            nonlocal max_path
+            first = second = 0
             for v in tree[s]:
-                paths.append(long_path(v, s))
-            return find_large(paths, s, p)
-    
+                val = long_path(v, s)
+                if(val > first):
+                    first, second = val, first
+                
+                elif(val > second):
+                    second = val
+            
+            max_path = max(max_path, first + second + 1)
+            
+            if(p != -1 and label[s] == label[p]):
+                return 0
+            
+            return first + 1
+
         tree = create_tree()
         max_path = 0
         long_path()
