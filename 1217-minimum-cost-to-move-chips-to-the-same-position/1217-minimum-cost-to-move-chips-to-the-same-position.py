@@ -1,12 +1,13 @@
 class Solution:
     def minCostToMoveChips(self, position: List[int]) -> int:
         min_steps = inf
-        for p1 in position:
+        poss = Counter(position)
+        for key in poss.keys():
             steps = 0
-            for p2 in position:
-                if(abs(p2 - p1) & 1):
-                    steps += 1
-            
+            for k, v in poss.items():
+                if(abs(key - k) & 1):
+                    steps += (1 * v)
+                    
             min_steps = min(min_steps, steps)
         
         return min_steps
