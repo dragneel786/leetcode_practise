@@ -1,21 +1,12 @@
 class Solution:
     def modifyString(self, s: str) -> str:
-        chars = ['a', 'b', 'z']
         ans = []
-        j = 0
         n = len(s)
-        
-        condition = lambda p: (ans and ans[-1] == chars[j]) or\
-        (p < n - 1 and chars[j] == s[p + 1])
-        
-        
-        for i in range(n):
-            ch = s[i]
-            if(s[i] == '?'):
-                while(condition(i)):
-                    j = (j + 1) % 3
-                ch = chars[j]
-            
+        for i, c in enumerate(s):
+            nxt = s[i + 1] if(i < n - 1) else '#'
+            prev = ans[-1] if(ans) else '?'
+            ch = c if(c != '?') else {'a', 'b', 'c'}\
+            .difference({prev, nxt}).pop()
             ans.append(ch)
         
         return ''.join(ans)
