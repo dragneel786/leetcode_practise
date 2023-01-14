@@ -1,6 +1,6 @@
 class Solution:
     def modifyString(self, s: str) -> str:
-        chars = ['a', 'b', 'c']
+        chars = ['a', 'b', 'z']
         ans = []
         j = 0
         n = len(s)
@@ -10,13 +10,12 @@ class Solution:
         
         
         for i in range(n):
+            ch = s[i]
             if(s[i] == '?'):
                 while(condition(i)):
                     j = (j + 1) % 3
-
-                ans.append(chars[j])
+                ch = chars[j]
             
-            else:
-                ans.append(s[i])
+            ans.append(ch)
         
         return ''.join(ans)
