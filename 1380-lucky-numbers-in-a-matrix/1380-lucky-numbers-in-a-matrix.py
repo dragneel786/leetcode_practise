@@ -11,8 +11,9 @@ class Solution:
                 maxc[c] = max(val, maxc[c])
         
         ans = []
-        for a, b in product(minr, maxc):
-            if(a == b):
-                ans.append(b)
+        minr = set(minr)
+        for v in maxc:
+            if(v in minr):
+                ans.append(v)
         
         return ans
