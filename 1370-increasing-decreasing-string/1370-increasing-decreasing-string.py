@@ -4,7 +4,7 @@ class Solution:
         keys = list(sorted(scounts.keys()))
         ans = []
         while(scounts):
-            for c in keys + keys[::-1]:
+            for c in ascii_lowercase + ascii_lowercase[::-1]:
                 if(scounts[c]):
                     ans.append(c)
                     scounts[c] -= 1
