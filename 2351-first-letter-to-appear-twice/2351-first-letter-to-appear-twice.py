@@ -1,7 +1,8 @@
 class Solution:
     def repeatedCharacter(self, s: str) -> str:
-        seen = set()
+        seen = 0
         for c in s:
-            if(c in seen):
+            pos = 1 << (ord(c) - 97)
+            if(seen & pos):
                 return c
-            seen.add(c)
+            seen |= pos
