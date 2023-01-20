@@ -3,21 +3,17 @@ class Solution:
         
         def return_seq(i = 0, ans = []):
             if(i == len(nums)):
-                val = tuple(ans)
-                if(len(ans) >= 2 and val not in seen):
-                    seen.add(val)
-                    return [ans]
-                return []
+                if(len(ans) >= 2):
+                    result.add(tuple(ans))
+                return
             
-            res = []
             if(not len(ans) or nums[i] >= ans[-1]):
-                res.extend(return_seq(i + 1, ans + [nums[i]]))
-            
-            res.extend(return_seq(i + 1, ans))
-            return res
+                return_seq(i + 1, ans + [nums[i]])
+            return_seq(i + 1, ans)
         
-        seen = set()
-        return return_seq()
+        result = set()
+        return_seq()
+        return result
             
             
         
