@@ -1,17 +1,12 @@
 class Solution:
     def mostFrequentEven(self, nums: List[int]) -> int:
-        nums.sort()
-        nums.append(inf)
-        maxvc = [0, -1]
-        count = 1
-        for i in range(1, len(nums)):
-            if(nums[i - 1] != nums[i]):
-                if(nums[i - 1] % 2 == 0):
-                    if(maxvc[0] < count):
-                        maxvc = [count, nums[i - 1]]
-                count = 0      
-            count += 1
+        res = count = -1
+        for c, num in sorted([(c, n) for n, c in Counter(nums).items()]):
+            if(num % 2 == 0):
+                if(count < c):
+                    res = num
+                    count = c
             
-        return maxvc[1]
+        return res
                 
             
