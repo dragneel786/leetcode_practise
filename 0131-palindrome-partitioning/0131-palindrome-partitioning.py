@@ -6,10 +6,11 @@ class Solution:
                 ans.append(parts)
                 return
             
-            for end in range(start + 1, len(s) + 1):
-                substr = s[start: end]
-                if(substr == substr[::-1]):
-                    part_it(end, parts + [substr])
+            temp = []
+            for i in range(start, len(s)):
+                temp.append(s[i])
+                if(temp == temp[::-1]):
+                    part_it(i + 1, parts + [''.join(temp)])
         
         
         ans = []
