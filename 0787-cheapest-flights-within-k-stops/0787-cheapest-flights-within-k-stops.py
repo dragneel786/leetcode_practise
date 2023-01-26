@@ -9,7 +9,7 @@ class Solution:
             
         
         graph = create_graph()
-        visited = defaultdict(lambda:inf)
+        visited = [inf] * n
         visited[src] = 0
         q = deque([(src, 0)])
         stops = 0
