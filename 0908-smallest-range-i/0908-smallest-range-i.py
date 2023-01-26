@@ -1,7 +1,7 @@
 class Solution:
     def smallestRangeI(self, nums: List[int], k: int) -> int:
-        nums.sort()
-        diff = nums[-1] - nums[0]
+        
+        diff = max(nums) - min(nums)
         if(diff <= (k * 2)):
             return 0
         
