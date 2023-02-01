@@ -1,18 +1,22 @@
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
-        # Algorithm.
-        # Get gcd number with length and check the string 1 with string 2
-        def gcd(m, n):
-            if(not n): return m
-            return gcd(n, m % n)
+        n = len(str1)
+        m = len(str2)
+        if(m > n):
+            return self.gcdOfStrings(str2, str1)
         
-        m, n = len(str1), len(str2)
-        size = gcd(m, n)
-        res = str1[:size]
+        if(set(str1) != set(str2)):
+            return ''
         
-        if(res * (m // size) == str1\
-           and res * (n // size) == str2):
-            return res
+        chars = list(str2)
+        ts = str2
+        while(chars and (ts * (n // len(chars)) != str1 or \
+                        ts * (m // len(chars)) != str2)):
+            chars.pop()
+            ts = ''.join(chars)
         
-        return ""
+        return ''.join(chars)
+        
+                
+        
         
