@@ -4,10 +4,13 @@ class Solution:
         m, n = len(sentence1), len(sentence2)
         res = False
         if(m == n):
-            pairs = set([a + '-' + b for a, b in similarPairs])
+            pairs = defaultdict(set)
+            for a, b in similarPairs:
+                pairs[a].add(b)
+                
             for a, b in zip(sentence1, sentence2):
-                if(a != b and a+'-'+b not in pairs\
-                   and b + '-' + a not in pairs):
+                if(a != b and b not in pairs[a]\
+                   and a not in pairs[b]):
                     break
             else:
                 res = True
