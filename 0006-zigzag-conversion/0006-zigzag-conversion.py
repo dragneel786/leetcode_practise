@@ -7,8 +7,9 @@ class Solution:
         for c in s:
             if(change_dir(k + d)):
                 d *= -1
-            ans[k + d].append(c)
             k += d
+            ans[k].append(c)
+            
         
         return ''.join(map(''.join, ans))
         
