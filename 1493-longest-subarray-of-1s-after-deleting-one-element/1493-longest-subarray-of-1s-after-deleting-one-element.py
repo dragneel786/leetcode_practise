@@ -6,17 +6,15 @@ class Solution:
             if(i == len(nums)):
                 return c - remain
             
-            if(not nums[i]):
-                if(not remain):
-                    return c
+            if(not nums[i] and not remain):
+                return c
                 
-                return max(get_size(i + 1, c, remain - 1),\
-                           get_size(i + 1, 0, remain))
-            else:
-                return get_size(i + 1, c + 1, remain)
+            ret = -inf
+            if(nums[i] == 0):
+                ret = get_size(i + 1, 0, remain)
+            return max(ret, get_size(i + 1, c + (nums[i] == 1),\
+                                     remain - (nums[i] == 0)))
             
-            
-        
         return get_size()
             
             
