@@ -1,8 +1,8 @@
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
         m, n = len(s1), len(s2)
-        if(m > n):
-            return False
+#         if(m > n):
+#             return False
         
         target = [0] * 26
         for c in s1:
