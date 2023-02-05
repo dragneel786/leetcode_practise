@@ -1,19 +1,21 @@
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
         n = len(p)
-        target = Counter()
+        target = [0] * 26
         for c in p:
-            target[c] += 1
+            target[ord(c) - 97] += 1
         
         curr_size = j = 0
-        window = Counter()
+        window = [0] * 26
         ans = []
         for i, c in enumerate(s):
-            window[c] += 1
+            ci = ord(c) - 97
+            window[ci] += 1
             curr_size += 1
             
-            while(window[c] > target[c]):
-                window[s[j]] -= 1
+            while(window[ci] > target[ci]):
+                cj = ord(s[j]) - 97
+                window[cj] -= 1
                 j += 1
                 curr_size -= 1
             
