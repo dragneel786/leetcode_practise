@@ -5,22 +5,16 @@ class Solution:
         for c in p:
             target[ord(c) - 97] += 1
         
-        curr_size = j = 0
         window = [0] * 26
         ans = []
         for i, c in enumerate(s):
             ci = ord(c) - 97
             window[ci] += 1
-            curr_size += 1
-            
-            while(window[ci] > target[ci]):
-                cj = ord(s[j]) - 97
-                window[cj] -= 1
-                j += 1
-                curr_size -= 1
-            
-            if(curr_size == n and window == target):
-                ans.append(j)
+            if(i >= n):
+                window[ord(s[i - n]) - 97] -= 1
+                
+            if(window == target):
+                ans.append((i - n + 1))
             
         return ans
             
