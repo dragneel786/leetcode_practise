@@ -9,19 +9,15 @@ class Solution:
                 even += num
         
         
-        bodd = beven = count = 0
-        for i in range(n - 1, -1, -1):
-            num = nums[i]
-            to, te = bodd, beven
+        fo = fe = count = 0
+        for i in range(n):
             if(i & 1):
-                odd -= num
-                bodd += num
+                fo += nums[i]
+                count += (odd + fe - fo + nums[i]) == (even + fo - fe)
             else:
-                even -= num
-                beven += num
+                fe += nums[i]
+                count += (odd + fe - fo) == (even + fo - fe + nums[i])
             
-            if(odd + te == even + to):
-                count += 1
         
         return count
             
