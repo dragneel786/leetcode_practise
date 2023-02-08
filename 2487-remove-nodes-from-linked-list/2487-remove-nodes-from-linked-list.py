@@ -7,18 +7,12 @@ class Solution:
     def removeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
         def remove_nodes(head):
-            nonlocal max_val
-            if(not head):
-                return None
+            if(not head.next):
+                return head
 
             head.next = remove_nodes(head.next)
-            if(max_val > head.val):
+            if(head.next and head.next.val > head.val):
                 return head.next
-            
-            max_val = head.val
             return head
             
-            
-        
-        max_val = -inf
         return remove_nodes(head)
