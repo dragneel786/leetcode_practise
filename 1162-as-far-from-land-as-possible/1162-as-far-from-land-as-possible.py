@@ -1,34 +1,45 @@
 class Solution:
     def maxDistance(self, grid: List[List[int]]) -> int:
         
-        def nearby(r, c, q):
-            for dr, dc in [(1, 0), (0, 1),\
-                           (-1, 0), (0, -1)]:
-                nr, nc = r + dr, c + dc
-                q.append((nr, nc))
-                
-        def bfs():
-            nonlocal steps
+        
+        def bfs(q):
+            nonlocal rows, cols
+            ans = -1
             while(q):
-                steps += 1
                 for _ in range(len(q)):
-                    x, y = q.popleft()
-                
-                    if(0 <= x < n and 0 <= y < n\
-                       and not grid[x][y]):
-                        grid[x][y] = steps
-                        nearby(x, y, q)
+                    key, r, c = q.popleft()
+                    ans = max(ans, grid[r][c])
+                    
+                    for dr, dc in [(0, 1), (1, 0), (-1, 0), (0, -1),\
+                                  (-1, 1), (1, -1), (-1, -1), (1, 1)]:
+                        
+                        nr, nc = (r + dr), (c + dc)
+                        kr, kc = comap[key]
+                        md = abs(kr - nr) + abs(kc - nc)
+                        
+                        if(0 <= nr < rows and 0 <= nc < cols\
+                           and grid[nr][nc] > md):
+                            grid[nr][nc] = md
+                            q.append((key, nr, nc))
+            return ans
         
-        n = len(grid)
+        
+        
         q = deque()
-        steps = 0
-        
-        for r in range(n):
-            for c in range(n):
-                if(grid[r][c]):
-                    nearby(r, c, q)
-        
-        bfs()
-        return -1 if(steps == 1) else steps - 1
+        comap = dict()
+        counter = 1
+        rows, cols = len(grid), len(grid[0])
+        for r in range(rows):
+            for c in range(cols):    
+                if(grid[r][c] == 1):
+                    grid[r][c] = -1
+                    comap[counter] = (r, c)
+                    q.append((counter, r, c))
+                else:
+                    grid[r][c] = 3000
+                counter += 1
                 
+
+        return bfs(q)
+                    
                     
