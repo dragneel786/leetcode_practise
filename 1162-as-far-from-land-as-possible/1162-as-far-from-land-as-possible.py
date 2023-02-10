@@ -10,8 +10,7 @@ class Solution:
                     key, r, c = q.popleft()
                     ans = max(ans, grid[r][c])
                     
-                    for dr, dc in [(0, 1), (1, 0), (-1, 0), (0, -1),\
-                                  (-1, 1), (1, -1), (-1, -1), (1, 1)]:
+                    for dr, dc in [(0, 1), (1, 0), (-1, 0), (0, -1)]:
                         
                         nr, nc = (r + dr), (c + dc)
                         kr, kc = comap[key]
