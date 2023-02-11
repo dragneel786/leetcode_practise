@@ -31,15 +31,16 @@ class Solution:
                             seen.add((neigh, color))
                             q.append((neigh, ac))
                             
-                            answer[neigh] = min(answer[neigh], path)
+                            if(answer[neigh] == -1):
+                                answer[neigh] = path
                 
                             
-            for i in range(len(answer)):
-                if(answer[i] == inf):
-                    answer[i] = -1
+            # for i in range(len(answer)):
+            #     if(answer[i] == inf):
+            #         answer[i] = -1
         
         alternate_color = lambda x: 'B' if(x == 'R') else 'R'
-        answer = [inf] * n
+        answer = [-1] * n
         egraph = edge_graph()
         bfs()
         return answer
