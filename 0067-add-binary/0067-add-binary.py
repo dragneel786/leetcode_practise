@@ -1,0 +1,16 @@
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        if(len(a) < len(b)):
+            return self.addBinary(b, a)
+        
+        sumation = []
+        c = 0
+        for a, b in zip_longest(a[::-1], b[::-1]):
+            c += (a == '1') + (b == '1')
+            sumation.append(c % 2)
+            c = c // 2
+        
+        if(c):
+            sumation.append(c)
+        
+        return ''.join(map(str, sumation))[::-1]
