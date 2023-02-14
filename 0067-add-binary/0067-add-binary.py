@@ -1,8 +1,5 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        if(len(a) < len(b)):
-            return self.addBinary(b, a)
-        
         sumation = []
         c = 0
         for a, b in zip_longest(a[::-1], b[::-1]):
