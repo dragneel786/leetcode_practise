@@ -7,10 +7,9 @@ class Solution:
         c = 0
         for a, b in zip_longest(a[::-1], b[::-1]):
             c += (a == '1') + (b == '1')
-            sumation.append(c % 2)
+            sumation.append(str(c % 2))
             c = c // 2
         
         if(c):
-            sumation.append(c)
-        
-        return ''.join(map(str, sumation))[::-1]
+            sumation.append(str(c))
+        return ''.join(sumation)[::-1]
