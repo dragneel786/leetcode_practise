@@ -10,10 +10,13 @@ class Solution:
         fmap = create_map()
         count = 0
         keys = list(fmap.keys())
-        for i, k1 in enumerate(keys):
-            for k2 in keys[i + 1:]:
+        for k1 in keys:
+            for k2 in keys:
+                if(k1 == k2):
+                    continue
+                    
                 mutual_count = len(fmap[k1] & fmap[k2])
-                count += 2 * ((len(fmap[k1]) - mutual_count) * 
+                count += ((len(fmap[k1]) - mutual_count) * 
                               (len(fmap[k2]) - mutual_count))
 
 
