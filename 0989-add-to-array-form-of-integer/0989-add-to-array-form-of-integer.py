@@ -2,24 +2,16 @@ class Solution:
     def addToArrayForm(self, num: List[int], k: int) -> List[int]:
         n = len(num)
         carry = 0
-        for i in range(n - 1, -1, -1):
-            carry += (k % 10) + num[i]
-            num[i] = carry % 10
-            carry //= 10
-            k //= 10
+        ans = deque()
+        for a, b in zip_longest(num[::-1], str(k)[::-1]):
+            carry += 0 if(a is None) else a
+            carry += 0 if(b is None) else int(b)
             
-            if(carry == k == 0):
-                return num
+            ans.appendleft(carry % 10)
+            carry //= 10
         
-        front = []
-        while(k):
-            carry += (k % 10)
-            front.append(carry % 10)
-            carry //= 10
-            k //= 10
-            if(k == 0):
-                front.reverse()
-                num = front + num
-            
-        return [carry] + num if(carry) else num
+        if(carry):
+            ans.appendleft(carry)
+        
+        return ans
             
