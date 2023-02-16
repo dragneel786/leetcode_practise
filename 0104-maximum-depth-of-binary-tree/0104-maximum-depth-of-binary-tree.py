@@ -12,10 +12,9 @@ class Solution:
             node, l = q.pop()
             if(not node):
                 ans = max(ans, l)
-                continue
-            
-            q.append((node.left, l + 1))
-            q.append((node.right, l + 1))
+            else:
+                q.append((node.left, l + 1))
+                q.append((node.right, l + 1))
     
         return ans
             
