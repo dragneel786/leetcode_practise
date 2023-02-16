@@ -9,7 +9,7 @@ class Solution:
         q = deque([(root, 0)])
         ans = 0
         while(q):
-            node, l = q.popleft()
+            node, l = q.pop()
             if(not node):
                 ans = max(ans, l)
                 continue
