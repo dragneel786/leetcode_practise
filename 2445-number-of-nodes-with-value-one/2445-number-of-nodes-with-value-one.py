@@ -12,4 +12,4 @@ class Solution:
         for q in queries:
             nodes[q] += 1
         update(1)
-        return len(list(filter(lambda x: x % 2 == 1, nodes)))
+        return sum([num % 2 for num in nodes])
