@@ -1,27 +1,32 @@
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
-        def check(ws):
-            wd = 1
-            s = 0
+        
+        def isvalid(weight):
+            nonlocal days
+            day_counts = 0
+            curr_wei = 0
             for w in weights:
-                s += w
-                if(s > ws):
-                    wd += 1
-                    s = w
+                if(curr_wei + w > weight):
+                    curr_wei = 0
+                    day_counts += 1
+                
+                curr_wei += w
             
-            return wd
-             
+            day_counts += (curr_wei > 0)
+            return day_counts <= days
+                
         
-        hi = sum(weights)
-        lo = max(weights)
-        while(lo < hi):
-            mid = (hi + lo) // 2
-            cd = check(mid)
-            if(cd <= days):
-                hi = mid
+        low = max(weights)
+        high = sum(weights)
+        ans = 0
+        while(low <= high):
+            mid = low + (high - low) // 2
+            if(isvalid(mid)):
+                ans = mid
+                high = mid - 1
             else:
-                lo = mid + 1
+                low = mid + 1
         
-        return lo
-        
+        return ans
+                
         
