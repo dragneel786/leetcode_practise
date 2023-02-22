@@ -1,12 +1,6 @@
 class Solution:
     def smallestNumber(self, pattern: str) -> str:
-        
-        
-        options = "123456789"
-        used = set()
-        
         def isvalid(num, val, idx):
-            nonlocal options
             if(num and \
                ((num % 10 > val and pattern[idx] == "I")\
                 or (num % 10 < val and pattern[idx] == "D"))):
@@ -15,20 +9,17 @@ class Solution:
             return True
             
                
-        def create_pattern(num=0, j = -1):
-            nonlocal options
-            # print(num, j)
+        def create_pattern(num = 0,\
+                           j = -1,\
+                           options = set([1,2,3,4,5,6,7,8,9])):        
             if(j == len(pattern)):
                 return str(num)
             
             minv = "999999999"
-            for i in range(9):
-                if(options[i] not in used and\
-                   isvalid(num, int(options[i]), j)):
-                    used.add(options[i])
+            for v in options:
+                if(isvalid(num, v, j)):
                     minv = min(minv, create_pattern(\
-                        num * 10 + int(options[i]), j + 1))
-                    used.discard(options[i])
+                        num * 10 + v, j + 1, options - {v}))
             return minv
         
         return create_pattern()
