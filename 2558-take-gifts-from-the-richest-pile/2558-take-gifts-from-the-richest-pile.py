@@ -3,8 +3,8 @@ class Solution:
         piles = [-g for g in gifts]
         heapify(piles)
         for _ in range(k):
-            ele = heappop(piles)
-            ele = floor(sqrt(-ele))
+            ele = -heappop(piles)
+            ele = floor(sqrt(ele))
             if(ele):
                 heappush(piles, -ele)
         
