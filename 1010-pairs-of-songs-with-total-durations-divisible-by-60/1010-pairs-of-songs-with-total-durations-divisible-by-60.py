@@ -4,10 +4,7 @@ class Solution:
         ans = 0
         for t in time:
             val = t % 60
-            if(val):
-                ans += rem_count[60 - val]
-            else:
-                ans += rem_count[0]
+            ans += rem_count[60 - (val if(val) else 60)]
             rem_count[val] += 1
         
         return ans
