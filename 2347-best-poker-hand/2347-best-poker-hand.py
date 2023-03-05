@@ -1,7 +1,7 @@
 class Solution:
     def bestHand(self, ranks: List[int], suits: List[str]) -> str:
         rcounts = Counter(ranks)
-        scounts = Counter(suits)
+        scounts = set(suits)
         if(len(scounts) == 1):
             return "Flush"
         
