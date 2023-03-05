@@ -1,5 +1,13 @@
 class Solution:
     def minJumps(self, arr: List[int]) -> int:
+        def add_to_queue(q, nodes):
+            while(nodes):
+                poped = nodes.pop()
+                if(0 < poped < n and\
+                   poped not in visited):
+                    visited.add(poped)
+                    q.append(poped)
+        
         
         imap = defaultdict(list)
         for i, a in enumerate(arr):
@@ -9,32 +17,18 @@ class Solution:
         steps = 0
         visited = set([0])
         n = len(arr)
+        
         while(q):
             for _ in range(len(q)):
                 idx = q.popleft()
                 if(idx == n - 1):
                     return steps
                 
-                if(idx - 1 > 0 and\
-                   idx - 1 not in visited):
-                    # imap[arr[idx - 1]].popleft()
-                    visited.add(idx - 1)
-                    q.append(idx - 1)
-                
-                if(idx + 1 < n and\
-                   idx + 1 not in visited):
-                    # imap[arr[idx + 1]].popleft()
-                    visited.add(idx + 1)
-                    q.append(idx + 1)
-                
-                while(imap[arr[idx]]):
-                    nidx = imap[arr[idx]].pop()
-                    if(nidx not in visited):
-                        visited.add(nidx)
-                        q.append(nidx)
+                add_to_queue(q, [*imap[arr[idx]],\
+                                 idx - 1, idx + 1])
+                imap[arr[idx]] = []
             
             steps += 1
-        
-        return steps
+
         
         
