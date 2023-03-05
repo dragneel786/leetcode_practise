@@ -6,7 +6,7 @@ class Solution:
             for i in range(1, len(w)):
                 ans.append(ord(w[i]) - ord(w[i - 1]))
             
-            return ans
+            return tuple(ans)
         
         pattern = compute(words[0])
         c = 1
