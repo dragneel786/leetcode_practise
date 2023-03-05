@@ -4,9 +4,9 @@ class Solution:
         def compute(w):
             ans = []
             for i in range(1, len(w)):
-                ans.append(ord(w[i]) - ord(w[i - 1]))
+                ans.append(str(ord(w[i]) - ord(w[i - 1])))
             
-            return tuple(ans)
+            return '|'.join(ans)
         
         pattern = compute(words[0])
         c = 1
