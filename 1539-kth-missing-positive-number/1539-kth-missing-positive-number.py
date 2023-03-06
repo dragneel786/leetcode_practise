@@ -11,7 +11,7 @@ class Solution:
                 return mid
             
             if(mid - idx >= k):
-                high = mid - 1 - (arr[idx - 1] == mid - 1)
+                high = mid - 1
             else:
                 low = mid + 1
         
