@@ -1,6 +1,6 @@
 class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
-        high = 2002
+        high = arr[-1] + k + 1
         low = 1
         n = len(arr)
         while(low <= high):
