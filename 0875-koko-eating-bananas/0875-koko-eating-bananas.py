@@ -13,12 +13,12 @@ class Solution:
         
         ans = low = 1
         high = max(piles) + 1
-        while(low <= high):
+        while(low < high):
             mid = (low + (high - low) // 2)
             if(calcy(mid)):
-                ans = mid
-                high = mid - 1
+                # ans = mid
+                high = mid
             else:
                 low = mid + 1
         
-        return ans
+        return low
