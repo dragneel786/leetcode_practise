@@ -6,16 +6,18 @@
 
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-#         fast = slow = head
-#         while(fast.next and fast != slow):
-#             fast = fast.next.next
-#             slow = slow.next
+        if(not head or not head.next):
+            return None
         
-#         print(fast.val, slow.val)
-        hmap = dict()
-        node = head
-        while(node and node not in hmap):
-            hmap[node] = 1
-            node = node.next
+        fast = head.next.next
+        slow = head.next
+        while(fast and fast.next and fast != slow):
+            fast = fast.next.next
+            slow = slow.next
         
-        return node
+        slow = head
+        while(fast and fast.next and fast != slow):
+            fast = fast.next
+            slow = slow.next
+        
+        return slow if(fast and fast.next) else None
