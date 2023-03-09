@@ -9,15 +9,15 @@ class Solution:
         if(not head or not head.next):
             return None
         
-        fast = head.next.next
         slow = head.next
+        fast = head.next.next
         while(fast and fast.next and fast != slow):
             fast = fast.next.next
             slow = slow.next
         
         slow = head
-        while(fast and fast.next and fast != slow):
+        while(fast and fast != slow):
             fast = fast.next
             slow = slow.next
         
-        return slow if(fast and fast.next) else None
+        return fast
