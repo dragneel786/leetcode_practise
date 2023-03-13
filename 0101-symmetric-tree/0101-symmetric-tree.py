@@ -15,8 +15,11 @@ class Solution:
                 return False
             
             left = is_simp(node1.left, node2.right)
+            if(not left):
+                return False
+            
             right = is_simp(node1.right, node2.left)
-            return left and right
+            return right
             
         
         return is_simp(root.left, root.right)
