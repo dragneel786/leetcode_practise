@@ -18,8 +18,6 @@ class Solution:
             if(not left):
                 return False
             
-            right = is_simp(node1.right, node2.left)
-            return right
-            
+            return is_simp(node1.right, node2.left)            
         
         return is_simp(root.left, root.right)
