@@ -8,21 +8,15 @@ class FindElements:
 
     def __init__(self, root: Optional[TreeNode]):
         
-        def cleanse(node):
+        def cleanse(node, val = 0):
             if(not node):
                 return
         
-            if(node.left):
-                node.left.val = node.val * 2 + 1
-                cleanse(node.left)
-            
-            if(node.right):
-                node.right.val = node.val * 2 + 2
-                cleanse(node.right)
-            
-            self.maps.add(node.val)
+            temp_val = val * 2 + 1
+            cleanse(node.left, temp_val)
+            cleanse(node.right, temp_val + 1)
+            self.maps.add(val)
                 
-        root.val = 0
         self.maps = set()
         cleanse(root)
 
