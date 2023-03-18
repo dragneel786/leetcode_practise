@@ -1,35 +1,28 @@
 class BrowserHistory:
 
     def __init__(self, homepage: str):
-        self.c = deque()
-        self.f = deque()
-        self.home = homepage
+        self.curr = deque()
+        self.fwd = deque()
+        self.hpage = homepage
 
     def visit(self, url: str) -> None:
-        if(self.f and self.f[-1] == url):
-            self.f.pop()
-        else:
-            self.f.clear()
-        
-        self.c.append(url)
+        self.curr.append(url)
+        self.fwd.clear()
 
     def back(self, steps: int) -> str:
-        while(self.c and steps):
-            self.f.append(self.c.pop())
+        while(self.curr and steps):
             steps -= 1
+            self.fwd.append(self.curr.pop())
         
-        if(self.c):
-            return self.c[-1]
-        return self.home
+        return self.curr[-1] if(self.curr) else self.hpage
 
     def forward(self, steps: int) -> str:
-        while(self.f and steps):
-            self.c.append(self.f.pop())
+        while(self.fwd and steps):
             steps -= 1
+            self.curr.append(self.fwd.pop())
         
-        if(self.c):
-            return self.c[-1]
-        return self.home
+        return self.curr[-1] if(self.curr) else self.hpage
+
 
 # Your BrowserHistory object will be instantiated and called as such:
 # obj = BrowserHistory(homepage)
