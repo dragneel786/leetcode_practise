@@ -13,19 +13,20 @@ class WordDictionary:
     def search(self, word: str) -> bool:
         
         def search_it(w, t):
-            if(t):
-                for i, c in enumerate(w):
-                    if(c == '.'):
-                        for k in t.keys():
-                            if(search_it(w[i + 1:], t[k])):
-                                return True
+            if(w):
+                if(w[0] != '.'):
+                    if(w[0] not in t):
                         return False
-                    elif(c not in t):
-                        return False
-                    else:
-                        t = t[c]
-            
-            return t != None and '$' in t
+
+                    return search_it(w[1:], t[w[0]])
+
+                else:
+                    for k in t.keys():
+                        if(k != '$' and search_it(w[1:], t[k])):
+                            return True
+                    return False
+
+            return '$' in t
                 
         return search_it(word, self.trie)
             
