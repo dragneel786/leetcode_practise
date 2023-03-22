@@ -1,17 +1,10 @@
 class Solution:
     def findLucky(self, arr: List[int]) -> int:
-        arr.sort()
-        arr.append(-1)
-        prev = ans = -1
-        count = 0
-        for a in arr:
-            if(prev != a):
-                if(count == prev):
-                    ans = prev
-                prev = a
-                count = 0
-            
-            count += 1
+        acount = Counter(arr)
+        ans = -1
+        for a, v in acount.items():
+            if(a == v and a > ans):
+                ans = a
         
         return ans
         
