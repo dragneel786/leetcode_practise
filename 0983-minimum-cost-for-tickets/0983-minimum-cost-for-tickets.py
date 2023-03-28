@@ -1,19 +1,13 @@
 class Solution:
     def mincostTickets(self, days: List[int], costs: List[int]) -> int:
-        
-        @lru_cache(None)
-        def min_cost(i, curr):
-            if(i >= len(days)):
-                return 0
-            
-            if(curr >= days[i]):
-                return min_cost(i + 1, curr)
-            
-            ans = inf
+        n = len(days)
+        dp = [inf] * (n + 1)
+        dp[-2:] = [min(costs), 0]
+        for i in range(n - 2, -1, -1):
             for c, d in zip(costs, [0, 6, 29]):
-                ans = min(ans, c + \
-                          min_cost(i + 1, days[i] + d))
-            
-            return ans
+                idx = bisect_right(days, days[i] + d)
+                dp[i] = min(dp[idx] + c, dp[i])
         
-        return min_cost(0, days[0] - 1)
+        # print(dp)
+        return dp[0]
+        
