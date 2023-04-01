@@ -1,18 +1,16 @@
 class Solution:
     def slowestKey(self, releaseTimes: List[int], keysPressed: str) -> str:
-        key = chr(ord('a') - 1)
-        lag = 0
-        prevl = 0
-        for k, r in zip(keysPressed, releaseTimes):
+        
+        key = keysPressed[0]
+        prevl = lag = releaseTimes[0]
+        for k, r in zip(keysPressed[1:], releaseTimes[1:]):
             cd = r - prevl
-            if(cd > lag):
+            print(cd)
+            if(cd > lag or lag == cd):
+                key = max(k, key) if(lag == cd) else k
                 lag = cd
-                key = k
-            
-            if(cd == lag):
-                key = max(k, key)
             
             prevl = r
-    
+            
         return key
                 
