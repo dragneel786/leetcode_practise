@@ -2,10 +2,11 @@ class Solution:
     def successfulPairs(self, spells: List[int], potions: List[int], success: int) -> List[int]:
         
         spell_index = [(s, i) for i, s in enumerate(spells)]
+        spells.clear()
         
         spell_index.sort()
         potions.sort()
-        ans = [0] * len(spells)
+        ans = [0] * len(spell_index)
         n = len(potions)
 
         potion_index = len(potions) - 1
