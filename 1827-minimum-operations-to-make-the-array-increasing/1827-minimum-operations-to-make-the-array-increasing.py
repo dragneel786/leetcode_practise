@@ -1,13 +1,11 @@
 class Solution:
     def minOperations(self, nums: List[int]) -> int:
-        ans = prev_val = 0
-        for num in nums:
-            if(prev_val >= num):
-                diff = (prev_val - num + 1)
-                prev_val = num + diff
+        ans = 0
+        for i in range(1, len(nums)):
+            if(nums[i - 1] >= nums[i]):
+                diff = nums[i - 1] - nums[i] + 1
+                nums[i] += diff
                 ans += diff
-            else:
-                prev_val = num
         
         return ans
                 
