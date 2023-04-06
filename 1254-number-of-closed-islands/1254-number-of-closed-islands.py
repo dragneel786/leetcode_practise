@@ -1,22 +1,35 @@
 class Solution:
     def closedIsland(self, grid: List[List[int]]) -> int:
         
-        def dfs(x, y) -> bool:
-            if(x < 0 or y < 0 or x >= m or y >= n):
-                return False
+        def is_closed(r, c):
+            closed = True
+            q = deque([(r, c)])
             
-            if(grid[x][y]):
-                return True
+            while(q):
+                r, c = q.popleft()
+                grid[r][c] = 1
+                
+                for dr, dc in [(0,1), (1,0),\
+                               (-1,0), (0,-1)]:
+                    nr, nc = r + dr, c + dc
+                    if(0 > nr or nr >= rows or\
+                       nc < 0 or nc >= cols):
+                        closed = False
+                        continue
+                    
+                    if(not grid[nr][nc]):
+                        q.append((nr, nc))
             
-            grid[x][y] = -1
-            return sum(dfs(x + dx, y + dy) for dx, dy in dic) == 4
+            
+            return closed
+                       
+                       
+                       
+        rows, cols = len(grid), len(grid[0])
+        ans = 0
+        for r in range(rows):
+            for c in range(cols):
+                if(not grid[r][c]):
+                    ans += is_closed(r, c)
         
-        dic = [(1, 0), (0, 1), (-1, 0), (0, -1)]
-        m = len(grid)
-        n = len(grid[0])
-        counts = 0
-        for i in range(m):
-            for j in range(n):
-                if(not grid[i][j]):
-                    counts += dfs(i, j)
-        return counts
+        return ans
