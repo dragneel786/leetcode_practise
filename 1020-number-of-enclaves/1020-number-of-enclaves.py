@@ -2,36 +2,31 @@ class Solution:
     def numEnclaves(self, grid: List[List[int]]) -> int:
         
         def dfs(r, c):
-            nonlocal rows, cols, count
+            nonlocal rows, cols, is_valid
             if(r < 0 or r >= rows or\
                c < 0 or c >= cols):
-                count = None
-                return
+                is_valid = False
+                return 0
             
             if(not grid[r][c]):
-                return
+                return 0
             
             grid[r][c] = 0
-            if(count is not None):
-                count += 1
-            
-            dfs(r + 1, c)
-            dfs(r, c + 1)
-            dfs(r - 1, c)
-            dfs(r, c - 1)
+            return 1 + dfs(r + 1, c) + dfs(r, c + 1) \
+        + dfs(r - 1, c) + dfs(r, c - 1)
 
         
         
         rows, cols = len(grid), len(grid[0])
-        ans = count = 0
+        ans = 0 
         for r in range(rows):
             for c in range(cols):
                 if(grid[r][c]):
-                    count = 0
-                    dfs(r, c)
-                    if(count):
-                        ans += count
-        
+                    is_valid = True
+                    val = dfs(r, c)
+                    if(is_valid):
+                        ans += val
+                    
         return ans
             
             
