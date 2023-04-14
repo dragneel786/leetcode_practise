@@ -1,19 +1,17 @@
 class Solution:
     def longestPalindromeSubseq(self, s: str) -> int:
         n = len(s)
-        dp = [0] * (n + 1)
-        large = 0
-        rev_s = s[::-1]
-        for i in range(1, n + 1):
-            temp = [0] * (n + 1)
-            for j in range(1, n + 1):
-                if(s[i - 1] == rev_s[j - 1]):
-                    temp[j] = dp[j - 1] + 1
+        dp = [0] * n
+        dp_prev = dp.copy()
+        for i in range(n - 1, -1, -1):
+            dp[i] = 1
+            for j in range(i + 1, n):
+                if(s[i] == s[j]):
+                    dp[j] = dp_prev[j - 1] + 2
                 else:
-                    temp[j] = max(dp[j], temp[j - 1])
+                    dp[j] = max(dp_prev[j], dp[j - 1])
             
-            large = max(temp)
-            dp = temp
+            dp, dp_prev = dp_prev, dp
         
-        return large
+        return dp_prev[-1]
             
