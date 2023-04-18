@@ -1,16 +1,5 @@
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
-        i, j = 0, 0
-        m, n = len(word1), len(word2)
-        ans = ""
-        while(i < m or j < n):
-            if(i < m):
-                ans += word1[i]
-            
-            if(j < n):
-                ans += word2[j]
-            
-            i += 1
-            j += 1
-    
-        return ans
+        empty = lambda a: a if(a) else ''
+        return ''.join([empty(a) + empty(b) \
+                for a, b in zip_longest(word1, word2)])
