@@ -14,7 +14,7 @@ class Solution:
             end = q[-1][1]
             for _ in range(len(q)):
                 node, idx = q.popleft()
-                child_idx = 2 * idx
+                child_idx = 2 * (idx - 1)
                 if(node.left):
                     q.append((node.left, child_idx + 1))
                 
