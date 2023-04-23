@@ -11,15 +11,15 @@ class Solution:
                 return 0
             
             count = 0
-            num = []
+            num = 0
             for i in range(idx, n):
-                num.append(s[i])
-                if(int(''.join(num)) > k):
+                num = (num * 10) + int(s[i])
+                if(num > k):
                     return count
                 
                 count = (count + total_ways(i + 1)) % MOD
             
-            return count % MOD
+            return count
         
         MOD = 10 ** 9 + 7
         n = len(s)
