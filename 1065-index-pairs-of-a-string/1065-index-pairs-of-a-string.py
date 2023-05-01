@@ -9,19 +9,20 @@ class Solution:
             return g
         
         
-        def dfs(word, start = -1, end = -1):
-            if(not word):
-                ans.append([start, end])
+        def dfs(i, end = -1):
+            nonlocal word
+            if(i == len(word)):
+                ans.append([end - len(word) + 1, end])
                 return 
         
-            for idx in graph[word[0]]:
+            for idx in graph[word[i]]:
                 if(end == -1 or end + 1 == idx):
-                    dfs(word[1:], start if(start != -1) else idx, idx)
+                    dfs(i + 1, idx)
             
         
         graph = create_graph()
         ans = []
         for word in words:
-            dfs(word)
+            dfs(0)
         
         return sorted(ans)
