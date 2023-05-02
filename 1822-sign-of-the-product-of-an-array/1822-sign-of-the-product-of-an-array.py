@@ -1,11 +1,14 @@
 class Solution:
     def arraySign(self, nums: List[int]) -> int:
-        countNeg = 0
-        for n in nums:
-            if(n == 0):
-                return 0
+        def remove(v):
+            nonlocal zero
+            if(v < 0):
+                return True
             
-            if(n < 0):
-                countNeg += 1
+            if(v == 0):
+                zero = True
+            return False
         
-        return -1 if(countNeg % 2) else 1
+        zero = False
+        remain = list(filter(remove, nums))
+        return 0 if(zero) else (-1 if(len(remain) % 2) else 1)
