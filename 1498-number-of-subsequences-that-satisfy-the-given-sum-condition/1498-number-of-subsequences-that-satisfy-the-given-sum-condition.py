@@ -4,13 +4,15 @@ class Solution:
         nums.sort()
         MOD = (10 ** 9) + 7
         ans = 0
-        for i, num in enumerate(nums):
-            idx = bisect_right(nums, target - num) - 1
-            if(idx >= i):
-                n = (idx - i)
-                ans = (ans + (2 ** n)) % MOD
-        
-        return ans
+        i, j = 0, len(nums) - 1
+        while(i <= j):
+            if(nums[i] + nums[j] <= target):
+                ans += 2 ** (j - i)
+                i += 1
+            else:
+                j -= 1
+                
+        return ans % MOD
         
                 
         
