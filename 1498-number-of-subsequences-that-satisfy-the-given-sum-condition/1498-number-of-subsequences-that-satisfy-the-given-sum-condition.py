@@ -1,17 +1,16 @@
 class Solution:
     def numSubseq(self, nums: List[int], target: int) -> int:
-        nums.sort()
-        n = len(nums)
-        count = 0
-        i, j = 0, n - 1
-        while(i <= j):
-            if(nums[i] + nums[j] <= target):
-                count += 1 << (j - i)
-                i += 1
-            else:
-                j -= 1
         
-        return count % (10 ** 9 + 7)
+        nums.sort()
+        MOD = (10 ** 9) + 7
+        ans = 0
+        for i, num in enumerate(nums):
+            idx = bisect_right(nums, target - num) - 1
+            if(idx >= i):
+                n = (idx - i)
+                ans = (ans + (2 ** n)) % MOD
+        
+        return ans
+        
                 
-            
-            
+        
