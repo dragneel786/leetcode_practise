@@ -4,16 +4,16 @@ class Solution:
         def dfs(r, c):
             nonlocal rows, cols
             grid[r][c] = 0
-            ret = ''
+            ret = []
             for dr, dc, ch in [(0, 1, 'r'), (1, 0, 'l'),\
                                (0, -1, 'u'), (-1, 0, 'd')]:
                 nr, nc = r + dr, c + dc
                 if(0 <= nr < rows and\
                    0 <= nc < cols and\
                    grid[nr][nc]):
-                    ret += ch + dfs(nr, nc) + '|'
+                    ret.append(ch + dfs(nr, nc))
             
-            return ret
+            return '|'.join(ret) + '|'
         
         
         rows, cols = len(grid), len(grid[0])
