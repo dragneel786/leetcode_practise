@@ -11,9 +11,9 @@ class Solution:
                 if(0 <= nr < rows and\
                    0 <= nc < cols and\
                    grid[nr][nc]):
-                    ret.append(ch + dfs(nr, nc))
+                    ret.append(ch + dfs(nr, nc) + '|')
             
-            return '|'.join(ret) + '|'
+            return ''.join(ret)
         
         
         rows, cols = len(grid), len(grid[0])
@@ -21,7 +21,7 @@ class Solution:
         for r in range(rows):
             for c in range(cols):
                 if(grid[r][c]):
-                    island = 'c' + dfs(r, c)
+                    island = dfs(r, c)
                     iset.add(island)
         
         return len(iset)
