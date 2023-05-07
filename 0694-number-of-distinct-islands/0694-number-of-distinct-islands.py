@@ -1,19 +1,21 @@
 class Solution:
     def numDistinctIslands(self, grid: List[List[int]]) -> int:
         
-        def dfs(r, c):
+        def dfs(r, c, direc):
             nonlocal rows, cols
             grid[r][c] = 0
-            ret = []
-            for dr, dc, ch in [(0, 1, 'r'), (1, 0, 'l'),\
-                               (0, -1, 'u'), (-1, 0, 'd')]:
+            sign.append(direc)
+            
+            for dr, dc, ch in [(0, 1, 'r'), (1, 0, 'd'),\
+                               (0, -1, 'l'), (-1, 0, 'u')]:
                 nr, nc = r + dr, c + dc
                 if(0 <= nr < rows and\
                    0 <= nc < cols and\
                    grid[nr][nc]):
-                    ret.append(ch + dfs(nr, nc) + '|')
+                    dfs(nr, nc, ch)
             
-            return ''.join(ret)
+            sign.append('|')
+            
         
         
         rows, cols = len(grid), len(grid[0])
@@ -21,8 +23,9 @@ class Solution:
         for r in range(rows):
             for c in range(cols):
                 if(grid[r][c]):
-                    island = dfs(r, c)
-                    iset.add(island)
+                    sign = []
+                    dfs(r, c, '0')
+                    iset.add(tuple(sign))
         
         return len(iset)
         
