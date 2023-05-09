@@ -8,14 +8,12 @@ class Solution:
         
         while(up < down and left < right):
             
-            if(left < right):
-                for u in range(left, right):
-                    ans.append(matrix[up][u])
+            for u in range(left, right):
+                ans.append(matrix[up][u])
             up += 1
             
-            if(up < down):
-                for r in range(up, down):
-                    ans.append(matrix[r][right - 1])
+            for r in range(up, down):
+                ans.append(matrix[r][right - 1])
             right -= 1
             
             if(up < down):
