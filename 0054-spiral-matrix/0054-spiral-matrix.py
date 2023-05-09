@@ -6,7 +6,7 @@ class Solution:
         up, right = 0, cols
         down, left = rows, 0
         
-        while(up < down and left < right):
+        while len(ans) < rows * cols:
             
             for u in range(left, right):
                 ans.append(matrix[up][u])
