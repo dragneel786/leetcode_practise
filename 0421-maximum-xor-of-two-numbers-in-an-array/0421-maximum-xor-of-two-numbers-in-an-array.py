@@ -17,17 +17,15 @@ class Solution:
         def search(bnum):
             temp = trie
             rev = {'0':'1', '1':'0'}
-            search_res = []
+            res = 0
             for c in bnum:
                 cv = rev[c]
+                res <<= 1
                 if(cv in temp):
-                    search_res.append('1')
-                    temp = temp[cv]
-                else:
-                    search_res.append('0')
-                    temp = temp[c]
-            
-            return int(''.join(search_res), 2)
+                    res += 1 
+                    c = cv
+                temp = temp[c]
+            return res
                     
                 
         rep = []
