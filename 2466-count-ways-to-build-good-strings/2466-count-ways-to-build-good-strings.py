@@ -7,8 +7,9 @@ class Solution:
             if(size > high):
                 return 0
             
-            return ((size >= low) + const_string(size + zero)\
-        + const_string(size + one)) % MOD
+            return ((size >= low) +\
+                    const_string(size + zero) +\
+                    const_string(size + one)) % MOD
         
         MOD = 10 ** 9 + 7
         return const_string() % MOD
