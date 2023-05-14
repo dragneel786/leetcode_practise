@@ -1,19 +1,17 @@
 class Solution:
-    def minNumberOfHours(self, initialEnergy: int, initialExperience: int, energy: List[int], experience: List[int]) -> int:
+    def minNumberOfHours(self, ien: int, iex: int, en: List[int], ex: List[int]) -> int:
         
         tot_energy = 0
-        curr_exp = initialExperience
         thours = 0
-        for i in range(len(energy)):
-            e = experience[i]
-            if(e >= curr_exp):
-                thours += (e + 1) - curr_exp 
-                curr_exp += (e + 1) - curr_exp 
+        for i in range(len(en)):
+            if(ex[i] >= iex):
+                thours += (ex[i] + 1) - iex 
+                iex += (ex[i] + 1) - iex 
             
-            curr_exp += e
-            tot_energy += energy[i]
+            iex += ex[i]
+            tot_energy += en[i]
         
-        return thours + max(0, (tot_energy + 1) - initialEnergy)
+        return thours + max(0, (tot_energy + 1) - ien)
     
         
         
