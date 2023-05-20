@@ -4,8 +4,11 @@ class Solution:
         zp = '0'
         op = '1'
         for i in range(len(s)):
-            zchange += zp != s[i]
-            ochange += op != s[i]
+            if(zp != s[i]):
+                zchange += 1
+            else:
+                ochange += 1
+            
             zp, op = op, zp
         
         return min(zchange, ochange)
