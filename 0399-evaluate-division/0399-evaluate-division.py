@@ -11,6 +11,9 @@ class Solution:
         
         def traverse(start):
             nonlocal end
+            if(start not in graph):
+                return -1
+            
             if(start == end):
                 return 1
             
@@ -29,10 +32,7 @@ class Solution:
         ans = []
         visited = set()
         for start, end in queries:
-            if(start in graph):
-                visited.clear()
-                ans.append(traverse(start))
-            else:
-                ans.append(-1)
+            visited.clear()
+            ans.append(traverse(start))
             
         return ans
