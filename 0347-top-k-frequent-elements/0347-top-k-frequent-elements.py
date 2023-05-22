@@ -1,16 +1,16 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        ks = []
-        li = [0] * 20001
-        for num in nums:
-            idx = num + 10000
-            li[idx] += 1
+        bucket = [[] for _ in range(10 ** 5)]
+        for v, c in Counter(nums).items():
+            bucket[c].append(v)
         
-        for i in range(20001):
-            if(li[i] > 0):
-                insort(ks, (-li[i], i - 10000))
-            
-            if(len(ks) > k):
-                ks.pop()
+        ans = []
+        for i in range(10 ** 5 - 1, -1, -1):
+            for v in bucket[i]:
+                ans.append(v)
+                
+                if(len(ans) == k):
+                    return ans
         
-        return [v[1] for v in ks]
+        return ans
+        
