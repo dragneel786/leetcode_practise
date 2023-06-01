@@ -9,26 +9,25 @@ class Solution:
             return head
         
         temp_head = ListNode(-50001, head)
-        hole = head.next
-        prev_hole = head
+        hole = head
         head = temp_head
         
-        while(hole):
-            if(prev_hole.val <= hole.val):
-                prev_hole = hole
+        while(hole.next):
+            
+            if(hole.val <= hole.next.val):
                 hole = hole.next
                 continue
-            
-            prev_hole.next = hole.next
-                
+
             temp = head
-            while(temp.next.val < hole.val):
+            while(temp.next.val < hole.next.val):
                 temp = temp.next
-            
-            hole.next = temp.next
-            temp.next = hole
-            
-            hole = prev_hole.next
+
+            nxt = hole.next.next
+            hole.next.next = None
+
+            hole.next.next = temp.next
+            temp.next = hole.next
+            hole.next = nxt
 
         return head.next
                 
