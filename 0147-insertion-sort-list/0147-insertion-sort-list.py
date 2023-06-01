@@ -21,14 +21,12 @@ class Solution:
             
             prev_hole.next = hole.next
                 
-            prev = head
-            temp = head.next
-            while(temp.val < hole.val):
-                prev = temp
+            temp = head
+            while(temp.next.val < hole.val):
                 temp = temp.next
             
-            prev.next = hole
-            hole.next = temp
+            hole.next = temp.next
+            temp.next = hole
             
             hole = prev_hole.next
 
