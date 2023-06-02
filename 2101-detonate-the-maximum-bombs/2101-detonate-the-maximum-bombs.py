@@ -1,32 +1,37 @@
 class Solution:
     def maximumDetonation(self, bombs: List[List[int]]) -> int:
         
-        intersects = lambda x, y: (x[2] ** 2) >= ((x[0] - y[0])**2)\
-        + ((x[1] - y[1])**2)
+        def is_covered(x1, y1, x2, y2, r):
+            return math.sqrt((x2 - x1)**2 + (y2 - y1)**2) <= r
         
-        def construct_graph():
+        def create_graph():
             g = defaultdict(list)
             for i in range(len(bombs)):
-                for j in range(len(bombs)):
-                    if(i != j and intersects(bombs[i], bombs[j])):
+                x1, y1, r1 = bombs[i]
+                for j in range(i + 1, len(bombs)):
+                    x2, y2, r2 = bombs[j]
+                    if(is_covered(x1, y1, x2, y2, r1)):
                         g[i].append(j)
+                    
+                    if(is_covered(x2, y2, x1, y1, r2)):
+                        g[j].append(i)
+                        
             return g
         
-        
-        def dfs(x, visited):
-            res = 0
-            visited.add(x)
-            for v in graph[x]:
-                if(v not in visited):
-                    res += (1 + dfs(v, visited))
-            return res
-                    
-        
-        graph = construct_graph()
-        max_value = -inf
-        for i in range(len(bombs)):
-            max_value = max(1 + dfs(i, set()), max_value)
+        def dfs(start, visited):
+            visited.add(start)
             
-        return max_value
+            count = 1
+            for v in graph[start]:
+                if(v not in visited):
+                    count += dfs(v, visited)
+            
+            return count
+            
+        graph = create_graph()
+        ans = 0
+        for i in range(len(bombs)):
+            ans = max(dfs(i, set()), ans)
         
+        return ans
                         
