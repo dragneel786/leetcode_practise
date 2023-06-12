@@ -7,10 +7,9 @@ class Solution:
             if(nums[i - 1] + 1 == nums[i]):
                 continue
             
-            if(nums[i - 1] == start):
-                ans.append(str(start))
-            else:
-                ans.append(f'{start}->{nums[i - 1]}')
+            ans.append(str(start))
+            if(nums[i - 1] != start):
+                ans[-1] += f'->{nums[i - 1]}'
             
             start = nums[i]
         
