@@ -1,18 +1,34 @@
 class Solution:
     def equalPairs(self, grid: List[List[int]]) -> int:
-        rmap = Counter([tuple(grid[i]) for i in range(len(grid))])
-        n = len(grid)
-        count = 0
         
-        for c in range(n):
-            t = []
-            for r in range(n):
-                t.append(grid[r][c])
+        def create_trie():
+            t = dict()
+            for row in grid:
+                temp = t
+                for v in row:
+                    temp[v] = temp.get(v, {})
+                    temp = temp[v]
                 
-            count += rmap.get(tuple(t), 0)
+                temp[-1] = temp.get(-1, 0) + 1
+            
+            return t
+                
+        
+        def search():
+            nonlocal k
+            t = trie
+            for i in range(n):
+                v = grid[i][k]
+                if(v not in t):
+                    return False
+                t = t[v]
+            
+            return t[-1]
+        
+        n = len(grid)
+        trie = create_trie()
+        count = 0
+        for k in range(n):
+            count += search()
         
         return count
-    # [[3,1,2,2],
-    #  [1,4,4,5],
-    #  [2,4,2,2],
-    #  [2,4,2,2]]
