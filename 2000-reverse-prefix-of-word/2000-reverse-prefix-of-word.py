@@ -1,11 +1,8 @@
 class Solution:
     def reversePrefix(self, word: str, ch: str) -> str:
-        ans = []
-        for i, c in enumerate(word):
-            ans.append(c)
-            if(c == ch):
-                break
-        else:
+        try:
+            idx = word.index(ch)
+            return word[:idx + 1][::-1] + word[idx + 1:]
+        except:
             return word
-        
-        return ''.join(ans[::-1]) + word[i+1:]
+            
