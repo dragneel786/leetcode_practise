@@ -1,22 +1,30 @@
 class Solution:
     def maxProbability(self, n: int, edges: List[List[int]], succProb: List[float], start: int, end: int) -> float:
         
-        p, g = [0.0] * n, defaultdict(list)
-        for i,e in enumerate(edges):
-            a, b = e
-            g[a].append((b, i))
-            g[b].append((a, i))
-        
-        p[start] = 1.0
-        heap = [(-p[start], start)]
+        def make_graph():
+            graph = defaultdict(list)
+            for [s, e], p in zip(edges, succProb):
+                graph[s].append((e, p))
+                graph[e].append((s, p))
+            return graph
+                
+        g = make_graph()
+        heap = [(1, start)]
+        visited = {start:1}
+        ans = 0
         while(heap):
-            prob, v = heappop(heap)
-            if(v == end):
-                return p[v]
-            for ne, i in g[v]:
-                if(-prob * succProb[i] > p[ne]):
-                    p[ne] = -prob * succProb[i]
-                    heappush(heap, (-p[ne], ne))
+            weight, pos = heappop(heap)
+            weight = abs(weight)
+            if(pos == end):
+                return weight
             
-        return 0.0
+            for b, a in g[pos]:
+                val = weight * a
+                if(visited.get(b, 0) < val):
+                    heappush(heap, (-(weight * a), b))
+                    visited[b] = val
         
+        return ans
+            
+            
+            
