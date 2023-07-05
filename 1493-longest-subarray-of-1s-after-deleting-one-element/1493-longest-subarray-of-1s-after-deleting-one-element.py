@@ -7,8 +7,7 @@ class Solution:
                 zero = False
                 ans = max(fhalf + shalf, ans)
                 fhalf, shalf = shalf, 0
-                continue
-            
-            shalf += 1
+            else:
+                shalf += 1
         
         return max(fhalf + shalf, ans) - zero
