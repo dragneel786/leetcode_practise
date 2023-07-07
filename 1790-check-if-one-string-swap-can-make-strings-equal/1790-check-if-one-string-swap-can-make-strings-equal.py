@@ -6,5 +6,7 @@ class Solution:
             counts[a] += 1
             counts[b] -= 1
             diff += a != b
+            if(diff > 2):
+                return False
         
-        return diff < 3 and not any(counts.values())
+        return not any(counts.values())
