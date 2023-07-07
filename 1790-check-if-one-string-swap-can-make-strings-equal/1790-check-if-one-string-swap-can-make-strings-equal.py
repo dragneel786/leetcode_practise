@@ -1,12 +1,10 @@
 class Solution:
     def areAlmostEqual(self, s1: str, s2: str) -> bool:
         diff = 0
-        w1 = [0] * 26
-        w2 = [0] * 26
-        for i in range(len(s1)):
-            if(s1[i] != s2[i]):
-                diff += 1
-            w1[ord(s1[i]) - 97] += 1
-            w2[ord(s2[i]) - 97] += 1
+        imap = [0] * 26
+        for a, b in zip(s1, s2):
+            imap[ord(a) - 97] += 1
+            imap[ord(b) - 97] -= 1
+            diff += a != b
         
-        return diff == 0 or (diff == 2 and w1 == w2)
+        return diff < 3 and not any(imap)
