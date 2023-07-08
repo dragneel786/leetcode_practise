@@ -12,6 +12,6 @@ class Solution:
             if(i > 0 and c == password[i - 1]):
                 return False
         
-        return lcase and ucase and digit and special
+        return all([lcase, ucase, digit, special])
                 
             
