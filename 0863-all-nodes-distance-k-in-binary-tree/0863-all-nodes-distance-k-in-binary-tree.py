@@ -1,13 +1,13 @@
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+class TreeNode1:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+        self.parent = None
 
 class Solution:
     def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
-        
         def dfs(node, par = None):
             if(not node):
                 return
@@ -34,9 +34,3 @@ class Solution:
         res = []
         bfs()
         return res
-                        
-            
-            
-            
-            
-            
