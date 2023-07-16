@@ -9,7 +9,7 @@ class Solution:
             for skill in skills:
                 skill_mask = skill_mask | (1 << skill_idx[skill])
             
-            for curr_mask, need in list(dp.items()):
+            for curr_mask, need in dp.copy().items():
                 comb = curr_mask | skill_mask
                 if(comb == curr_mask):
                     continue
