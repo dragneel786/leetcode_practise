@@ -1,19 +1,17 @@
 class Solution:
     def minSpeedOnTime(self, dist: List[int], hour: float) -> int:
         
-        def calculate(speed):
-            time_taken = 0
-            for d in dist:
-                time_taken = ceil(time_taken) + (d / speed)
-            return time_taken
+        def calculate2(speed):
+            return reduce(lambda a, b: ceil(a) + (b / speed), dist)
         
         
         low = 1
         high = 10 ** 9
+        dist = [0] + dist
         res = -1
         while(low <= high):
             mid = (high - low) // 2 + low
-            if(calculate(mid) <= hour):
+            if(calculate2(mid) <= hour):
                 res = mid
                 high = mid - 1
             else:
