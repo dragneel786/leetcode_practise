@@ -6,7 +6,7 @@ class Solution:
         dp[0] = True
         for i in range(len(s)):
             for j in range(i + 1):
-                if(s[j:i + 1] in word_set and dp[j]):
+                if(dp[j] and s[j:i + 1] in word_set):
                     dp[i + 1] = True
                     break
         
