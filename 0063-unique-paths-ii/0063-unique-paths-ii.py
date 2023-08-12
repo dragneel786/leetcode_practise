@@ -1,16 +1,22 @@
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
-        @lru_cache(None)
-        def possible_paths(i, j):
-            # print(i, j, obstacleGrid[i][j], m, n)
-            if(i >= m or j >= n or obstacleGrid[i][j]):
-                return 0
-            
-            if(i == m - 1 and j == n - 1):
-                return 1
-            
-            return possible_paths(i + 1, j) +\
-        possible_paths(i, j + 1)
-        
         m, n = len(obstacleGrid), len(obstacleGrid[0])
-        return possible_paths(0, 0)
+        dp = [([0] * n) for _ in range(m)]
+        dp[m - 1][n - 1] += obstacleGrid[m - 1][n - 1] != 1
+        
+        for r in range(m - 1, -1, -1):
+            for c in range(n - 1, -1, -1):
+                if(obstacleGrid[r][c]):
+                    continue
+                
+                a, b = 0, 0
+                if(r + 1 < m):
+                    a = dp[r + 1][c]
+                    
+                if(c + 1 < n):
+                    b = dp[r][c + 1]
+                
+                dp[r][c] += a + b
+                
+        
+        return dp[0][0]
