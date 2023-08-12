@@ -6,9 +6,6 @@ class Solution:
         
         for r in range(m - 1, -1, -1):
             for c in range(n - 1, -1, -1):
-                if(obstacleGrid[r][c]):
-                    continue
-                
                 a, b = 0, 0
                 if(r + 1 < m):
                     a = dp[r + 1][c]
@@ -16,7 +13,7 @@ class Solution:
                 if(c + 1 < n):
                     b = dp[r][c + 1]
                 
-                dp[r][c] += a + b
+                dp[r][c] += obstacleGrid[r][c] != 1 and a + b
                 
         
         return dp[0][0]
