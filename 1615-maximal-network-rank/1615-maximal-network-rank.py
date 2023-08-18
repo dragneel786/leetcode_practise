@@ -3,8 +3,8 @@ class Solution:
         def create_network():
             g = defaultdict(set)
             for i, (a, b) in enumerate(roads):
-                g[a].add(i)
-                g[b].add(i)
+                g[a].add(b)
+                g[b].add(a)
             
             return g
         
@@ -15,7 +15,7 @@ class Solution:
             an = len(graph[a])
             for b in range(a + 1, n):
                 bn = len(graph[b])
-                res = max(res, an + bn - len(graph[a] & graph[b]))
+                res = max(res, an + bn - (a in graph[b]))
         
         return res
         
