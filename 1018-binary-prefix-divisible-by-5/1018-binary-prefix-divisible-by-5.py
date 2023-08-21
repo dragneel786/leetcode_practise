@@ -3,7 +3,7 @@ class Solution:
         val = 0
         res = []
         for num in nums:
-            val = (val << 1) + num
+            val = (2 * val) + num
             res.append(val % 5 == 0)
         
         return res
