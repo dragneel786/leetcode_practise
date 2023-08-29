@@ -1,17 +1,17 @@
 class Solution:
     def bestClosingTime(self, customers: str) -> int:
-        early = loss = inf
-        new_y = Counter(customers)['Y']
-        old_n = 0
-        
+        early = 0
+        curr_penalty = min_penalty = customers.count('Y')
         for i, c in enumerate(customers + '-'):
-            if(loss > new_y + old_n):
-                early = i
-                loss = new_y + old_n
+            if(c == 'Y'):
+                curr_penalty -= 1
+            else:
+                curr_penalty += 1
             
-            old_n += c == 'N'
-            new_y -= c == 'Y'
-        
+            if(min_penalty > curr_penalty):
+                early = i + 1
+                min_penalty = curr_penalty
+            
         return early
             
             
