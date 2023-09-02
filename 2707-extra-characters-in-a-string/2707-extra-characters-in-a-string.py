@@ -1,7 +1,7 @@
 class Solution:
     def minExtraChar(self, s: str, dictionary: List[str]) -> int:
         
-        @lru_cache(None)
+        @cache
         def dp(start):
             if(start == n):
                 return 0
