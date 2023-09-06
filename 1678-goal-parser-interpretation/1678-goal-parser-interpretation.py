@@ -1,12 +1,22 @@
 class Solution:
     def interpret(self, command: str) -> str:
-        hash = {"G":"G", "()":"o", "(al)":"al"}
-        val = ""
-        ans = ""
-        for c in command:
-            val += c
-            if(val in hash):
-                ans += hash[val]
-                val = ""
+        ans = []
+        idx = 0
+        while(idx < len(command)):
+            ch = ''
+            if(command[idx] == 'G'):
+                ch = "G"
+                idx += 1
             
-        return ans
+            elif(command[idx: idx + 2] == '()'):
+                ch = "o"
+                idx += 2
+            
+            else:
+                idx += 4
+                ch = 'al'
+            
+            ans.append(ch)
+        
+        return ''.join(ans)
+                
