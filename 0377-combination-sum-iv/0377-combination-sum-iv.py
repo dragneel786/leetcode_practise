@@ -1,19 +1,22 @@
 class Solution:
     def combinationSum4(self, nums: List[int], target: int) -> int:
-        dp = [0] * (target + 1)
-        dp[0] = 1
-        nums.sort()
-        for t in range(1, target + 1):
-            curr = 0
+        @lru_cache(None)
+        def combine(remain = target):
+            if(remain <= 0):
+                return remain == 0
+
+            tot = 0
             for num in nums:
-                if(num > t):
-                    break
-                
-                curr += dp[t - num]
-            
-            dp[t] = curr
-        
-        return dp[target]
+                tot += combine(remain - num)
+
+            return tot
+
+
+        nums.sort()
+        if(nums[0] > target):
+            return 0
+
+        return combine()
                 
         
         
