@@ -2,13 +2,16 @@ class Solution:
     def countPairs(self, nums: List[int], target: int) -> int:
         nums.sort()
         tot = 0
-        for i in range(len(nums) - 1, 0, -1):
-            j = i - 1
-            while(j > -1 and nums[i] + nums[j] >= target):
-                j -= 1
-                
-            if(j >= 0):
-                tot += (j + 1)
+        n = len(nums)
+        j = 0
+        for i in range(n - 1, 0, -1):
+            while(j < i and nums[i] + nums[j] < target):
+                j += 1
+            
+            if(j >= i):
+                break
+            
+            tot += j
         
-        return tot
+        return tot + (j * (j + 1)) // 2
                 
