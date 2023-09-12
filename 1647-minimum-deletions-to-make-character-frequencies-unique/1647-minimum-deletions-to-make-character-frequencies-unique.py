@@ -1,16 +1,16 @@
 class Solution:
     def minDeletions(self, s: str) -> int:
-        C = Counter(s)
-        dele = 0
-        uniq = set()
-        keys = C.keys()
-        for ki in keys:
-            while(C[ki] in uniq and C[ki]):
-                C[ki] -= 1
-                dele += 1
-            uniq.add(C[ki])
+        chars_map = Counter(s)
+        appeared = set()
+        deleted = 0
+        for v in sorted(chars_map.values()):
+            while(v in appeared):
+                v -= 1
+                deleted += 1
             
-        return dele
-                
-                    
-                
+            if(v):
+                appeared.add(v)
+        
+        return deleted
+            
+            
