@@ -1,28 +1,52 @@
 class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
-        n = len(points)
-        visited = [True] + [False for _ in range(n - 1)]
-        disArr = [0] + [math.inf for _ in range(n - 1)]
-        tot = 0
-        edges = 0
-        curr = 0
-        while(edges < n - 1):
-            minE = math.inf
-            nextP = 0
-            for i in range(n):
-                if(not visited[i]):
-                    dis = abs(points[curr][0] - points[i][0])\
-                    + abs(points[curr][1] - points[i][1])
-                    disArr[i] = min(dis, disArr[i])
-                    
-                    if(minE > disArr[i]):
-                        minE = disArr[i]
-                        nextP = i
-                    
-            edges += 1
-            curr = nextP
-            tot += minE
-            visited[curr] = True
         
-        return tot
+        def create_heap():
+            g = []
+            for i, (x1, y1) in enumerate(points):
+                for j, (x2, y2) in enumerate(points[i + 1:]):
+                    dis = abs(x1 - x2) + abs(y1 - y2)
+                    heappush(g, (dis, i, j + i + 1))
+
+            return g
+        
+        def union(a, b):
+            pa, pb = find(a), find(b)
+            if pa == pb:
+                return False
+            
+            parent[pb] = pa
+            return True
+        
+        def find(a):
+            if(parent[a] != a):
+                parent[a] = find(parent[a])
+            return parent[a]
+    
+        heap = create_heap()
+        parent = {i:i for i in range(len(points))}
+        n = len(points) - 1
+        ans = 0
+        while(n and heap):
+            dis, x, y = heappop(heap)
+            if(union(x, y)):
+                ans += dis
+                n -= 1
+        
+        return ans
+            
+                
+            
+    
+        
+                
+                
+        
+        
+        
+        
+        
+            
+                    
+                
                 
