@@ -1,8 +1,8 @@
 class Solution:
     def findArray(self, pref: List[int]) -> List[int]:
         xor = 0
-        ans = [pref[0]]
+        prev = pref[0]
         for i in range(1, len(pref)):
-            ans.append(pref[i] ^ pref[i - 1])
+            prev, pref[i] = pref[i], pref[i] ^ prev
         
-        return ans
+        return pref
