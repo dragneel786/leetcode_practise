@@ -1,13 +1,4 @@
 class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
-        counts = []
-        for row in range(len(mat)):
-            idx = bisect.bisect(list(reversed(mat[row])),0)
-            counts.append([len(mat[row]) - idx, row])
+        return [ele[1] for ele in nsmallest(k, [(m.count(1), i) for i,m in enumerate(mat)])]
         
-        heapify(counts)
-        res = []
-        while(k):
-            res.append(heappop(counts)[1])
-            k -= 1
-        return res
