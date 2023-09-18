@@ -7,21 +7,27 @@
 class Solution:
     def sumEvenGrandparent(self, root: TreeNode) -> int:
         
-        def sumed(node, li = []):
+        def add(node):
             nonlocal sums
+            if not node:
+                return 
+            
+            if(node.left):
+                sums += node.left.val
+            
+            if(node.right):
+                sums += node.right.val
+        
+        def sumed(node):
             if(not node):
                 return
             
-            for i in range(len(li)):
-                li[i] -= 1
-                if li[i] == 0:
-                    sums += node.val
-                    
             if(node.val % 2 == 0):
-                li.append(2)
+                add(node.left)
+                add(node.right)
             
-            sumed(node.left, li[:])
-            sumed(node.right, li[:])
+            sumed(node.left)
+            sumed(node.right)
         
         sums = 0
         sumed(root)
