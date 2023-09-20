@@ -1,26 +1,17 @@
 class Solution:
     def minOperations(self, nums: List[int], x: int) -> int:
-        if(nums[0] > x < nums[-1]):
-            return -1
-        
+        sub_sum = sum(nums) - x
         n = len(nums)
-        find = sum(nums) - x
-        maxL, sub, j = (-math.inf, 0, 0)
+        size = inf
+        tot = j = 0
         for i in range(n):
-            sub += nums[i]
-            while(j <= i and sub > find):
-                sub -= nums[j]
+            tot += nums[i]
+            while(j <= i and tot > sub_sum):
+                tot -= nums[j]
                 j += 1
             
-            if(sub == find):
-                maxL = max(maxL, i - j + 1)
+            if(tot == sub_sum):
+                size = min(n - (i - j + 1), size)
         
-        if(maxL == -math.inf):
-            return -1
-        
-        return n - maxL
+        return size if(size != inf) else -1
             
-            
-        
-        
-        
