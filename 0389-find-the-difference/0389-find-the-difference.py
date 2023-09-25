@@ -1,10 +1,9 @@
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
         xor = 0
-        for c in s:
-            xor ^= ord(c)
-        
-        for c in t:
-            xor ^= ord(c)
+        for a, b in zip_longest(s, t):
+            if(a):
+                xor ^= ord(a)
+            xor ^= ord(b)
         
         return chr(xor)
