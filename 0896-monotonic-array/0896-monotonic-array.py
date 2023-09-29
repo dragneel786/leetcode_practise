@@ -1,16 +1,13 @@
 class Solution:
     def isMonotonic(self, nums: List[int]) -> bool:
         n = len(nums)
-        inc = None   
+        prev = None
         for i in range(1, n):
-            if(nums[i] == nums[i - 1]):
+            if(nums[i - 1] == nums[i]):
                 continue
-                
-            if(inc is None):
-                inc = nums[i - 1] < nums[i]
             
-            elif((nums[i - 1] < nums[i]) != inc):
+            if(prev is not None and prev != (nums[i - 1] < nums[i])):
                 return False
             
-            print(inc)
+            prev = nums[i - 1] < nums[i]
         return True
