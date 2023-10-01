@@ -28,6 +28,5 @@ class Solution:
         
         ordered = []
         preorder(root)
-        print(ordered)
         return construct(0, len(ordered) - 1)
         
