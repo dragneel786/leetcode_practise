@@ -1,7 +1,7 @@
 class Solution:
     def numWays(self, steps: int, arrLen: int) -> int:
         
-        @cache
+        @lru_cache(None)
         def ways(idx, remain):
             nonlocal MOD
             if(idx < 0 or idx >= arrLen):
