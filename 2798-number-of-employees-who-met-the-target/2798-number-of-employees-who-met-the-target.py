@@ -1,3 +1,3 @@
 class Solution:
     def numberOfEmployeesWhoMetTarget(self, hours: List[int], target: int) -> int:
-        return sum([h >= target for h in hours])
+        return len(list(filter(lambda x: x >= target, hours)))
