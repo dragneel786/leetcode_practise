@@ -6,7 +6,6 @@ class Solution:
             rows[r] += 1
             cols[c] += 1
         
-        print(rows, cols)
         odds = 0
         for r in range(m):
             for c in range(n):
