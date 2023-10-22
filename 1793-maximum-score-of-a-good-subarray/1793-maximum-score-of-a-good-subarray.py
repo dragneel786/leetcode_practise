@@ -13,4 +13,4 @@ class Solution:
             min_val = min(min_val, nums[i], nums[j])
             res = max(res, min_val * (j - i + 1))
             
-        return max(res, min_val * (j - i + 1))
+        return res
