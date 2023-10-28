@@ -1,9 +1,26 @@
 class Solution:
     def countVowelPermutation(self, n: int) -> int:
-        M = (10 ** 9) + 7
-        a, e, i, o, u = 1, 1, 1, 1, 1
-        for _ in range(n - 1):
-            a, e, i, o, u = e, (a + i) % M, (a + e + o + u) % M, (i + u) % M, a
-        return sum((a, e, i, o, u)) % M
         
+        options = {'a': ['e'], 'e':['a', 'i'],\
+                   'i':['a', 'e', 'o', 'u'],\
+                   'o':['i', 'u'], 'u':['a']}
+        
+        MOD = (10 ** 9) + 7
+        
+        @cache
+        def counts(curr = '' , size = 0):
+            nonlocal MOD
+            if(size == n):
+                return 1
             
+            tot = 0
+            op = ['a', 'e', 'i', 'o', 'u'] \
+            if(curr not in options) else options[curr]
+            
+            for c in op:
+                tot = (tot + counts(c, size + 1)) % MOD
+            
+            return tot
+        
+        return counts()
+                
