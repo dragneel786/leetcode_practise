@@ -1,8 +1,13 @@
 class Solution:
     def findArray(self, pref: List[int]) -> List[int]:
-        xor = 0
-        prev = pref[0]
-        for i in range(1, len(pref)):
-            prev, pref[i] = pref[i], pref[i] ^ prev
+        res = []
+        prev = 0
+        for i, p in enumerate(pref):
+            res.append(prev ^ p)
+            prev = p
         
-        return pref
+        return res
+            
+        
+        
+        
