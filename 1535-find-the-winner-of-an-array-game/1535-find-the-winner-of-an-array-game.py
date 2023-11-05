@@ -1,22 +1,15 @@
 class Solution:
     def getWinner(self, arr: List[int], k: int) -> int:
-        n = len(arr)
-        if(k >= n):
-            return max(arr)
+        curr = arr[0]
+        win = 0
+        for i in range(1, len(arr)):
+            if(arr[i] > curr):
+                win = 0
+                curr = arr[i] 
+            win += 1
+            if(win == k): return curr
         
-        q = deque(arr)
-        for i in range(n):
-            ele = q.popleft()
-            curr_max = 1 if(i > 0) else 0
-            while(ele > q[0] and curr_max < k):
-                curr_max += 1
-                e = q.popleft()
-                q.append(e)
+        return curr
             
-            q.append(ele)
-            if(curr_max >= k):
-                return ele
-            
-        return ele
         
         
