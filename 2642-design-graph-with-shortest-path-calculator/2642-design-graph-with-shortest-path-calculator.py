@@ -18,6 +18,8 @@ class Graph:
         while(pq):
             d, node = heappop(pq)
             if(node == node2): return d
+            if(d > dist[node]): continue
+                
             for new_node, cost in self.graph[node]:
                 if(dist[new_node] > cost + d):
                     dist[new_node] = cost + d
