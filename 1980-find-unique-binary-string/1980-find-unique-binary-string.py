@@ -1,13 +1,10 @@
 class Solution:
     def findDifferentBinaryString(self, nums: List[str]) -> str:
-        hset = set(nums)
-        nums.sort()
+        new_nums = [int(num, 2) for num in nums]
         n = len(nums)
-        start = '0' * n
-        while(start in nums):
-            val = int(start, 2)
-            start = bin(val + 1)[2:]
-            start = '0' * (n - len(start)) + start
-        
-        return start
+        for i in range(1 << n):
+            if(i not in new_nums):
+                s = bin(i)[2:]
+                val = '0' * (n - len(s)) + s
+                return val
             
