@@ -1,11 +1,12 @@
 class Solution:
     def reductionOperations(self, nums: List[int]) -> int:
-        nums_counts = Counter(nums)
-        sorted_keys = sorted(nums_counts.keys(), reverse=True)
-        operations = 0
-        for i in range(1, len(sorted_keys)):
-            operations += nums_counts[sorted_keys[i - 1]]
-            nums_counts[sorted_keys[i]] += nums_counts[sorted_keys[i - 1]]
+        heap = [(-key, value) for key, value in Counter(nums).items()]
+        heapify(heap)
+        ans = 0
+        while(len(heap) > 1):
+            large, count1 = heappop(heap)
+            slarge, count2 = heappop(heap)
+            ans += count1
+            heappush(heap, (slarge, count1 + count2))
         
-        return operations
-            
+        return ans
