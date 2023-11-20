@@ -2,8 +2,8 @@ class Solution:
     def maximumStrongPairXor(self, nums: List[int]) -> int:
         
         max_xor = 0
-        for a in nums:
-            for b in nums:
+        for i, a in enumerate(nums):
+            for b in nums[i:]:
                 if(abs(a - b) <= min(a, b)):
                     max_xor = max(max_xor, a ^ b)
             
