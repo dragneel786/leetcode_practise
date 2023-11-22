@@ -1,22 +1,16 @@
 class Solution:
     def findDiagonalOrder(self, nums: List[List[int]]) -> List[int]:
         ans = []
-        dig = defaultdict(deque)
-        order = [i for i in range((10 ** 5) + 2)]
-        start = 0
-        for r in range(len(nums)):
-            idx = start
-            for v in nums[r]:
-                dig[order[idx]].appendleft(v)
-                idx += 1
-                
-            start += 1
+        q = deque([(0, 0)])
+        while(q):
+            row, col = q.popleft()
+            ans.append(nums[row][col])
+            
+            if(col == 0 and row + 1 < len(nums)):
+                q.append((row + 1, col))
+            
+            if(col + 1 < len(nums[row])):
+                q.append((row, col + 1))
         
-        for i in range((10 ** 5) + 2):
-            if(i not in dig):
-                break
-            
-            ans.extend(dig[i])
-            
         return ans
         
