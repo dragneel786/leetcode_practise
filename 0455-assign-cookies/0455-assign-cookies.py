@@ -1,17 +1,16 @@
 class Solution:
     def findContentChildren(self, g: List[int], s: List[int]) -> int:
-        g.sort()
-        s.sort()
-        n = len(s)
-        count = idx = 0
-        for greed in g:
-            while(idx < n and greed > s[idx]):
-                idx += 1
+        heapify(g)
+        heapify(s)
+        count = 0
+        while(s and g):
+            if(s[0] >= g[0]):
+                heappop(g)
+                count += 1
             
-            if(idx >= n):
-                break
-            
-            count += 1
-            idx += 1
+            heappop(s)
         
         return count
+        
+            
+            
