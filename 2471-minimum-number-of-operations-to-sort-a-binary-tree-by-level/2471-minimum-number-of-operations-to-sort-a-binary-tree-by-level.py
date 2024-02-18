@@ -12,9 +12,10 @@ class Solution:
             diff = 0
             for i, a in enumerate(sorted_arr):
                 if(arr[i] != sorted_arr[i]):
-                    arr[i], arr[index_dict[sorted_arr[i]]] = arr[index_dict[sorted_arr[i]]], arr[i]
+                    idx = index_dict[sorted_arr[i]]
+                    arr[i], arr[idx] = arr[idx], arr[i]
                     
-                    index_dict[arr[index_dict[sorted_arr[i]]]] = index_dict[sorted_arr[i]]
+                    index_dict[arr[idx]] = idx
                     diff += 1
                 
             return diff
