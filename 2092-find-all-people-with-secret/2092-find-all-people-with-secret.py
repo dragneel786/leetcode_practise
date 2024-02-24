@@ -9,16 +9,19 @@ class Solution:
             return g
         
         graph = create_graph(meetings)
-        heap = [(0, 0), (0, firstPerson)]
-        ans = set([0])
-        max_time = 0
-        while(heap):
-            ptime, person = heappop(heap)
-            max_time = max(ptime, max_time)
+        earliest = [inf] * n
+        earliest[0] = 0
+        earliest[firstPerson] = 0
+        
+        q = deque([(0, 0), (0, firstPerson)])
+        ans = set()
+        while(q):
+            ptime, person = q.popleft()
             ans.add(person)
             for ns, time in graph[person]:
-                if(ns not in ans and max_time <= time):
-                    heappush(heap, (time, ns))
+                if(time >= ptime and earliest[ns] > time):
+                    q.append((time, ns))
+                    earliest[ns] = time
                     
         return list(ans)
             
