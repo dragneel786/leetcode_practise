@@ -1,23 +1,34 @@
 class Solution:
     def findMaxFish(self, grid: List[List[int]]) -> int:
-        n = len(grid)
-        m = len(grid[0])
-        ans = 0
-        for i in range(n):
-            for j in range(m):
-                if grid[i][j] > 0:
-                    ans = max(ans, self.dfs(i, j, grid, n, m))
-        return ans
-
-    def dfs(self, i: int, j: int, grid: List[List[int]], n: int, m: int) -> int:
-        f = grid[i][j]
-        grid[i][j] = 0
-        dr = [0, 1, 0, -1, 0]
-        for k in range(4):
-            nr = i + dr[k]
-            nc = j + dr[k + 1]
-            if nr >= 0 and nr < n and nc >= 0 and nc < m and grid[nr][nc] > 0:
-                f += self.dfs(nr, nc, grid, n, m)
-        return f
-
-
+        
+        def dfs(r, c):
+            nonlocal grid, m, n
+            ret = grid[r][c]
+            grid[r][c] = 0
+            for dr, dc in [(0,1), (1,0),
+                           (0,-1), (-1,0)]:
+                nr, nc = r + dr, c + dc
+                if(0 <= nr < m and \
+                   0 <= nc < n and \
+                   grid[nr][nc]):
+                    
+                    ret += dfs(nr, nc)
+            
+            return ret
+                    
+        
+        
+        
+        m, n = len(grid), len(grid[0])
+        max_fish = 0
+        for r in range(m):
+            for c in range(n):
+                if(grid[r][c]):
+                    max_fish = max(max_fish, dfs(r, c))
+        
+        return max_fish
+                
+            
+        
+                
+        
