@@ -9,7 +9,9 @@ class Solution:
                 max_val = max(max_val, num % 10)
                 num //= 10
             
-            ans += int(len(str_num) * str(max_val))
+            for i in range(count):
+                prod = (10 ** i)
+                ans += prod * max_val
         
         return ans
             
