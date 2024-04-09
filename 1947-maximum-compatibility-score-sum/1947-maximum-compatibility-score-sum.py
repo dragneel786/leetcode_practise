@@ -21,9 +21,9 @@ class Solution:
             return temp
         
         @lru_cache(None)
-        def pick(stu_mask, men_mask, choosed):
+        def pick(stu_mask, men_mask):
             nonlocal m
-            if(choosed == m):
+            if((stu_mask & men_mask) == ((1 << (n + 1)) - 1)):
                 return 0
             
             ret = 0
@@ -37,13 +37,12 @@ class Solution:
                     
                     ret = max(ret, score(st ^ mt)\
                                + pick((1 << i) | stu_mask,\
-                                      (1 << j) | men_mask, \
-                                      choosed + 1))
+                                      (1 << j) | men_mask))
             return ret
                                            
         m, n = len(students), len(students[0])
         students = bit_mapped(students)[:]
         mentors = bit_mapped(mentors)[:]
-        return pick(0, 0, 0)
+        return pick(0, 0)
         
         
