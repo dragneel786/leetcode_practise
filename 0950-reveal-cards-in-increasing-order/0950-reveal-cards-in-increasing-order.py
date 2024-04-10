@@ -3,15 +3,10 @@ class Solution:
         deck = deque(sorted(deck))
         q = deque()
         while(deck):
-            dummy = deque()
-            dummy.append(deck.pop())
             if(q):
-                dummy.append(q.pop())
-                while(q):
-                    dummy.append(q.popleft())
+                q.appendleft(q.pop())
+            q.appendleft(deck.pop())
             
-            q = dummy
-        
         return q
             
         
