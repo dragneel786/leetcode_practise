@@ -34,18 +34,18 @@ func (this *ThroneInheritance) GetInheritanceOrder() []string {
   deaths := this.deaths
   childrens := this.childrens
   order := []string{}
-  inheritOrder(king, deaths, childrens, &order)
+  inheritOrder(king, &deaths, &childrens, &order)
   return order
 }
 
 
-func inheritOrder(node string, deaths map[string]bool, childrens map[string][]string, order *[]string) {
+func inheritOrder(node string, deaths *map[string]bool, childrens *map[string][]string, order *[]string) {
   
-  if !deaths[node] {
+    if !(*deaths)[node] {
       *order = append(*order, node)
   }
   
-  for _, child := range childrens[node] {
+    for _, child := range (*childrens)[node] {
       inheritOrder(child, deaths, childrens, order)
   }
 }
