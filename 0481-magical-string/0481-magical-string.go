@@ -1,6 +1,5 @@
 func magicalString(n int) int {
-    arr := []int{1, 2, 2}
-    idx := 2
+    arr := []int{2}
     ones := 1
     n -= 3
     for n > 0 {
@@ -12,14 +11,14 @@ func magicalString(n int) int {
         arr = append(arr, val)
         n--
         
-        if n > 0 && arr[idx] == 2 {
+        if n > 0 && arr[0] == 2 {
             arr = append(arr, val)
             if val == 1 {
                 ones++
             }
             n--
         }
-        idx++  
+        arr = arr[1:]
     }
     // fmt.Println(arr)
     return ones
