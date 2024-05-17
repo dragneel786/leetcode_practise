@@ -11,10 +11,11 @@ func maxScoreIndices(nums []int) []int {
     var zeros, count = 0, 0
     for i, num := range nums {
         var sums = zeros + ones
-        if sums > count {
+        if sums >= count {
+            if sums > count{
+                res = []int{}
+            }
             count = sums
-            res = []int{i}
-        } else if sums == count {
             res = append(res, i)
         }
         
