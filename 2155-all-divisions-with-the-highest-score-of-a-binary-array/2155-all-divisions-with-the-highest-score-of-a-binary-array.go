@@ -13,8 +13,7 @@ func maxScoreIndices(nums []int) []int {
         var sums = zeros + ones
         if sums > count {
             count = sums
-            res = nil
-            res = append(res, i)
+            res = []int{i}
         } else if sums == count {
             res = append(res, i)
         }
