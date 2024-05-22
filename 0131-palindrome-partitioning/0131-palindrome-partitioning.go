@@ -1,31 +1,34 @@
 func partition(s string) [][]string {
     var res = [][]string{}
-    var palinParts func(index int, isPalin bool, currStack []string)
-    
-    isPalindrome := func(str string) bool {
-        var size = len(str)
-        for i := range size / 2 {
-            if str[i] != str[size - i - 1] {
-                return false
-            }
+    var dp = [][]bool{}
+    var size = len(s)
+    var palinParts func(index int, currStack []string)
+
+    for range size {
+        var temp = []bool{}
+        for range size {
+            temp = append(temp, false)
         }
-        return true
+        dp = append(dp, temp)
     }
     
-    palinParts = func(index int, isPalin bool, currStack []string) {
+    palinParts = func(index int, currStack []string) {
         if index >= len(s) {
-            if isPalin {
-                var temp = make([]string, len(currStack))
-                copy(temp, currStack)
-                res = append(res, temp)
-            }
+            var temp = make([]string, len(currStack))
+            copy(temp, currStack)
+            res = append(res, temp)
             return
         }
-        
+        var str = ""
         for i := index; i < len(s); i++ {
-            palinParts(i + 1, isPalin && isPalindrome(string(s[index: i + 1])), append(currStack, s[index: i + 1]))
+            str += string(s[i])
+            if str[0] == s[i] && (i - index <= 2 || dp[index + 1][i - 1]) {
+                dp[index][i] = true
+                palinParts(i + 1, append(currStack, str))
+            }
         }
     }
-    palinParts(0, true, []string{})
+    
+    palinParts(0, []string{})
     return res
 }
