@@ -4,13 +4,13 @@ func maximumCostSubstring(s string, chars string, vals []int) int {
         charMap[c] = vals[i]
     }
     
-    var charIntSub = []int{}
-    for _, c := range s {
+    var charIntSub = make([]int, len(s))
+    for i, c := range s {
         var val = int(c) - 96
         if _, ok := charMap[c]; ok {
             val = charMap[c]
         }
-        charIntSub = append(charIntSub, val)
+        charIntSub[i] = val
     }
     
     var maxSoFar, maxCurr = 0, 0
