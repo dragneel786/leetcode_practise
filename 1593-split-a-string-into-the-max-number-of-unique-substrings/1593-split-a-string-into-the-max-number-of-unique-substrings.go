@@ -4,9 +4,6 @@ func maxUniqueSplit(s string) int {
     
     splitsCounts = func (start, end int) int {
         if end >= len(s) {
-            if !uniq[s[start: end]] {
-                return 0
-            }
             return 0
         }
         
