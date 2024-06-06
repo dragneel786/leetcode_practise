@@ -11,11 +11,7 @@ func isNStraightHand(hand []int, groupSize int) bool {
             index++
         }
 
-        if index >= len(hand) {
-            break
-        }
-
-        for inc := range groupSize {
+        for inc := 0; index < len(hand) && inc < groupSize; inc++ {
             if handCount[hand[index] + inc] == 0 {
                 return false
             }
