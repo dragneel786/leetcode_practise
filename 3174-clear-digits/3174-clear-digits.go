@@ -1,20 +1,12 @@
 func clearDigits(s string) string {
-    var que = list.New()
+    var que = []string{}
     for _, c := range s {
         if unicode.IsDigit(c) {
-            var e = que.Back()
-			que.Remove(e)
+            que = que[:len(que) - 1]
         } else {
-			que.PushBack(c)
+            que = append(que, string(c))
 		}
     }
-
-	var ret = []string{}
-	for que.Len() > 0 {
-		var e = que.Front()
-		ret = append(ret, string(e.Value.(rune)))
-		que.Remove(e)
-	} 
 	
-	return strings.Join(ret, "")
+	return strings.Join(que, "")
 }
