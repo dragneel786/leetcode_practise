@@ -1,26 +1,16 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        zeros = 0
-        prod = 1
-        for num in nums:
-            if(not num):
-                zeros += 1
-            else:
-                prod *= num
-                
-            if(zeros > 1):
-                return [0] * len(nums)
-            
-            
-        
+        prefix_prod = 1
+        result = [0] * len(nums)
         for i, num in enumerate(nums):
-            if(zeros):
-                if(not num):
-                    nums[i] = prod
-                else:
-                    nums[i] = 0
-            
-            else:   
-                nums[i] = prod // num
+            result[i] = prefix_prod
+            prefix_prod *= num
         
-        return nums
+        postfix_prod = 1
+        for i in range(len(nums) - 1, -1, -1):
+            result[i] *= postfix_prod
+            postfix_prod *= nums[i]
+        
+        return result
+            
+        
