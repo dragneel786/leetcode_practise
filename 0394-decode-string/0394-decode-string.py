@@ -1,25 +1,42 @@
 class Solution:
     def decodeString(self, s: str) -> str:
         
-        def pop_and_create():
-            temp = ''
-            while(st[-1] != '['):
-                temp = st.pop() + temp
+        def dec_str(string):
+            if '[' not in string:
+                return string
 
-            st.pop()
-            st.append(int(st.pop()) * temp)
+            val = index = 0
+            st = []
+            while(index < len(string)):
+                c = string[index]
+                if c.isdigit():
+                    val = (val * 10) + int(c)
 
-        st = deque()
-        for c in s:
-            if(c == ']'):
-                pop_and_create()
-            else:
-                if(st and st[-1].isdigit() and c.isdigit()):
-                    st[-1] = st[-1] + c
-                else:
+                elif c.isalpha():
                     st.append(c)
 
-        return ''.join(st)
+                elif c == '[':
+                    op = 1
+                    end = index + 1
+                    while(op != 0):
+                        if string[end] == '[':
+                            op += 1
+
+                        elif string[end] == ']':
+                            op -= 1
+
+                        end += 1
+
+                    ret = dec_str(string[index + 1: end - 1])
+                    st.append(val * ret)
+                    index = end - 1
+                    val = 0
+
+                index += 1
+
+            return ''.join(st)
+
+        return dec_str(s)
                         
                         
                 
