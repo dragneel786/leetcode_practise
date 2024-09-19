@@ -1,13 +1,7 @@
 class Solution:
     def diffWaysToCompute(self, expression: str) -> List[int]:
-        ops = ['+', '-', '*']
-        for op in ops:
-            if op in expression:
-                break
-        else:
-            return [int(expression)]
-        
         res = []
+        ops = ['+','-','*']
         for i in range(len(expression)):
             if expression[i] in ops:
                 left = self.diffWaysToCompute(expression[:i])
@@ -17,7 +11,7 @@ class Solution:
                     for r in right:
                         res.append(eval(f'{l}{expression[i]}{r}'))
         
-        return res
+        return res if res else [int(expression)]
                         
                 
                 
