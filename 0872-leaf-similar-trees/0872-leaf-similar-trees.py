@@ -7,17 +7,15 @@
 class Solution:
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
         
-        def all_leafs(node):
-            if(not node):
+        def values(node):
+            if not node:
                 return []
             
-            if(not node.left and not node.right):
+            if node.left == node.right == None:
                 return [node.val]
-            
-            left = all_leafs(node.left)
-            right = all_leafs(node.right)
+                
+            left = values(node.left)
+            right = values(node.right)
             return left + right
         
-        
-        return all_leafs(root1) == all_leafs(root2)
-            
+        return values(root1) == values(root2)
