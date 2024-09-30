@@ -19,7 +19,7 @@ class Solution:
                 lnode = node
                 return False
             
-            if (node.val == p.val or node.val == q.val) and (left or right):
+            if (node.val in [p.val, q.val]) and (left or right):
                 lnode = node
                 return False
             
