@@ -3,23 +3,18 @@ class Solution:
         if k == 1:
             return nums
         
-        counts = Counter()
+        counts = 0
         si = 0
         res = []
         for i in range(1, len(nums)):
-            counts[nums[i] - nums[i - 1]] += 1
+            counts += (nums[i] - nums[i - 1] == 1)
+            
             if i >= k:
-                diff = nums[si + 1] - nums[si]
-                counts[diff] -= 1
-                if counts[diff] == 0: del counts[diff]
+                counts -= (nums[si + 1] - nums[si] == 1)
                 si += 1
             
             if i >= k - 1:
-                if 1 not in counts or counts[1] != k - 1:
-                    res.append(-1)
-                
-                else:
-                    res.append(nums[i])
+                res.append(-1 if counts != k - 1 else nums[i])
     
         return res
             
