@@ -5,7 +5,7 @@ class Solution:
             if index2 >= len(str2):
                 break
                 
-            inc_ch = chr(((ord(c) - 97) % 26 + 1) + 97) if c != 'z' else 'a'
+            inc_ch = chr((ord(c) - ord('a') + 1) % 26 + ord('a'))
             if c == str2[index2] or inc_ch == str2[index2]:
                 index2 += 1
                 
