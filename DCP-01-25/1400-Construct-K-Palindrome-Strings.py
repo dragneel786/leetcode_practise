@@ -10,11 +10,6 @@ class Solution:
 
         if odds > k:
             return False
-        
-        for v in range(values + 1):
-            # print(((values - v), (v * 2), odds))
-            if ((values - v) + (v * 2) + odds) >= k:
-                return True
 
-        return False
+        return (values * 2) + odds >= k
         
