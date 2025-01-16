@@ -3,10 +3,11 @@ class Solution:
         res = []
         zig = zag = True
         for row in grid:
-            for v in (row if zig else row[::-1]):
-                if zag:
-                    res.append(v)
-                
+            rrange = range(len(row)) \
+            if zig else range(len(row) - 1, -1, -1)
+            
+            for i in rrange:
+                if zag: res.append(row[i])
                 zag = not zag
             
             zig = not zig
