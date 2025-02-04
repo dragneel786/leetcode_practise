@@ -6,17 +6,32 @@
 #         self.right = right
 class Solution:
     def flipMatchVoyage(self, root: Optional[TreeNode], voyage: List[int]) -> List[int]:
-        res = []
-        stack = [root]
-        i = 0
-        while stack:
-            node = stack.pop()
-            if not node: continue
-            if node and node.val != voyage[i]: return [-1]
-            i += 1
-            if node.right and node.right.val == voyage[i]:
-                if node.left: res.append(node.val)
-                stack.extend([node.left, node.right])
-            else:
-                stack.extend([node.right, node.left])
-        return res
+        
+        def pre_order(node):
+            nonlocal start
+            if node is None:
+                return True
+            
+            if node.val != voyage[start]:
+                return False
+            
+            start += 1
+            if pre_order(node.left) and pre_order(node.right):
+                return True
+            
+            elif pre_order(node.right) and pre_order(node.left):
+                flipped.append(node.val)
+                return True
+            
+            return False
+        
+        start = 0
+        flipped = []
+        if not pre_order(root):
+            return [-1]
+
+        return flipped
+
+
+
+            
