@@ -1,16 +1,11 @@
 class Solution:
     def areAlmostEqual(self, s1: str, s2: str) -> bool:
-        diff_idx = []
+        diff1 = []
+        diff2 = []
         for i, (a, b) in enumerate(zip(s1, s2)):
             if a != b:
-                diff_idx.append(i)
+                diff1.append(a)
+                diff2.append(b)
+        
+        return len(diff1) in [0, 2] and len(diff2) in [0, 2] and sorted(diff1) == sorted(diff2)
             
-            if len(diff_idx) > 2:
-                return False
-
-        if len(diff_idx) == 2:
-            i, j = diff_idx
-            if s1[i] == s2[j] and s1[j] == s2[i]:
-                return True
-            
-        return len(diff_idx) == 0
