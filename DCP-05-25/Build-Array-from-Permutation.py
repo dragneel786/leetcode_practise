@@ -1,7 +1,9 @@
 class Solution:
     def buildArray(self, nums: List[int]) -> List[int]:
-        ans = [0] * len(nums)
         for i in range(len(nums)):
-            ans[i] = nums[nums[i]]
+            nums[i] += (1024 * (nums[nums[i]] % 1024))
         
-        return ans
+        for i in range(len(nums)):
+            nums[i] //= 1024
+        
+        return nums
