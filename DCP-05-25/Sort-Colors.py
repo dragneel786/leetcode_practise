@@ -3,14 +3,20 @@ class Solution:
         \\\
         Do not return anything, modify nums in-place instead.
         \\\
-        counts = Counter(nums)
-        start = min(counts.keys())
-        for i in range(len(nums)):
-            nums[i] = start
-            counts[start] -= 1
-            if counts[start] == 0:
-                for i in range(0, 3):
-                    if counts[i] == 0:
-                        continue
-                    start = i
-                    break
+        n = len(nums)
+        lo = mid = 0
+        hi = n - 1
+        while(mid <= hi):
+            if nums[mid] == 0:
+                nums[mid], nums[lo] = nums[lo], nums[mid]
+                lo += 1
+                mid += 1
+
+            elif nums[mid] == 1:
+                mid += 1
+            
+            else:
+                nums[mid], nums[hi] = nums[hi], nums[mid]
+                hi -= 1
+
+        
