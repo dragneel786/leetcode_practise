@@ -1,36 +1,41 @@
 class Solution:
     def colorTheGrid(self, m: int, n: int) -> int:
+        def is_valid(state):
+            for j in range(1, len(state)):
+                if state[j - 1] == state[j]:
+                    return False
+
+            return True
+
+        def is_valid_alter(state1, state2):
+            for a, b in zip(state1, state2):
+                if a == b:
+                    return False
+            
+            return True
+
         mod = 10**9 + 7
-        # Hash mapping stores all valid coloration schemes for a single row that meet the requirements
-        # The key represents mask, and the value represents the ternary string of mask (stored as a list)
-        valid = dict()
+        valid_state = dict()
+        for i, state in enumerate(product([0,1,2], repeat=m)):
+            if is_valid(state):
+                valid_state[i] = state
 
-        # Enumerate masks that meet the requirements within the range [0, 3^m)
-        for mask in range(3**m):
-            color = list()
-            mm = mask
-            for i in range(m):
-                color.append(mm % 3)
-                mm //= 3
-            if any(color[i] == color[i + 1] for i in range(m - 1)):
-                continue
-            valid[mask] = color
+        compatible_states = defaultdict(list)
+        for mask1, state1 in valid_state.items():
+            for mask2, state2 in valid_state.items():
+                if is_valid_alter(state1, state2):
+                    compatible_states[mask1].append(mask2)
 
-        # Preprocess all (mask1, mask2) binary tuples, satisfying mask1 and mask2 When adjacent rows, the colors of the two cells in the same column are 
-        adjacent = defaultdict(list)
-        for mask1, color1 in valid.items():
-            for mask2, color2 in valid.items():
-                if not any(x == y for x, y in zip(color1, color2)):
-                    adjacent[mask1].append(mask2)
-
-        f = [int(mask in valid) for mask in range(3**m)]
-        for i in range(1, n):
-            g = [0] * (3**m)
-            for mask2 in valid.keys():
-                for mask1 in adjacent[mask2]:
-                    g[mask2] += f[mask1]
-                    if g[mask2] >= mod:
-                        g[mask2] -= mod
-            f = g
-
-        return sum(f) % mod       
+        
+        dp = {k: 1 for k in valid_state.keys()}
+        for _ in range(1, n):
+            new_dp = Counter()
+            for key in dp.keys():
+                for next_state in compatible_states[key]:
+                    new_dp[next_state] += dp[key]
+                    new_dp[next_state] %= mod
+            
+            dp = new_dp
+            
+        return sum(dp.values()) % mod
+     
