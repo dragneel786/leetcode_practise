@@ -1,29 +1,23 @@
 class Solution:
     def maxRunTime(self, n: int, batteries: List[int]) -> int:
+        # Get the sum of all extra batteries.
+        batteries.sort()   
+        extra = sum(batteries[:-n])
         
-        def calcy(hrs):
-            i = m - 1
-            while(i and batteries[i] >= hrs):
-                i -= 1
+        # live stands for the n largest batteries we chose for n computers.
+
+        live = batteries[-n:]
+        
+        # We increase the total running time using 'extra' by increasing 
+        # the running time of the computer with the smallest battery.
+        for i in range(n - 1):
+            # If the target running time is between live[i] and live[i + 1].
+            if extra // (i + 1) < live[i + 1] - live[i]:
+                return live[i] + extra // (i + 1)
             
-            remain = n - (m - i - 1)
-            return sum(batteries[:i + 1]) >= remain * hrs
-            
-        m = len(batteries)
-        batteries.sort()
-        low = batteries[0]
-        high = sum(batteries)
-        ans = 0
-        while(low <= high):
-            mid = (high - low) // 2 + low
-            ret = calcy(mid)
-            if(ret):
-                low = mid + 1
-                ans = mid
-            else:
-                high = mid - 1
-                
-        return ans
-            
-            
-    
+            # Reduce 'extra' by the total power used.
+            extra -= (i + 1) * (live[i + 1] - live[i])
+        
+        # If there is power left, we can increase the running time 
+        # of all computers.
+        return live[-1] + extra // n
