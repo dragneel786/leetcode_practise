@@ -1,16 +1,14 @@
 class Solution:
     def minDeletionSize(self, strs: List[str]) -> int:
-        delete_col = set()
-        prev = strs[0]
-        for curr in strs[1:]:
-            for i, (a, b) in enumerate(zip(prev, curr)):
-                if(a > b):
-                    delete_col.add(i)
-            if(len(delete_col) == len(strs[0])):
-                break
-            
-            prev = curr
+        cols = [0] * len(strs[0])
+        prev = ['a'] * len(strs[0])
+        for word in strs:
+            for i, c in enumerate(word):
+                if cols[i] == 0:
+                    if prev[i] > c:
+                        cols[i] = 1
+                
+                prev[i] = c
         
-        return len(delete_col)
-            
-        
+        print(cols)
+        return sum(cols)
