@@ -1,8 +1,8 @@
-<h2><a href="https://leetcode.com/problems/minimum-penalty-for-a-shop/">2483. Minimum Penalty for a Shop</a></h2><h3>Medium</h3><hr><div><p>You are given the customer visit log of a shop represented by a <strong>0-indexed</strong> string <code>customers</code> consisting only of characters <code>'N'</code> and <code>'Y'</code>:</p>
+<h2><a href="https://leetcode.com/problems/minimum-penalty-for-a-shop">2483. Minimum Penalty for a Shop</a></h2><h3>Medium</h3><hr><p>You are given the customer visit log of a shop represented by a <strong>0-indexed</strong> string <code>customers</code> consisting only of characters <code>&#39;N&#39;</code> and <code>&#39;Y&#39;</code>:</p>
 
 <ul>
-	<li>if the <code>i<sup>th</sup></code> character is <code>'Y'</code>, it means that customers come at the <code>i<sup>th</sup></code> hour</li>
-	<li>whereas <code>'N'</code> indicates that no customers come at the <code>i<sup>th</sup></code> hour.</li>
+	<li>if the <code>i<sup>th</sup></code> character is <code>&#39;Y&#39;</code>, it means that customers come at the <code>i<sup>th</sup></code> hour</li>
+	<li>whereas <code>&#39;N&#39;</code> indicates that no customers come at the <code>i<sup>th</sup></code> hour.</li>
 </ul>
 
 <p>If the shop closes at the <code>j<sup>th</sup></code> hour (<code>0 &lt;= j &lt;= n</code>), the <strong>penalty</strong> is calculated as follows:</p>
@@ -19,7 +19,8 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> customers = "YYNY"
+<pre>
+<strong>Input:</strong> customers = &quot;YYNY&quot;
 <strong>Output:</strong> 2
 <strong>Explanation:</strong> 
 - Closing the shop at the 0<sup>th</sup> hour incurs in 1+1+0+1 = 3 penalty.
@@ -28,26 +29,27 @@
 - Closing the shop at the 3<sup>rd</sup> hour incurs in 0+0+1+1 = 2 penalty.
 - Closing the shop at the 4<sup>th</sup> hour incurs in 0+0+1+0 = 1 penalty.
 Closing the shop at 2<sup>nd</sup> or 4<sup>th</sup> hour gives a minimum penalty. Since 2 is earlier, the optimal closing time is 2.
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> customers = "NNNNN"
+<pre>
+<strong>Input:</strong> customers = &quot;NNNNN&quot;
 <strong>Output:</strong> 0
-<strong>Explanation:</strong> It is best to close the shop at the 0<sup>th</sup> hour as no customers arrive.<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+<strong>Explanation:</strong> It is best to close the shop at the 0<sup>th</sup> hour as no customers arrive.</pre>
 
 <p><strong class="example">Example 3:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> customers = "YYYY"
+<pre>
+<strong>Input:</strong> customers = &quot;YYYY&quot;
 <strong>Output:</strong> 4
 <strong>Explanation:</strong> It is best to close the shop at the 4<sup>th</sup> hour as customers arrive at each hour.
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
 	<li><code>1 &lt;= customers.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>customers</code> consists only of characters <code>'Y'</code> and <code>'N'</code>.</li>
+	<li><code>customers</code> consists only of characters <code>&#39;Y&#39;</code> and <code>&#39;N&#39;</code>.</li>
 </ul>
-</div>
