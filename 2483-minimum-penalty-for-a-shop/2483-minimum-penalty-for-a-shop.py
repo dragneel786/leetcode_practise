@@ -1,18 +1,12 @@
 class Solution:
     def bestClosingTime(self, customers: str) -> int:
-        early = 0
-        curr_penalty = min_penalty = customers.count('Y')
-        for i, c in enumerate(customers + '-'):
-            if(c == 'Y'):
-                curr_penalty -= 1
-            else:
-                curr_penalty += 1
-            
-            if(min_penalty > curr_penalty):
-                early = i + 1
-                min_penalty = curr_penalty
-            
-        return early
-            
-            
+
+        x = y = z = 0
         
+        for i, ch in enumerate(customers):
+            z += 1 if ch == "Y" else -1
+            if z > y:
+                y, x = z, i + 1 
+                
+        return x
+                
