@@ -1,25 +1,26 @@
 class Solution:
     def mostBooked(self, n: int, meetings: List[List[int]]) -> int:
-        meet_count = [0] * n
-        free = [i for i in range(n)]
-        booked = []
+        meetings.sort()
         
-        heapify(free) 
-        for start, end in sorted(meetings):
-            
-            while(booked and start >= booked[0][0]):
-                _, room = heappop(booked)
-                heappush(free, room)
-                
+        free = list(range(n))
+        heapq.heapify(free)
+        busy = []
+        cnt = [0] * n
+
+        for s, e in meetings:
+            d = e - s
+
+            while busy and busy[0][0] <= s:
+                _, r = heapq.heappop(busy)
+                heapq.heappush(free, r)
+
             if free:
-                room = heappop(free)
-                heappush(booked, (end, room))
+                r = heapq.heappop(free)
+                heapq.heappush(busy, (e, r))
+                cnt[r] += 1
             else:
-                room_available, room = heappop(booked)
-                heappush(booked, (room_available + end - start, room))
-                
-            meet_count[room] += 1
-            
-        return meet_count.index(max(meet_count))
-                
-        
+                t, r = heapq.heappop(busy)
+                heapq.heappush(busy, (t + d, r))
+                cnt[r] += 1
+
+        return cnt.index(max(cnt))
