@@ -4,8 +4,8 @@ class Solution:
         digits[-1] += 1
         for i in range(len(digits) - 1, -1, -1):
             sums = (digits[i] + carry)
-            carry = digits[i] // 10
-            digits[i] = digits[i] % 10
+            carry = sums // 10
+            digits[i] = sums % 10
         
         if carry:
             return [carry] + digits
