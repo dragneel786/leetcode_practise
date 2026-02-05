@@ -1,9 +1,4 @@
 class Solution:
-    def constructTransformedArray(self, nums: List[int]) -> List[int]:
-        size = len(nums)
-        nums = nums[::-1] + nums + nums
-        res = []
-        for i in range(size, 2 * size):
-            res.append(nums[i + (nums[i] % size)])
-        
-        return res
+    def constructTransformedArray(self, nums):
+        n = len(nums)
+        return [nums[((i + nums[i]) % n + n) % n] for i in range(n)]
