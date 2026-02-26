@@ -1,30 +1,25 @@
 func numSteps(s string) int {
-    var que = list.New()
-    for _, c := range s {
-        que.PushFront(string(c))
+    n := len(s)
+    if n == 1 {
+        return 0
     }
-    
-    var steps = 0
-    for que.Len() > 1 {
-        var temp = que.Front()
-        if temp.Value.(string) == "1" {
-
-            for temp != nil && temp.Value.(string) == "1" {
-                temp.Value = "0"
-                temp = temp.Next()
+    if n == 2 {
+        return 1
+    }
+    res, ones := 0, 0
+    for i := n-1; i >= 0; i-- {
+        if s[i] == '0' {
+            res = res + 1 + ones
+            if ones > 0 {
+                ones = 1
             }
-    
-            if temp != nil {
-                temp.Value = "1"
-            } else {
-                que.PushBack("1")
-            }
-            steps++
+        } else {
+            ones++
         }
-        var element = que.Front()
-        que.Remove(element)
-        steps++
     }
-
-    return steps
+    if ones > 1 {
+        res += ones + 1
+    }
+    
+    return res
 }
