@@ -27,6 +27,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/dragneel786/leetcode_practise/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
+| [1758-minimum-changes-to-make-alternating-binary-string](https://github.com/dragneel786/leetcode_practise/tree/main/1758-minimum-changes-to-make-alternating-binary-string/) | Easy |
 ## Recursion
 | Problem Name | Difficulty |
 | ------- | ------- |
