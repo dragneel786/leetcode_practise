@@ -17,6 +17,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1536-minimum-swaps-to-arrange-a-binary-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1536-minimum-swaps-to-arrange-a-binary-grid/) | Medium |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/dragneel786/leetcode_practise/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
 | [1878-get-biggest-three-rhombus-sums-in-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1878-get-biggest-three-rhombus-sums-in-a-grid/) | Medium |
+| [1886-determine-whether-matrix-can-be-obtained-by-rotation](https://github.com/dragneel786/leetcode_practise/tree/main/1886-determine-whether-matrix-can-be-obtained-by-rotation/) | Easy |
 | [1980-find-unique-binary-string](https://github.com/dragneel786/leetcode_practise/tree/main/1980-find-unique-binary-string/) | Medium |
 ## Greedy
 | Problem Name | Difficulty |
@@ -30,6 +31,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1536-minimum-swaps-to-arrange-a-binary-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1536-minimum-swaps-to-arrange-a-binary-grid/) | Medium |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/dragneel786/leetcode_practise/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
 | [1878-get-biggest-three-rhombus-sums-in-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1878-get-biggest-three-rhombus-sums-in-a-grid/) | Medium |
+| [1886-determine-whether-matrix-can-be-obtained-by-rotation](https://github.com/dragneel786/leetcode_practise/tree/main/1886-determine-whether-matrix-can-be-obtained-by-rotation/) | Easy |
 ## String
 | Problem Name | Difficulty |
 | ------- | ------- |
