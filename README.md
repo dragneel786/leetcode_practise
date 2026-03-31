@@ -30,6 +30,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [1536-minimum-swaps-to-arrange-a-binary-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1536-minimum-swaps-to-arrange-a-binary-grid/) | Medium |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/dragneel786/leetcode_practise/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
+| [3474-lexicographically-smallest-generated-string](https://github.com/dragneel786/leetcode_practise/tree/main/3474-lexicographically-smallest-generated-string/) | Hard |
 | [3600-maximize-spanning-tree-stability-with-upgrades](https://github.com/dragneel786/leetcode_practise/tree/main/3600-maximize-spanning-tree-stability-with-upgrades/) | Hard |
 ## Matrix
 | Problem Name | Difficulty |
@@ -51,6 +52,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1784-check-if-binary-string-has-at-most-one-segment-of-ones](https://github.com/dragneel786/leetcode_practise/tree/main/1784-check-if-binary-string-has-at-most-one-segment-of-ones/) | Easy |
 | [1980-find-unique-binary-string](https://github.com/dragneel786/leetcode_practise/tree/main/1980-find-unique-binary-string/) | Medium |
 | [2839-check-if-strings-can-be-made-equal-with-operations-i](https://github.com/dragneel786/leetcode_practise/tree/main/2839-check-if-strings-can-be-made-equal-with-operations-i/) | Easy |
+| [3474-lexicographically-smallest-generated-string](https://github.com/dragneel786/leetcode_practise/tree/main/3474-lexicographically-smallest-generated-string/) | Hard |
 | [3838-weighted-word-mapping](https://github.com/dragneel786/leetcode_practise/tree/main/3838-weighted-word-mapping/) | Easy |
 ## Recursion
 | Problem Name | Difficulty |
@@ -134,4 +136,8 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [3546-equal-sum-grid-partition-i](https://github.com/dragneel786/leetcode_practise/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
+## String Matching
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3474-lexicographically-smallest-generated-string](https://github.com/dragneel786/leetcode_practise/tree/main/3474-lexicographically-smallest-generated-string/) | Hard |
 <!---LeetCode Topics End-->
