@@ -1,34 +1,41 @@
 class Solution:
-    def survivedRobotsHealths(self, positions: List[int], healths: List[int], directions: str) -> List[int]:
-        robot_spec = [(p, i, h, d) for i, (p, h, d) in enumerate(zip(positions, healths, directions))]
-        robot_spec.sort()
-        
-        left_stack = deque()
-        res = [0] * len(positions)
-        for p, i, h, d in robot_spec:
-            if d == 'L':
-                while left_stack and left_stack[-1][2] < h:
-                    left_stack.pop()
-                    h -= 1
-                
-                if len(left_stack) == 0:
-                    res[i] = h
-                
-                else:
-                    if left_stack[-1][2] == h:
-                        left_stack.pop()
+    def survivedRobotsHealths(
+        self, positions: List[int], healths: List[int], directions: str
+    ) -> List[int]:
+        n = len(positions)
+        indices = list(range(n))
+        result = []
+        stack = deque()
 
-                    else:
-                        left_stack[-1][2] -= 1
-            
+        # Sort indices based on their positions
+        indices.sort(key=lambda x: positions[x])
+
+        for current_index in indices:
+            # Add right-moving robots to the stack
+            if directions[current_index] == "R":
+                stack.append(current_index)
             else:
-                left_stack.append([i, p, h])
-        
-        while left_stack:
-            i, p, h = left_stack.pop()
-            res[i] = h
-        
-        return [r for r in res if r]
-            
-            
-        
+                while stack and healths[current_index] > 0:
+                    # Pop the top robot from the stack for collision check
+                    top_index = stack.pop()
+
+                    if healths[top_index] > healths[current_index]:
+                        # Top robot survives, current robot is destroyed
+                        healths[top_index] -= 1
+                        healths[current_index] = 0
+                        stack.append(top_index)
+                    elif healths[top_index] < healths[current_index]:
+                        # Current robot survives, top robot is destroyed
+                        healths[current_index] -= 1
+                        healths[top_index] = 0
+                    else:
+                        # Both robots are destroyed
+                        healths[current_index] = 0
+                        healths[top_index] = 0
+
+        # Collect surviving robots
+        for index in range(n):
+            if healths[index] > 0:
+                result.append(healths[index])
+
+        return result
