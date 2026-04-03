@@ -23,6 +23,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [2751-robot-collisions](https://github.com/dragneel786/leetcode_practise/tree/main/2751-robot-collisions/) | Hard |
 | [2906-construct-product-matrix](https://github.com/dragneel786/leetcode_practise/tree/main/2906-construct-product-matrix/) | Medium |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/dragneel786/leetcode_practise/tree/main/2946-matrix-similarity-after-cyclic-shifts/) | Easy |
+| [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 | [3418-maximum-amount-of-money-robot-can-earn](https://github.com/dragneel786/leetcode_practise/tree/main/3418-maximum-amount-of-money-robot-can-earn/) | Medium |
 | [3546-equal-sum-grid-partition-i](https://github.com/dragneel786/leetcode_practise/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
@@ -33,6 +34,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [1536-minimum-swaps-to-arrange-a-binary-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1536-minimum-swaps-to-arrange-a-binary-grid/) | Medium |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/dragneel786/leetcode_practise/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
+| [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 | [3474-lexicographically-smallest-generated-string](https://github.com/dragneel786/leetcode_practise/tree/main/3474-lexicographically-smallest-generated-string/) | Hard |
 | [3600-maximize-spanning-tree-stability-with-upgrades](https://github.com/dragneel786/leetcode_practise/tree/main/3600-maximize-spanning-tree-stability-with-upgrades/) | Hard |
 ## Matrix
@@ -104,6 +106,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 ## Binary Search
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 | [3600-maximize-spanning-tree-stability-with-upgrades](https://github.com/dragneel786/leetcode_practise/tree/main/3600-maximize-spanning-tree-stability-with-upgrades/) | Hard |
 | [3661-maximum-walls-destroyed-by-robots](https://github.com/dragneel786/leetcode_practise/tree/main/3661-maximum-walls-destroyed-by-robots/) | Hard |
 ## Union-Find
@@ -124,6 +127,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1622-fancy-sequence](https://github.com/dragneel786/leetcode_practise/tree/main/1622-fancy-sequence/) | Hard |
 | [1878-get-biggest-three-rhombus-sums-in-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1878-get-biggest-three-rhombus-sums-in-a-grid/) | Medium |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/dragneel786/leetcode_practise/tree/main/2946-matrix-similarity-after-cyclic-shifts/) | Easy |
+| [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 ## Design
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -143,6 +147,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1878-get-biggest-three-rhombus-sums-in-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1878-get-biggest-three-rhombus-sums-in-a-grid/) | Medium |
+| [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 ## Enumeration
 | Problem Name | Difficulty |
 | ------- | ------- |
