@@ -1,26 +1,26 @@
 class Solution:
     def minFlips(self, s: str) -> int:
-        switch = lambda v: '0' if(v == '1') else '1'
-        decrement = lambda pos, st, pre: (pre != st) if(pos >= n) else 0
+        # Characteristic function
+        I = lambda ch, x: int(ord(ch) - ord("0") == x)
 
         n = len(s)
-        s += s
-        flip1 = flip2 = 0
-        start = prev = '0'
-        min_flip = inf
-        for i in range(2 * n):
-            min_flip = min(flip1, flip2, min_flip) if(i >= n) else inf
+        pre = [[0, 0] for _ in range(n)]
+        # Note the boundary case when i=0
+        for i in range(n):
+            pre[i][0] = (0 if i == 0 else pre[i - 1][1]) + I(s[i], 1)
+            pre[i][1] = (0 if i == 0 else pre[i - 1][0]) + I(s[i], 0)
 
-            flip1 += (start != s[i]) - decrement(i, s[i - n], prev)
-            flip2 += (start == s[i]) - decrement(i, s[i - n], switch(prev))
+        ans = min(pre[n - 1][0], pre[n - 1][1])
+        if n % 2 == 1:
+            # If n is an odd number, it is also necessary to calculate suf
+            suf = [[0, 0] for _ in range(n)]
+            # Note the boundary case when i = n - 1
+            for i in range(n - 1, -1, -1):
+                suf[i][0] = (0 if i == n - 1 else suf[i + 1][1]) + I(s[i], 1)
+                suf[i][1] = (0 if i == n - 1 else suf[i + 1][0]) + I(s[i], 0)
 
-            prev = switch(prev) if(i >= n) else prev
-            start = switch(start)
+            for i in range(n - 1):
+                ans = min(ans, pre[i][0] + suf[i + 1][0])
+                ans = min(ans, pre[i][1] + suf[i + 1][1])
 
-        return min_flip
-            
-            
-        
-            
-            
-    
+        return ans
