@@ -32,6 +32,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3833-count-dominant-indices](https://github.com/dragneel786/leetcode_practise/tree/main/3833-count-dominant-indices/) | Easy |
 | [3838-weighted-word-mapping](https://github.com/dragneel786/leetcode_practise/tree/main/3838-weighted-word-mapping/) | Easy |
 | [3842-toggle-light-bulbs](https://github.com/dragneel786/leetcode_practise/tree/main/3842-toggle-light-bulbs/) | Easy |
+| [3875-construct-uniform-parity-array-i](https://github.com/dragneel786/leetcode_practise/tree/main/3875-construct-uniform-parity-array-i/) | Easy |
 ## Greedy
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -140,6 +141,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1878-get-biggest-three-rhombus-sums-in-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1878-get-biggest-three-rhombus-sums-in-a-grid/) | Medium |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/dragneel786/leetcode_practise/tree/main/2946-matrix-similarity-after-cyclic-shifts/) | Easy |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
+| [3875-construct-uniform-parity-array-i](https://github.com/dragneel786/leetcode_practise/tree/main/3875-construct-uniform-parity-array-i/) | Easy |
 ## Design
 | Problem Name | Difficulty |
 | ------- | ------- |
