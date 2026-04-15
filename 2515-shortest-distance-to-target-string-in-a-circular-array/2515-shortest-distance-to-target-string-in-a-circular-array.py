@@ -6,12 +6,6 @@ class Solution:
             if word != target:
                 continue
             
-            if i < startIndex:
-                res = min(startIndex - i, res)
-                res = min((i - 0) + (n - startIndex), res)
-            
-            else:
-                res = min(i - startIndex, res)
-                res = min((n - i) + (startIndex - 0), res)
+            res = min(res, abs(i - startIndex), n - abs(i - startIndex))
 
         return res if res != inf else -1
