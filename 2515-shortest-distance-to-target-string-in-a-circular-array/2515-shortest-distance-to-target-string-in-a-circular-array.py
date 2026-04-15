@@ -1,26 +1,17 @@
 class Solution:
-    def closetTarget(self, words: List[str], target: str, startIndex: int) -> int:
-        if (words[startIndex] == target):
-            return 0
-
+    def closestTarget(self, words: List[str], target: str, startIndex: int) -> int:
+        res = inf
         n = len(words)
-        words.extend(words)
-        steps = 1
-        i = n + startIndex - 1
-        j = startIndex + 1
-        while (i > -1 and j < 2 * n):
-            if (words[i] == target or words[j] == target):
-                return steps
-
-            if (i > -1):
-                i -= 1
-
-            if (j < 2 * n):
-                j += 1
-
-            steps += 1
-
-        return -1
-
-        
+        for i, word in enumerate(words):
+            if word != target:
+                continue
             
+            if i < startIndex:
+                res = min(startIndex - i, res)
+                res = min((i - 0) + (n - startIndex), res)
+            
+            else:
+                res = min(i - startIndex, res)
+                res = min((n - i) + (startIndex - 0), res)
+
+        return res if res != inf else -1
