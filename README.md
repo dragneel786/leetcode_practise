@@ -35,6 +35,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [2515-shortest-distance-to-target-string-in-a-circular-array](https://github.com/dragneel786/leetcode_practise/tree/main/2515-shortest-distance-to-target-string-in-a-circular-array/) | Easy |
 | [2553-separate-the-digits-in-an-array](https://github.com/dragneel786/leetcode_practise/tree/main/2553-separate-the-digits-in-an-array/) | Easy |
 | [2751-robot-collisions](https://github.com/dragneel786/leetcode_practise/tree/main/2751-robot-collisions/) | Hard |
+| [2784-check-if-array-is-good](https://github.com/dragneel786/leetcode_practise/tree/main/2784-check-if-array-is-good/) | Easy |
 | [2906-construct-product-matrix](https://github.com/dragneel786/leetcode_practise/tree/main/2906-construct-product-matrix/) | Medium |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/dragneel786/leetcode_practise/tree/main/2946-matrix-similarity-after-cyclic-shifts/) | Easy |
 | [3225-maximum-score-from-grid-operations](https://github.com/dragneel786/leetcode_practise/tree/main/3225-maximum-score-from-grid-operations/) | Hard |
@@ -128,6 +129,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [0874-walking-robot-simulation](https://github.com/dragneel786/leetcode_practise/tree/main/0874-walking-robot-simulation/) | Medium |
 | [1674-minimum-moves-to-make-array-complementary](https://github.com/dragneel786/leetcode_practise/tree/main/1674-minimum-moves-to-make-array-complementary/) | Medium |
 | [1980-find-unique-binary-string](https://github.com/dragneel786/leetcode_practise/tree/main/1980-find-unique-binary-string/) | Medium |
+| [2784-check-if-array-is-good](https://github.com/dragneel786/leetcode_practise/tree/main/2784-check-if-array-is-good/) | Easy |
 | [3488-closest-equal-element-queries](https://github.com/dragneel786/leetcode_practise/tree/main/3488-closest-equal-element-queries/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 | [3629-minimum-jumps-to-reach-end-via-prime-teleportation](https://github.com/dragneel786/leetcode_practise/tree/main/3629-minimum-jumps-to-reach-end-via-prime-teleportation/) | Medium |
@@ -227,6 +229,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/dragneel786/leetcode_practise/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
 | [2463-minimum-total-distance-traveled](https://github.com/dragneel786/leetcode_practise/tree/main/2463-minimum-total-distance-traveled/) | Hard |
 | [2751-robot-collisions](https://github.com/dragneel786/leetcode_practise/tree/main/2751-robot-collisions/) | Hard |
+| [2784-check-if-array-is-good](https://github.com/dragneel786/leetcode_practise/tree/main/2784-check-if-array-is-good/) | Easy |
 | [3464-maximize-the-distance-between-points-on-a-square](https://github.com/dragneel786/leetcode_practise/tree/main/3464-maximize-the-distance-between-points-on-a-square/) | Hard |
 | [3661-maximum-walls-destroyed-by-robots](https://github.com/dragneel786/leetcode_practise/tree/main/3661-maximum-walls-destroyed-by-robots/) | Hard |
 | [3842-toggle-light-bulbs](https://github.com/dragneel786/leetcode_practise/tree/main/3842-toggle-light-bulbs/) | Easy |
