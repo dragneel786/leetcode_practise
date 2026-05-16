@@ -16,6 +16,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [0048-rotate-image](https://github.com/dragneel786/leetcode_practise/tree/main/0048-rotate-image/) | Medium |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/dragneel786/leetcode_practise/tree/main/0153-find-minimum-in-rotated-sorted-array/) | Medium |
+| [0154-find-minimum-in-rotated-sorted-array-ii](https://github.com/dragneel786/leetcode_practise/tree/main/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard |
 | [0396-rotate-function](https://github.com/dragneel786/leetcode_practise/tree/main/0396-rotate-function/) | Medium |
 | [0874-walking-robot-simulation](https://github.com/dragneel786/leetcode_practise/tree/main/0874-walking-robot-simulation/) | Medium |
 | [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1391-check-if-there-is-a-valid-path-in-a-grid/) | Medium |
@@ -176,6 +177,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/dragneel786/leetcode_practise/tree/main/0153-find-minimum-in-rotated-sorted-array/) | Medium |
+| [0154-find-minimum-in-rotated-sorted-array-ii](https://github.com/dragneel786/leetcode_practise/tree/main/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 | [3464-maximize-the-distance-between-points-on-a-square](https://github.com/dragneel786/leetcode_practise/tree/main/3464-maximize-the-distance-between-points-on-a-square/) | Hard |
 | [3488-closest-equal-element-queries](https://github.com/dragneel786/leetcode_practise/tree/main/3488-closest-equal-element-queries/) | Medium |
