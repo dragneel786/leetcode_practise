@@ -1,34 +1,46 @@
 class Solution:
     def minJumps(self, arr: List[int]) -> int:
-        def add_to_queue(q, nodes):
-            while(nodes):
-                poped = nodes.pop()
-                if(0 < poped < n and\
-                   poped not in visited):
-                    visited.add(poped)
-                    q.append(poped)
-        
-        
-        imap = defaultdict(list)
-        for i, a in enumerate(arr):
-            imap[a].append(i)
-        
-        q = deque([0])
-        steps = 0
-        visited = set([0])
         n = len(arr)
-        
-        while(q):
-            for _ in range(len(q)):
-                idx = q.popleft()
-                if(idx == n - 1):
-                    return steps
-                
-                add_to_queue(q, [*imap[arr[idx]],\
-                                 idx - 1, idx + 1])
-                imap[arr[idx]] = []
-            
-            steps += 1
+        if n <= 1:
+            return 0
 
-        
-        
+        graph = {}
+        for i in range(n):
+            if arr[i] in graph:
+                graph[arr[i]].append(i)
+            else:
+                graph[arr[i]] = [i]
+
+        curs = [0]  # store current layers
+        visited = {0}
+        step = 0
+
+        # when current layer exists
+        while curs:
+            nex = []
+
+            # iterate the layer
+            for node in curs:
+                # check if reached end
+                if node == n-1:
+                    return step
+
+                # check same value
+                for child in graph[arr[node]]:
+                    if child not in visited:
+                        visited.add(child)
+                        nex.append(child)
+
+                # clear the list to prevent redundant search
+                graph[arr[node]].clear()
+
+                # check neighbors
+                for child in [node-1, node+1]:
+                    if 0 <= child < len(arr) and child not in visited:
+                        visited.add(child)
+                        nex.append(child)
+
+            curs = nex
+            step += 1
+
+        return -1
