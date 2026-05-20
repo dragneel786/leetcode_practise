@@ -1,22 +1,23 @@
 class Solution:
-    def findThePrefixCommonArray(self, A: List[int], B: List[int]) -> List[int]:
-        count = 0
-        hashed = set()
-        res = []
-        for a, b in zip(A, B):
-            if(a in hashed):
-                count += 1
-            
-            if(b in hashed):
-                count += 1
-            
-            if(a == b):
-                count += 1
-            
-            # print(a, b, hashed)
-            res.append(count)
-            hashed.add(a)
-            hashed.add(b)
-        
-        return res
-            
+    def findThePrefixCommonArray(self, A: list, B: list) -> list:
+        n = len(A)
+        prefix_common_array = [0] * n
+
+        # Loop through each index to calculate common elements for each prefix
+        for current_index in range(n):
+            common_count = 0
+
+            # Compare elements in A and B within the range of current prefix
+            for a_index in range(current_index + 1):
+                for b_index in range(current_index + 1):
+
+                    # Check if elements match, and count if they do
+                    if A[a_index] == B[b_index]:
+                        common_count += 1
+                        break  # Prevent counting duplicates
+
+            # Store the count of common elements for the current prefix
+            prefix_common_array[current_index] = common_count
+
+        # Return the final list with counts of common elements in each prefix
+        return prefix_common_array
