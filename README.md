@@ -59,6 +59,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3548-equal-sum-grid-partition-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 | [3629-minimum-jumps-to-reach-end-via-prime-teleportation](https://github.com/dragneel786/leetcode_practise/tree/main/3629-minimum-jumps-to-reach-end-via-prime-teleportation/) | Medium |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/dragneel786/leetcode_practise/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
+| [3635-earliest-finish-time-for-land-and-water-rides-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3635-earliest-finish-time-for-land-and-water-rides-ii/) | Medium |
 | [3653-xor-after-range-multiplication-queries-i](https://github.com/dragneel786/leetcode_practise/tree/main/3653-xor-after-range-multiplication-queries-i/) | Medium |
 | [3660-jump-game-ix](https://github.com/dragneel786/leetcode_practise/tree/main/3660-jump-game-ix/) | Medium |
 | [3661-maximum-walls-destroyed-by-robots](https://github.com/dragneel786/leetcode_practise/tree/main/3661-maximum-walls-destroyed-by-robots/) | Hard |
@@ -80,6 +81,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3474-lexicographically-smallest-generated-string](https://github.com/dragneel786/leetcode_practise/tree/main/3474-lexicographically-smallest-generated-string/) | Hard |
 | [3600-maximize-spanning-tree-stability-with-upgrades](https://github.com/dragneel786/leetcode_practise/tree/main/3600-maximize-spanning-tree-stability-with-upgrades/) | Hard |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/dragneel786/leetcode_practise/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
+| [3635-earliest-finish-time-for-land-and-water-rides-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3635-earliest-finish-time-for-land-and-water-rides-ii/) | Medium |
 ## Matrix
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -214,6 +216,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3488-closest-equal-element-queries](https://github.com/dragneel786/leetcode_practise/tree/main/3488-closest-equal-element-queries/) | Medium |
 | [3600-maximize-spanning-tree-stability-with-upgrades](https://github.com/dragneel786/leetcode_practise/tree/main/3600-maximize-spanning-tree-stability-with-upgrades/) | Hard |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/dragneel786/leetcode_practise/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
+| [3635-earliest-finish-time-for-land-and-water-rides-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3635-earliest-finish-time-for-land-and-water-rides-ii/) | Medium |
 | [3661-maximum-walls-destroyed-by-robots](https://github.com/dragneel786/leetcode_practise/tree/main/3661-maximum-walls-destroyed-by-robots/) | Hard |
 ## Union-Find
 | Problem Name | Difficulty |
@@ -271,6 +274,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [2784-check-if-array-is-good](https://github.com/dragneel786/leetcode_practise/tree/main/2784-check-if-array-is-good/) | Easy |
 | [3464-maximize-the-distance-between-points-on-a-square](https://github.com/dragneel786/leetcode_practise/tree/main/3464-maximize-the-distance-between-points-on-a-square/) | Hard |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/dragneel786/leetcode_practise/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
+| [3635-earliest-finish-time-for-land-and-water-rides-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3635-earliest-finish-time-for-land-and-water-rides-ii/) | Medium |
 | [3661-maximum-walls-destroyed-by-robots](https://github.com/dragneel786/leetcode_practise/tree/main/3661-maximum-walls-destroyed-by-robots/) | Hard |
 | [3842-toggle-light-bulbs](https://github.com/dragneel786/leetcode_practise/tree/main/3842-toggle-light-bulbs/) | Easy |
 ## Heap (Priority Queue)
@@ -334,6 +338,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1861-rotating-the-box](https://github.com/dragneel786/leetcode_practise/tree/main/1861-rotating-the-box/) | Medium |
 | [2540-minimum-common-value](https://github.com/dragneel786/leetcode_practise/tree/main/2540-minimum-common-value/) | Easy |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/dragneel786/leetcode_practise/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
+| [3635-earliest-finish-time-for-land-and-water-rides-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3635-earliest-finish-time-for-land-and-water-rides-ii/) | Medium |
 ## Number Theory
 | Problem Name | Difficulty |
 | ------- | ------- |
