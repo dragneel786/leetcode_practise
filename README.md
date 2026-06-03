@@ -37,6 +37,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1914-cyclically-rotating-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1914-cyclically-rotating-a-grid/) | Medium |
 | [1980-find-unique-binary-string](https://github.com/dragneel786/leetcode_practise/tree/main/1980-find-unique-binary-string/) | Medium |
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/dragneel786/leetcode_practise/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
+| [2126-destroying-asteroids](https://github.com/dragneel786/leetcode_practise/tree/main/2126-destroying-asteroids/) | Medium |
 | [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/dragneel786/leetcode_practise/tree/main/2144-minimum-cost-of-buying-candies-with-discount/) | Easy |
 | [2463-minimum-total-distance-traveled](https://github.com/dragneel786/leetcode_practise/tree/main/2463-minimum-total-distance-traveled/) | Hard |
 | [2515-shortest-distance-to-target-string-in-a-circular-array](https://github.com/dragneel786/leetcode_practise/tree/main/2515-shortest-distance-to-target-string-in-a-circular-array/) | Easy |
@@ -76,6 +77,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1536-minimum-swaps-to-arrange-a-binary-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1536-minimum-swaps-to-arrange-a-binary-grid/) | Medium |
 | [1665-minimum-initial-energy-to-finish-tasks](https://github.com/dragneel786/leetcode_practise/tree/main/1665-minimum-initial-energy-to-finish-tasks/) | Hard |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/dragneel786/leetcode_practise/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
+| [2126-destroying-asteroids](https://github.com/dragneel786/leetcode_practise/tree/main/2126-destroying-asteroids/) | Medium |
 | [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/dragneel786/leetcode_practise/tree/main/2144-minimum-cost-of-buying-candies-with-discount/) | Easy |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 | [3474-lexicographically-smallest-generated-string](https://github.com/dragneel786/leetcode_practise/tree/main/3474-lexicographically-smallest-generated-string/) | Hard |
@@ -268,6 +270,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1727-largest-submatrix-with-rearrangements](https://github.com/dragneel786/leetcode_practise/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
 | [1878-get-biggest-three-rhombus-sums-in-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1878-get-biggest-three-rhombus-sums-in-a-grid/) | Medium |
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/dragneel786/leetcode_practise/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
+| [2126-destroying-asteroids](https://github.com/dragneel786/leetcode_practise/tree/main/2126-destroying-asteroids/) | Medium |
 | [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/dragneel786/leetcode_practise/tree/main/2144-minimum-cost-of-buying-candies-with-discount/) | Easy |
 | [2463-minimum-total-distance-traveled](https://github.com/dragneel786/leetcode_practise/tree/main/2463-minimum-total-distance-traveled/) | Hard |
 | [2751-robot-collisions](https://github.com/dragneel786/leetcode_practise/tree/main/2751-robot-collisions/) | Hard |
