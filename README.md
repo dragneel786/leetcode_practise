@@ -71,6 +71,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3660-jump-game-ix](https://github.com/dragneel786/leetcode_practise/tree/main/3660-jump-game-ix/) | Medium |
 | [3661-maximum-walls-destroyed-by-robots](https://github.com/dragneel786/leetcode_practise/tree/main/3661-maximum-walls-destroyed-by-robots/) | Hard |
 | [3737-count-subarrays-with-majority-element-i](https://github.com/dragneel786/leetcode_practise/tree/main/3737-count-subarrays-with-majority-element-i/) | Medium |
+| [3739-count-subarrays-with-majority-element-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3739-count-subarrays-with-majority-element-ii/) | Hard |
 | [3741-minimum-distance-between-three-equal-elements-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3741-minimum-distance-between-three-equal-elements-ii/) | Medium |
 | [3742-maximum-path-score-in-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/3742-maximum-path-score-in-a-grid/) | Medium |
 | [3761-minimum-absolute-distance-between-mirror-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3761-minimum-absolute-distance-between-mirror-pairs/) | Medium |
@@ -177,6 +178,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3548-equal-sum-grid-partition-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 | [3629-minimum-jumps-to-reach-end-via-prime-teleportation](https://github.com/dragneel786/leetcode_practise/tree/main/3629-minimum-jumps-to-reach-end-via-prime-teleportation/) | Medium |
 | [3737-count-subarrays-with-majority-element-i](https://github.com/dragneel786/leetcode_practise/tree/main/3737-count-subarrays-with-majority-element-i/) | Medium |
+| [3739-count-subarrays-with-majority-element-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3739-count-subarrays-with-majority-element-ii/) | Hard |
 | [3741-minimum-distance-between-three-equal-elements-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3741-minimum-distance-between-three-equal-elements-ii/) | Medium |
 | [3761-minimum-absolute-distance-between-mirror-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3761-minimum-absolute-distance-between-mirror-pairs/) | Medium |
 | [3842-toggle-light-bulbs](https://github.com/dragneel786/leetcode_practise/tree/main/3842-toggle-light-bulbs/) | Easy |
@@ -219,6 +221,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3546-equal-sum-grid-partition-i](https://github.com/dragneel786/leetcode_practise/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 | [3737-count-subarrays-with-majority-element-i](https://github.com/dragneel786/leetcode_practise/tree/main/3737-count-subarrays-with-majority-element-i/) | Medium |
+| [3739-count-subarrays-with-majority-element-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3739-count-subarrays-with-majority-element-ii/) | Hard |
 ## Bit Manipulation
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -288,6 +291,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1622-fancy-sequence](https://github.com/dragneel786/leetcode_practise/tree/main/1622-fancy-sequence/) | Hard |
 | [3161-block-placement-queries](https://github.com/dragneel786/leetcode_practise/tree/main/3161-block-placement-queries/) | Hard |
 | [3737-count-subarrays-with-majority-element-i](https://github.com/dragneel786/leetcode_practise/tree/main/3737-count-subarrays-with-majority-element-i/) | Medium |
+| [3739-count-subarrays-with-majority-element-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3739-count-subarrays-with-majority-element-ii/) | Hard |
 ## Sorting
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -338,6 +342,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [3653-xor-after-range-multiplication-queries-i](https://github.com/dragneel786/leetcode_practise/tree/main/3653-xor-after-range-multiplication-queries-i/) | Medium |
 | [3737-count-subarrays-with-majority-element-i](https://github.com/dragneel786/leetcode_practise/tree/main/3737-count-subarrays-with-majority-element-i/) | Medium |
+| [3739-count-subarrays-with-majority-element-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3739-count-subarrays-with-majority-element-ii/) | Hard |
 ## Depth-First Search
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -406,4 +411,5 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [3737-count-subarrays-with-majority-element-i](https://github.com/dragneel786/leetcode_practise/tree/main/3737-count-subarrays-with-majority-element-i/) | Medium |
+| [3739-count-subarrays-with-majority-element-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3739-count-subarrays-with-majority-element-ii/) | Hard |
 <!---LeetCode Topics End-->
