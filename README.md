@@ -20,6 +20,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [0154-find-minimum-in-rotated-sorted-array-ii](https://github.com/dragneel786/leetcode_practise/tree/main/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard |
 | [0396-rotate-function](https://github.com/dragneel786/leetcode_practise/tree/main/0396-rotate-function/) | Medium |
 | [0874-walking-robot-simulation](https://github.com/dragneel786/leetcode_practise/tree/main/0874-walking-robot-simulation/) | Medium |
+| [1331-rank-transform-of-an-array](https://github.com/dragneel786/leetcode_practise/tree/main/1331-rank-transform-of-an-array/) | Easy |
 | [1340-jump-game-v](https://github.com/dragneel786/leetcode_practise/tree/main/1340-jump-game-v/) | Hard |
 | [1345-jump-game-iv](https://github.com/dragneel786/leetcode_practise/tree/main/1345-jump-game-iv/) | Hard |
 | [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1391-check-if-there-is-a-valid-path-in-a-grid/) | Medium |
@@ -165,6 +166,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0874-walking-robot-simulation](https://github.com/dragneel786/leetcode_practise/tree/main/0874-walking-robot-simulation/) | Medium |
+| [1331-rank-transform-of-an-array](https://github.com/dragneel786/leetcode_practise/tree/main/1331-rank-transform-of-an-array/) | Easy |
 | [1345-jump-game-iv](https://github.com/dragneel786/leetcode_practise/tree/main/1345-jump-game-iv/) | Hard |
 | [1674-minimum-moves-to-make-array-complementary](https://github.com/dragneel786/leetcode_practise/tree/main/1674-minimum-moves-to-make-array-complementary/) | Medium |
 | [1980-find-unique-binary-string](https://github.com/dragneel786/leetcode_practise/tree/main/1980-find-unique-binary-string/) | Medium |
@@ -302,6 +304,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 ## Sorting
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1331-rank-transform-of-an-array](https://github.com/dragneel786/leetcode_practise/tree/main/1331-rank-transform-of-an-array/) | Easy |
 | [1340-jump-game-v](https://github.com/dragneel786/leetcode_practise/tree/main/1340-jump-game-v/) | Hard |
 | [1665-minimum-initial-energy-to-finish-tasks](https://github.com/dragneel786/leetcode_practise/tree/main/1665-minimum-initial-energy-to-finish-tasks/) | Hard |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/dragneel786/leetcode_practise/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
