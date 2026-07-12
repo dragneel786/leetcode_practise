@@ -1,16 +1,15 @@
 class Solution:
     def arrayRankTransform(self, arr: List[int]) -> List[int]:
-        values = [(a, i) for i, a in enumerate(arr)]
-        values.sort()
-        res = [0] * len(arr)
-        prev = -inf
-        rank = 0
-        for v, i in values:
-            if prev != v:
-                prev = v
-                rank += 1
-            
-            res[i] = rank
+        indexes = defaultdict(list)
+        for i, val in enumerate(arr):
+            indexes[val].append(i)
         
-        return res
-                
+        curr_rank = 0
+        ranks = [0] * len(arr)
+        for v in sorted(indexes.keys()):
+            curr_rank += 1
+            for i in indexes[v]:
+                ranks[i] = curr_rank
+
+        return ranks
+        
