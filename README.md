@@ -332,6 +332,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 ## Enumeration
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1291-sequential-digits](https://github.com/dragneel786/leetcode_practise/tree/main/1291-sequential-digits/) | Medium |
 | [3546-equal-sum-grid-partition-i](https://github.com/dragneel786/leetcode_practise/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 | [3833-count-dominant-indices](https://github.com/dragneel786/leetcode_practise/tree/main/3833-count-dominant-indices/) | Easy |
