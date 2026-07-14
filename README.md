@@ -59,6 +59,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3161-block-placement-queries](https://github.com/dragneel786/leetcode_practise/tree/main/3161-block-placement-queries/) | Hard |
 | [3225-maximum-score-from-grid-operations](https://github.com/dragneel786/leetcode_practise/tree/main/3225-maximum-score-from-grid-operations/) | Hard |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
+| [3336-find-the-number-of-subsequences-with-equal-gcd](https://github.com/dragneel786/leetcode_practise/tree/main/3336-find-the-number-of-subsequences-with-equal-gcd/) | Hard |
 | [3418-maximum-amount-of-money-robot-can-earn](https://github.com/dragneel786/leetcode_practise/tree/main/3418-maximum-amount-of-money-robot-can-earn/) | Medium |
 | [3464-maximize-the-distance-between-points-on-a-square](https://github.com/dragneel786/leetcode_practise/tree/main/3464-maximize-the-distance-between-points-on-a-square/) | Hard |
 | [3488-closest-equal-element-queries](https://github.com/dragneel786/leetcode_practise/tree/main/3488-closest-equal-element-queries/) | Medium |
@@ -203,6 +204,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3129-find-all-possible-stable-binary-arrays-i](https://github.com/dragneel786/leetcode_practise/tree/main/3129-find-all-possible-stable-binary-arrays-i/) | Medium |
 | [3130-find-all-possible-stable-binary-arrays-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3130-find-all-possible-stable-binary-arrays-ii/) | Hard |
 | [3225-maximum-score-from-grid-operations](https://github.com/dragneel786/leetcode_practise/tree/main/3225-maximum-score-from-grid-operations/) | Hard |
+| [3336-find-the-number-of-subsequences-with-equal-gcd](https://github.com/dragneel786/leetcode_practise/tree/main/3336-find-the-number-of-subsequences-with-equal-gcd/) | Hard |
 | [3418-maximum-amount-of-money-robot-can-earn](https://github.com/dragneel786/leetcode_practise/tree/main/3418-maximum-amount-of-money-robot-can-earn/) | Medium |
 | [3559-number-of-ways-to-assign-edge-weights-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3559-number-of-ways-to-assign-edge-weights-ii/) | Hard |
 | [3660-jump-game-ix](https://github.com/dragneel786/leetcode_practise/tree/main/3660-jump-game-ix/) | Medium |
@@ -279,6 +281,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/dragneel786/leetcode_practise/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/dragneel786/leetcode_practise/tree/main/2946-matrix-similarity-after-cyclic-shifts/) | Easy |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
+| [3336-find-the-number-of-subsequences-with-equal-gcd](https://github.com/dragneel786/leetcode_practise/tree/main/3336-find-the-number-of-subsequences-with-equal-gcd/) | Hard |
 | [3464-maximize-the-distance-between-points-on-a-square](https://github.com/dragneel786/leetcode_practise/tree/main/3464-maximize-the-distance-between-points-on-a-square/) | Hard |
 | [3558-number-of-ways-to-assign-edge-weights-i](https://github.com/dragneel786/leetcode_practise/tree/main/3558-number-of-ways-to-assign-edge-weights-i/) | Medium |
 | [3559-number-of-ways-to-assign-edge-weights-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3559-number-of-ways-to-assign-edge-weights-ii/) | Hard |
@@ -401,6 +404,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 ## Number Theory
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [3336-find-the-number-of-subsequences-with-equal-gcd](https://github.com/dragneel786/leetcode_practise/tree/main/3336-find-the-number-of-subsequences-with-equal-gcd/) | Hard |
 | [3629-minimum-jumps-to-reach-end-via-prime-teleportation](https://github.com/dragneel786/leetcode_practise/tree/main/3629-minimum-jumps-to-reach-end-via-prime-teleportation/) | Medium |
 ## Trie
 | Problem Name | Difficulty |
