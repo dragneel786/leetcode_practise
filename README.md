@@ -80,6 +80,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3833-count-dominant-indices](https://github.com/dragneel786/leetcode_practise/tree/main/3833-count-dominant-indices/) | Easy |
 | [3838-weighted-word-mapping](https://github.com/dragneel786/leetcode_practise/tree/main/3838-weighted-word-mapping/) | Easy |
 | [3842-toggle-light-bulbs](https://github.com/dragneel786/leetcode_practise/tree/main/3842-toggle-light-bulbs/) | Easy |
+| [3867-sum-of-gcd-of-formed-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3867-sum-of-gcd-of-formed-pairs/) | Medium |
 | [3875-construct-uniform-parity-array-i](https://github.com/dragneel786/leetcode_practise/tree/main/3875-construct-uniform-parity-array-i/) | Easy |
 ## Greedy
 | Problem Name | Difficulty |
@@ -163,6 +164,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3653-xor-after-range-multiplication-queries-i](https://github.com/dragneel786/leetcode_practise/tree/main/3653-xor-after-range-multiplication-queries-i/) | Medium |
 | [3838-weighted-word-mapping](https://github.com/dragneel786/leetcode_practise/tree/main/3838-weighted-word-mapping/) | Easy |
 | [3842-toggle-light-bulbs](https://github.com/dragneel786/leetcode_practise/tree/main/3842-toggle-light-bulbs/) | Easy |
+| [3867-sum-of-gcd-of-formed-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3867-sum-of-gcd-of-formed-pairs/) | Medium |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -290,6 +292,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3756-concatenate-non-zero-digits-and-multiply-by-sum-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3756-concatenate-non-zero-digits-and-multiply-by-sum-ii/) | Medium |
 | [3761-minimum-absolute-distance-between-mirror-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3761-minimum-absolute-distance-between-mirror-pairs/) | Medium |
 | [3783-mirror-distance-of-an-integer](https://github.com/dragneel786/leetcode_practise/tree/main/3783-mirror-distance-of-an-integer/) | Easy |
+| [3867-sum-of-gcd-of-formed-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3867-sum-of-gcd-of-formed-pairs/) | Medium |
 | [3870-count-commas-in-range](https://github.com/dragneel786/leetcode_practise/tree/main/3870-count-commas-in-range/) | Easy |
 | [3875-construct-uniform-parity-array-i](https://github.com/dragneel786/leetcode_practise/tree/main/3875-construct-uniform-parity-array-i/) | Easy |
 ## Design
@@ -324,6 +327,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3635-earliest-finish-time-for-land-and-water-rides-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3635-earliest-finish-time-for-land-and-water-rides-ii/) | Medium |
 | [3661-maximum-walls-destroyed-by-robots](https://github.com/dragneel786/leetcode_practise/tree/main/3661-maximum-walls-destroyed-by-robots/) | Hard |
 | [3842-toggle-light-bulbs](https://github.com/dragneel786/leetcode_practise/tree/main/3842-toggle-light-bulbs/) | Easy |
+| [3867-sum-of-gcd-of-formed-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3867-sum-of-gcd-of-formed-pairs/) | Medium |
 ## Heap (Priority Queue)
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -402,11 +406,13 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [2540-minimum-common-value](https://github.com/dragneel786/leetcode_practise/tree/main/2540-minimum-common-value/) | Easy |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/dragneel786/leetcode_practise/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
 | [3635-earliest-finish-time-for-land-and-water-rides-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3635-earliest-finish-time-for-land-and-water-rides-ii/) | Medium |
+| [3867-sum-of-gcd-of-formed-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3867-sum-of-gcd-of-formed-pairs/) | Medium |
 ## Number Theory
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [3336-find-the-number-of-subsequences-with-equal-gcd](https://github.com/dragneel786/leetcode_practise/tree/main/3336-find-the-number-of-subsequences-with-equal-gcd/) | Hard |
 | [3629-minimum-jumps-to-reach-end-via-prime-teleportation](https://github.com/dragneel786/leetcode_practise/tree/main/3629-minimum-jumps-to-reach-end-via-prime-teleportation/) | Medium |
+| [3867-sum-of-gcd-of-formed-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3867-sum-of-gcd-of-formed-pairs/) | Medium |
 ## Trie
 | Problem Name | Difficulty |
 | ------- | ------- |
