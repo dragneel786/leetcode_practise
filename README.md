@@ -63,6 +63,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3418-maximum-amount-of-money-robot-can-earn](https://github.com/dragneel786/leetcode_practise/tree/main/3418-maximum-amount-of-money-robot-can-earn/) | Medium |
 | [3464-maximize-the-distance-between-points-on-a-square](https://github.com/dragneel786/leetcode_practise/tree/main/3464-maximize-the-distance-between-points-on-a-square/) | Hard |
 | [3488-closest-equal-element-queries](https://github.com/dragneel786/leetcode_practise/tree/main/3488-closest-equal-element-queries/) | Medium |
+| [3534-path-existence-queries-in-a-graph-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3534-path-existence-queries-in-a-graph-ii/) | Hard |
 | [3546-equal-sum-grid-partition-i](https://github.com/dragneel786/leetcode_practise/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 | [3559-number-of-ways-to-assign-edge-weights-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3559-number-of-ways-to-assign-edge-weights-ii/) | Hard |
@@ -92,6 +93,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/dragneel786/leetcode_practise/tree/main/2144-minimum-cost-of-buying-candies-with-discount/) | Easy |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 | [3474-lexicographically-smallest-generated-string](https://github.com/dragneel786/leetcode_practise/tree/main/3474-lexicographically-smallest-generated-string/) | Hard |
+| [3534-path-existence-queries-in-a-graph-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3534-path-existence-queries-in-a-graph-ii/) | Hard |
 | [3600-maximize-spanning-tree-stability-with-upgrades](https://github.com/dragneel786/leetcode_practise/tree/main/3600-maximize-spanning-tree-stability-with-upgrades/) | Hard |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/dragneel786/leetcode_practise/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
 | [3635-earliest-finish-time-for-land-and-water-rides-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3635-earliest-finish-time-for-land-and-water-rides-ii/) | Medium |
@@ -208,6 +210,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3225-maximum-score-from-grid-operations](https://github.com/dragneel786/leetcode_practise/tree/main/3225-maximum-score-from-grid-operations/) | Hard |
 | [3336-find-the-number-of-subsequences-with-equal-gcd](https://github.com/dragneel786/leetcode_practise/tree/main/3336-find-the-number-of-subsequences-with-equal-gcd/) | Hard |
 | [3418-maximum-amount-of-money-robot-can-earn](https://github.com/dragneel786/leetcode_practise/tree/main/3418-maximum-amount-of-money-robot-can-earn/) | Medium |
+| [3534-path-existence-queries-in-a-graph-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3534-path-existence-queries-in-a-graph-ii/) | Hard |
 | [3559-number-of-ways-to-assign-edge-weights-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3559-number-of-ways-to-assign-edge-weights-ii/) | Hard |
 | [3660-jump-game-ix](https://github.com/dragneel786/leetcode_practise/tree/main/3660-jump-game-ix/) | Medium |
 | [3661-maximum-walls-destroyed-by-robots](https://github.com/dragneel786/leetcode_practise/tree/main/3661-maximum-walls-destroyed-by-robots/) | Hard |
@@ -235,6 +238,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [1009-complement-of-base-10-integer](https://github.com/dragneel786/leetcode_practise/tree/main/1009-complement-of-base-10-integer/) | Easy |
 | [2657-find-the-prefix-common-array-of-two-arrays](https://github.com/dragneel786/leetcode_practise/tree/main/2657-find-the-prefix-common-array-of-two-arrays/) | Medium |
+| [3534-path-existence-queries-in-a-graph-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3534-path-existence-queries-in-a-graph-ii/) | Hard |
 | [3559-number-of-ways-to-assign-edge-weights-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3559-number-of-ways-to-assign-edge-weights-ii/) | Hard |
 ## Binary Search
 | Problem Name | Difficulty |
@@ -247,6 +251,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
 | [3464-maximize-the-distance-between-points-on-a-square](https://github.com/dragneel786/leetcode_practise/tree/main/3464-maximize-the-distance-between-points-on-a-square/) | Hard |
 | [3488-closest-equal-element-queries](https://github.com/dragneel786/leetcode_practise/tree/main/3488-closest-equal-element-queries/) | Medium |
+| [3534-path-existence-queries-in-a-graph-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3534-path-existence-queries-in-a-graph-ii/) | Hard |
 | [3600-maximize-spanning-tree-stability-with-upgrades](https://github.com/dragneel786/leetcode_practise/tree/main/3600-maximize-spanning-tree-stability-with-upgrades/) | Hard |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/dragneel786/leetcode_practise/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
 | [3635-earliest-finish-time-for-land-and-water-rides-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3635-earliest-finish-time-for-land-and-water-rides-ii/) | Medium |
@@ -265,6 +270,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/dragneel786/leetcode_practise/tree/main/2492-minimum-score-of-a-path-between-two-cities/) | Medium |
 | [2685-count-the-number-of-complete-components](https://github.com/dragneel786/leetcode_practise/tree/main/2685-count-the-number-of-complete-components/) | Medium |
+| [3534-path-existence-queries-in-a-graph-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3534-path-existence-queries-in-a-graph-ii/) | Hard |
 | [3600-maximize-spanning-tree-stability-with-upgrades](https://github.com/dragneel786/leetcode_practise/tree/main/3600-maximize-spanning-tree-stability-with-upgrades/) | Hard |
 ## Minimum Spanning Tree
 | Problem Name | Difficulty |
@@ -324,6 +330,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [2751-robot-collisions](https://github.com/dragneel786/leetcode_practise/tree/main/2751-robot-collisions/) | Hard |
 | [2784-check-if-array-is-good](https://github.com/dragneel786/leetcode_practise/tree/main/2784-check-if-array-is-good/) | Easy |
 | [3464-maximize-the-distance-between-points-on-a-square](https://github.com/dragneel786/leetcode_practise/tree/main/3464-maximize-the-distance-between-points-on-a-square/) | Hard |
+| [3534-path-existence-queries-in-a-graph-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3534-path-existence-queries-in-a-graph-ii/) | Hard |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/dragneel786/leetcode_practise/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
 | [3635-earliest-finish-time-for-land-and-water-rides-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3635-earliest-finish-time-for-land-and-water-rides-ii/) | Medium |
 | [3661-maximum-walls-destroyed-by-robots](https://github.com/dragneel786/leetcode_practise/tree/main/3661-maximum-walls-destroyed-by-robots/) | Hard |
@@ -405,6 +412,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [2130-maximum-twin-sum-of-a-linked-list](https://github.com/dragneel786/leetcode_practise/tree/main/2130-maximum-twin-sum-of-a-linked-list/) | Medium |
 | [2161-partition-array-according-to-given-pivot](https://github.com/dragneel786/leetcode_practise/tree/main/2161-partition-array-according-to-given-pivot/) | Medium |
 | [2540-minimum-common-value](https://github.com/dragneel786/leetcode_practise/tree/main/2540-minimum-common-value/) | Easy |
+| [3534-path-existence-queries-in-a-graph-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3534-path-existence-queries-in-a-graph-ii/) | Hard |
 | [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/dragneel786/leetcode_practise/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
 | [3635-earliest-finish-time-for-land-and-water-rides-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3635-earliest-finish-time-for-land-and-water-rides-ii/) | Medium |
 | [3867-sum-of-gcd-of-formed-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3867-sum-of-gcd-of-formed-pairs/) | Medium |
