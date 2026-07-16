@@ -288,6 +288,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3558-number-of-ways-to-assign-edge-weights-i](https://github.com/dragneel786/leetcode_practise/tree/main/3558-number-of-ways-to-assign-edge-weights-i/) | Medium |
 | [3559-number-of-ways-to-assign-edge-weights-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3559-number-of-ways-to-assign-edge-weights-ii/) | Hard |
 | [3629-minimum-jumps-to-reach-end-via-prime-teleportation](https://github.com/dragneel786/leetcode_practise/tree/main/3629-minimum-jumps-to-reach-end-via-prime-teleportation/) | Medium |
+| [3658-gcd-of-odd-and-even-sums](https://github.com/dragneel786/leetcode_practise/tree/main/3658-gcd-of-odd-and-even-sums/) | Easy |
 | [3753-total-waviness-of-numbers-in-range-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3753-total-waviness-of-numbers-in-range-ii/) | Hard |
 | [3756-concatenate-non-zero-digits-and-multiply-by-sum-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3756-concatenate-non-zero-digits-and-multiply-by-sum-ii/) | Medium |
 | [3761-minimum-absolute-distance-between-mirror-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3761-minimum-absolute-distance-between-mirror-pairs/) | Medium |
@@ -412,6 +413,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [3336-find-the-number-of-subsequences-with-equal-gcd](https://github.com/dragneel786/leetcode_practise/tree/main/3336-find-the-number-of-subsequences-with-equal-gcd/) | Hard |
 | [3629-minimum-jumps-to-reach-end-via-prime-teleportation](https://github.com/dragneel786/leetcode_practise/tree/main/3629-minimum-jumps-to-reach-end-via-prime-teleportation/) | Medium |
+| [3658-gcd-of-odd-and-even-sums](https://github.com/dragneel786/leetcode_practise/tree/main/3658-gcd-of-odd-and-even-sums/) | Easy |
 | [3867-sum-of-gcd-of-formed-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3867-sum-of-gcd-of-formed-pairs/) | Medium |
 ## Trie
 | Problem Name | Difficulty |
