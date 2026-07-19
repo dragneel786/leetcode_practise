@@ -87,6 +87,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 ## Greedy
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1081-smallest-subsequence-of-distinct-characters](https://github.com/dragneel786/leetcode_practise/tree/main/1081-smallest-subsequence-of-distinct-characters/) | Medium |
 | [1536-minimum-swaps-to-arrange-a-binary-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1536-minimum-swaps-to-arrange-a-binary-grid/) | Medium |
 | [1665-minimum-initial-energy-to-finish-tasks](https://github.com/dragneel786/leetcode_practise/tree/main/1665-minimum-initial-energy-to-finish-tasks/) | Hard |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/dragneel786/leetcode_practise/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
@@ -124,6 +125,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [0657-robot-return-to-origin](https://github.com/dragneel786/leetcode_practise/tree/main/0657-robot-return-to-origin/) | Easy |
 | [0796-rotate-string](https://github.com/dragneel786/leetcode_practise/tree/main/0796-rotate-string/) | Easy |
+| [1081-smallest-subsequence-of-distinct-characters](https://github.com/dragneel786/leetcode_practise/tree/main/1081-smallest-subsequence-of-distinct-characters/) | Medium |
 | [1320-minimum-distance-to-type-a-word-using-two-fingers](https://github.com/dragneel786/leetcode_practise/tree/main/1320-minimum-distance-to-type-a-word-using-two-fingers/) | Hard |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/dragneel786/leetcode_practise/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
 | [1758-minimum-changes-to-make-alternating-binary-string](https://github.com/dragneel786/leetcode_practise/tree/main/1758-minimum-changes-to-make-alternating-binary-string/) | Easy |
@@ -358,6 +360,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 ## Stack
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1081-smallest-subsequence-of-distinct-characters](https://github.com/dragneel786/leetcode_practise/tree/main/1081-smallest-subsequence-of-distinct-characters/) | Medium |
 | [2130-maximum-twin-sum-of-a-linked-list](https://github.com/dragneel786/leetcode_practise/tree/main/2130-maximum-twin-sum-of-a-linked-list/) | Medium |
 | [2751-robot-collisions](https://github.com/dragneel786/leetcode_practise/tree/main/2751-robot-collisions/) | Hard |
 ## Sliding Window
@@ -450,4 +453,8 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [3737-count-subarrays-with-majority-element-i](https://github.com/dragneel786/leetcode_practise/tree/main/3737-count-subarrays-with-majority-element-i/) | Medium |
 | [3739-count-subarrays-with-majority-element-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3739-count-subarrays-with-majority-element-ii/) | Hard |
+## Monotonic Stack
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1081-smallest-subsequence-of-distinct-characters](https://github.com/dragneel786/leetcode_practise/tree/main/1081-smallest-subsequence-of-distinct-characters/) | Medium |
 <!---LeetCode Topics End-->
