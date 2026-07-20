@@ -20,6 +20,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [0154-find-minimum-in-rotated-sorted-array-ii](https://github.com/dragneel786/leetcode_practise/tree/main/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard |
 | [0396-rotate-function](https://github.com/dragneel786/leetcode_practise/tree/main/0396-rotate-function/) | Medium |
 | [0874-walking-robot-simulation](https://github.com/dragneel786/leetcode_practise/tree/main/0874-walking-robot-simulation/) | Medium |
+| [1260-shift-2d-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1260-shift-2d-grid/) | Easy |
 | [1331-rank-transform-of-an-array](https://github.com/dragneel786/leetcode_practise/tree/main/1331-rank-transform-of-an-array/) | Easy |
 | [1340-jump-game-v](https://github.com/dragneel786/leetcode_practise/tree/main/1340-jump-game-v/) | Hard |
 | [1345-jump-game-iv](https://github.com/dragneel786/leetcode_practise/tree/main/1345-jump-game-iv/) | Hard |
@@ -103,6 +104,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0048-rotate-image](https://github.com/dragneel786/leetcode_practise/tree/main/0048-rotate-image/) | Medium |
+| [1260-shift-2d-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1260-shift-2d-grid/) | Easy |
 | [1391-check-if-there-is-a-valid-path-in-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1391-check-if-there-is-a-valid-path-in-a-grid/) | Medium |
 | [1536-minimum-swaps-to-arrange-a-binary-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1536-minimum-swaps-to-arrange-a-binary-grid/) | Medium |
 | [1559-detect-cycles-in-2d-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
@@ -156,6 +158,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [0657-robot-return-to-origin](https://github.com/dragneel786/leetcode_practise/tree/main/0657-robot-return-to-origin/) | Easy |
 | [0874-walking-robot-simulation](https://github.com/dragneel786/leetcode_practise/tree/main/0874-walking-robot-simulation/) | Medium |
+| [1260-shift-2d-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1260-shift-2d-grid/) | Easy |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/dragneel786/leetcode_practise/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
 | [1914-cyclically-rotating-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1914-cyclically-rotating-a-grid/) | Medium |
 | [2069-walking-robot-simulation-ii](https://github.com/dragneel786/leetcode_practise/tree/main/2069-walking-robot-simulation-ii/) | Medium |
