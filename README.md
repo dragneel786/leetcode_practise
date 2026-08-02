@@ -20,6 +20,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [0154-find-minimum-in-rotated-sorted-array-ii](https://github.com/dragneel786/leetcode_practise/tree/main/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard |
 | [0396-rotate-function](https://github.com/dragneel786/leetcode_practise/tree/main/0396-rotate-function/) | Medium |
 | [0486-predict-the-winner](https://github.com/dragneel786/leetcode_practise/tree/main/0486-predict-the-winner/) | Medium |
+| [0628-maximum-product-of-three-numbers](https://github.com/dragneel786/leetcode_practise/tree/main/0628-maximum-product-of-three-numbers/) | Easy |
 | [0874-walking-robot-simulation](https://github.com/dragneel786/leetcode_practise/tree/main/0874-walking-robot-simulation/) | Medium |
 | [0877-stone-game](https://github.com/dragneel786/leetcode_practise/tree/main/0877-stone-game/) | Medium |
 | [1260-shift-2d-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1260-shift-2d-grid/) | Easy |
@@ -306,6 +307,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [0048-rotate-image](https://github.com/dragneel786/leetcode_practise/tree/main/0048-rotate-image/) | Medium |
 | [0396-rotate-function](https://github.com/dragneel786/leetcode_practise/tree/main/0396-rotate-function/) | Medium |
 | [0486-predict-the-winner](https://github.com/dragneel786/leetcode_practise/tree/main/0486-predict-the-winner/) | Medium |
+| [0628-maximum-product-of-three-numbers](https://github.com/dragneel786/leetcode_practise/tree/main/0628-maximum-product-of-three-numbers/) | Easy |
 | [0788-rotated-digits](https://github.com/dragneel786/leetcode_practise/tree/main/0788-rotated-digits/) | Medium |
 | [0877-stone-game](https://github.com/dragneel786/leetcode_practise/tree/main/0877-stone-game/) | Medium |
 | [1344-angle-between-hands-of-a-clock](https://github.com/dragneel786/leetcode_practise/tree/main/1344-angle-between-hands-of-a-clock/) | Medium |
@@ -349,6 +351,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 ## Sorting
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0628-maximum-product-of-three-numbers](https://github.com/dragneel786/leetcode_practise/tree/main/0628-maximum-product-of-three-numbers/) | Easy |
 | [1331-rank-transform-of-an-array](https://github.com/dragneel786/leetcode_practise/tree/main/1331-rank-transform-of-an-array/) | Easy |
 | [1340-jump-game-v](https://github.com/dragneel786/leetcode_practise/tree/main/1340-jump-game-v/) | Hard |
 | [1665-minimum-initial-energy-to-finish-tasks](https://github.com/dragneel786/leetcode_practise/tree/main/1665-minimum-initial-energy-to-finish-tasks/) | Hard |
