@@ -20,6 +20,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [0154-find-minimum-in-rotated-sorted-array-ii](https://github.com/dragneel786/leetcode_practise/tree/main/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard |
 | [0396-rotate-function](https://github.com/dragneel786/leetcode_practise/tree/main/0396-rotate-function/) | Medium |
 | [0874-walking-robot-simulation](https://github.com/dragneel786/leetcode_practise/tree/main/0874-walking-robot-simulation/) | Medium |
+| [0877-stone-game](https://github.com/dragneel786/leetcode_practise/tree/main/0877-stone-game/) | Medium |
 | [1260-shift-2d-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1260-shift-2d-grid/) | Easy |
 | [1331-rank-transform-of-an-array](https://github.com/dragneel786/leetcode_practise/tree/main/1331-rank-transform-of-an-array/) | Easy |
 | [1340-jump-game-v](https://github.com/dragneel786/leetcode_practise/tree/main/1340-jump-game-v/) | Hard |
@@ -215,6 +216,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [0396-rotate-function](https://github.com/dragneel786/leetcode_practise/tree/main/0396-rotate-function/) | Medium |
 | [0788-rotated-digits](https://github.com/dragneel786/leetcode_practise/tree/main/0788-rotated-digits/) | Medium |
+| [0877-stone-game](https://github.com/dragneel786/leetcode_practise/tree/main/0877-stone-game/) | Medium |
 | [1320-minimum-distance-to-type-a-word-using-two-fingers](https://github.com/dragneel786/leetcode_practise/tree/main/1320-minimum-distance-to-type-a-word-using-two-fingers/) | Hard |
 | [1340-jump-game-v](https://github.com/dragneel786/leetcode_practise/tree/main/1340-jump-game-v/) | Hard |
 | [1594-maximum-non-negative-product-in-a-matrix](https://github.com/dragneel786/leetcode_practise/tree/main/1594-maximum-non-negative-product-in-a-matrix/) | Medium |
@@ -301,6 +303,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [0048-rotate-image](https://github.com/dragneel786/leetcode_practise/tree/main/0048-rotate-image/) | Medium |
 | [0396-rotate-function](https://github.com/dragneel786/leetcode_practise/tree/main/0396-rotate-function/) | Medium |
 | [0788-rotated-digits](https://github.com/dragneel786/leetcode_practise/tree/main/0788-rotated-digits/) | Medium |
+| [0877-stone-game](https://github.com/dragneel786/leetcode_practise/tree/main/0877-stone-game/) | Medium |
 | [1344-angle-between-hands-of-a-clock](https://github.com/dragneel786/leetcode_practise/tree/main/1344-angle-between-hands-of-a-clock/) | Medium |
 | [1622-fancy-sequence](https://github.com/dragneel786/leetcode_practise/tree/main/1622-fancy-sequence/) | Hard |
 | [1840-maximum-building-height](https://github.com/dragneel786/leetcode_practise/tree/main/1840-maximum-building-height/) | Hard |
@@ -488,4 +491,8 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [3518-smallest-palindromic-rearrangement-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3518-smallest-palindromic-rearrangement-ii/) | Hard |
+## Game Theory
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0877-stone-game](https://github.com/dragneel786/leetcode_practise/tree/main/0877-stone-game/) | Medium |
 <!---LeetCode Topics End-->
