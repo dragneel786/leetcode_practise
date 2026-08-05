@@ -297,6 +297,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | ------- | ------- |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/dragneel786/leetcode_practise/tree/main/2492-minimum-score-of-a-path-between-two-cities/) | Medium |
 | [2685-count-the-number-of-complete-components](https://github.com/dragneel786/leetcode_practise/tree/main/2685-count-the-number-of-complete-components/) | Medium |
+| [3310-remove-methods-from-project](https://github.com/dragneel786/leetcode_practise/tree/main/3310-remove-methods-from-project/) | Medium |
 | [3534-path-existence-queries-in-a-graph-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3534-path-existence-queries-in-a-graph-ii/) | Hard |
 | [3600-maximize-spanning-tree-stability-with-upgrades](https://github.com/dragneel786/leetcode_practise/tree/main/3600-maximize-spanning-tree-stability-with-upgrades/) | Hard |
 ## Minimum Spanning Tree
@@ -420,6 +421,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1722-minimize-hamming-distance-after-swap-operations](https://github.com/dragneel786/leetcode_practise/tree/main/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/dragneel786/leetcode_practise/tree/main/2492-minimum-score-of-a-path-between-two-cities/) | Medium |
 | [2685-count-the-number-of-complete-components](https://github.com/dragneel786/leetcode_practise/tree/main/2685-count-the-number-of-complete-components/) | Medium |
+| [3310-remove-methods-from-project](https://github.com/dragneel786/leetcode_practise/tree/main/3310-remove-methods-from-project/) | Medium |
 | [3558-number-of-ways-to-assign-edge-weights-i](https://github.com/dragneel786/leetcode_practise/tree/main/3558-number-of-ways-to-assign-edge-weights-i/) | Medium |
 | [3559-number-of-ways-to-assign-edge-weights-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3559-number-of-ways-to-assign-edge-weights-ii/) | Hard |
 ## Counting
@@ -441,6 +443,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1559-detect-cycles-in-2d-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1559-detect-cycles-in-2d-grid/) | Medium |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/dragneel786/leetcode_practise/tree/main/2492-minimum-score-of-a-path-between-two-cities/) | Medium |
 | [2685-count-the-number-of-complete-components](https://github.com/dragneel786/leetcode_practise/tree/main/2685-count-the-number-of-complete-components/) | Medium |
+| [3310-remove-methods-from-project](https://github.com/dragneel786/leetcode_practise/tree/main/3310-remove-methods-from-project/) | Medium |
 | [3629-minimum-jumps-to-reach-end-via-prime-teleportation](https://github.com/dragneel786/leetcode_practise/tree/main/3629-minimum-jumps-to-reach-end-via-prime-teleportation/) | Medium |
 ## Linked List
 | Problem Name | Difficulty |
