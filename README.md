@@ -214,6 +214,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3741-minimum-distance-between-three-equal-elements-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3741-minimum-distance-between-three-equal-elements-ii/) | Medium |
 | [3761-minimum-absolute-distance-between-mirror-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3761-minimum-absolute-distance-between-mirror-pairs/) | Medium |
 | [3842-toggle-light-bulbs](https://github.com/dragneel786/leetcode_practise/tree/main/3842-toggle-light-bulbs/) | Easy |
+| [3945-digit-frequency-score](https://github.com/dragneel786/leetcode_practise/tree/main/3945-digit-frequency-score/) | Easy |
 ## Backtracking
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -347,6 +348,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3867-sum-of-gcd-of-formed-pairs](https://github.com/dragneel786/leetcode_practise/tree/main/3867-sum-of-gcd-of-formed-pairs/) | Medium |
 | [3870-count-commas-in-range](https://github.com/dragneel786/leetcode_practise/tree/main/3870-count-commas-in-range/) | Easy |
 | [3875-construct-uniform-parity-array-i](https://github.com/dragneel786/leetcode_practise/tree/main/3875-construct-uniform-parity-array-i/) | Easy |
+| [3945-digit-frequency-score](https://github.com/dragneel786/leetcode_practise/tree/main/3945-digit-frequency-score/) | Easy |
 ## Design
 | Problem Name | Difficulty |
 | ------- | ------- |
