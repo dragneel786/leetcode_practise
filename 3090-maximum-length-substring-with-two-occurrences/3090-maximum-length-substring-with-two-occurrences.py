@@ -1,14 +1,13 @@
 class Solution:
     def maximumLengthSubstring(self, s: str) -> int:
+        max_len = length = start = 0
         counts = Counter()
-        ans = start = 0
-        for end in range(len(s)):
-            counts[s[end]] += 1
-            while(counts[s[end]] > 2):
+        for i, c in enumerate(s):
+            while(counts[c] > 1):
                 counts[s[start]] -= 1
                 start += 1
-            
-            ans = max(ans, end - start + 1)
-        
-        return ans
-            
+
+            counts[c] += 1
+            max_len = max(max_len, i - start + 1)
+
+        return max_len
