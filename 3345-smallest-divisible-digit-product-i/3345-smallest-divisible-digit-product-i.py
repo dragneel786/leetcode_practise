@@ -1,16 +1,13 @@
 class Solution:
     def smallestNumber(self, n: int, t: int) -> int:
-        def is_div(num):
-            pro = 1
-            while(num):
-                pro *= (num % 10)
-                num //= 10
+        for val in range(max(n, t), 101):
+            temp = val
+            prod = 1
+            while(val):
+                mod = val % 10
+                prod *= mod
+                val //= 10
             
-            return pro % t == 0
+            if (prod % t) == 0:
+                return temp
         
-        while(not is_div(n)):
-            n += 1
-        
-        return n
-            
-            
