@@ -46,6 +46,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1914-cyclically-rotating-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1914-cyclically-rotating-a-grid/) | Medium |
 | [1979-find-greatest-common-divisor-of-array](https://github.com/dragneel786/leetcode_practise/tree/main/1979-find-greatest-common-divisor-of-array/) | Easy |
 | [1980-find-unique-binary-string](https://github.com/dragneel786/leetcode_practise/tree/main/1980-find-unique-binary-string/) | Medium |
+| [2029-stone-game-ix](https://github.com/dragneel786/leetcode_practise/tree/main/2029-stone-game-ix/) | Medium |
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/dragneel786/leetcode_practise/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
 | [2126-destroying-asteroids](https://github.com/dragneel786/leetcode_practise/tree/main/2126-destroying-asteroids/) | Medium |
 | [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/dragneel786/leetcode_practise/tree/main/2144-minimum-cost-of-buying-candies-with-discount/) | Easy |
@@ -103,6 +104,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1536-minimum-swaps-to-arrange-a-binary-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1536-minimum-swaps-to-arrange-a-binary-grid/) | Medium |
 | [1665-minimum-initial-energy-to-finish-tasks](https://github.com/dragneel786/leetcode_practise/tree/main/1665-minimum-initial-energy-to-finish-tasks/) | Hard |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/dragneel786/leetcode_practise/tree/main/1727-largest-submatrix-with-rearrangements/) | Medium |
+| [2029-stone-game-ix](https://github.com/dragneel786/leetcode_practise/tree/main/2029-stone-game-ix/) | Medium |
 | [2126-destroying-asteroids](https://github.com/dragneel786/leetcode_practise/tree/main/2126-destroying-asteroids/) | Medium |
 | [2144-minimum-cost-of-buying-candies-with-discount](https://github.com/dragneel786/leetcode_practise/tree/main/2144-minimum-cost-of-buying-candies-with-discount/) | Easy |
 | [3016-minimum-number-of-pushes-to-type-word-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3016-minimum-number-of-pushes-to-type-word-ii/) | Medium |
@@ -335,6 +337,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [1840-maximum-building-height](https://github.com/dragneel786/leetcode_practise/tree/main/1840-maximum-building-height/) | Hard |
 | [1878-get-biggest-three-rhombus-sums-in-a-grid](https://github.com/dragneel786/leetcode_practise/tree/main/1878-get-biggest-three-rhombus-sums-in-a-grid/) | Medium |
 | [1979-find-greatest-common-divisor-of-array](https://github.com/dragneel786/leetcode_practise/tree/main/1979-find-greatest-common-divisor-of-array/) | Easy |
+| [2029-stone-game-ix](https://github.com/dragneel786/leetcode_practise/tree/main/2029-stone-game-ix/) | Medium |
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/dragneel786/leetcode_practise/tree/main/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/dragneel786/leetcode_practise/tree/main/2946-matrix-similarity-after-cyclic-shifts/) | Easy |
 | [3296-minimum-number-of-seconds-to-make-mountain-height-zero](https://github.com/dragneel786/leetcode_practise/tree/main/3296-minimum-number-of-seconds-to-make-mountain-height-zero/) | Medium |
@@ -450,6 +453,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 ## Counting
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [2029-stone-game-ix](https://github.com/dragneel786/leetcode_practise/tree/main/2029-stone-game-ix/) | Medium |
 | [2833-furthest-point-from-origin](https://github.com/dragneel786/leetcode_practise/tree/main/2833-furthest-point-from-origin/) | Easy |
 | [3016-minimum-number-of-pushes-to-type-word-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3016-minimum-number-of-pushes-to-type-word-ii/) | Medium |
 | [3518-smallest-palindromic-rearrangement-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3518-smallest-palindromic-rearrangement-ii/) | Hard |
@@ -535,14 +539,21 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [0877-stone-game](https://github.com/dragneel786/leetcode_practise/tree/main/0877-stone-game/) | Medium |
 | [1140-stone-game-ii](https://github.com/dragneel786/leetcode_practise/tree/main/1140-stone-game-ii/) | Medium |
 | [1406-stone-game-iii](https://github.com/dragneel786/leetcode_practise/tree/main/1406-stone-game-iii/) | Hard |
+| [2029-stone-game-ix](https://github.com/dragneel786/leetcode_practise/tree/main/2029-stone-game-ix/) | Medium |
 ## Minimax
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1140-stone-game-ii](https://github.com/dragneel786/leetcode_practise/tree/main/1140-stone-game-ii/) | Medium |
 | [1406-stone-game-iii](https://github.com/dragneel786/leetcode_practise/tree/main/1406-stone-game-iii/) | Hard |
+| [2029-stone-game-ix](https://github.com/dragneel786/leetcode_practise/tree/main/2029-stone-game-ix/) | Medium |
 ## Zero-Sum Game
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1140-stone-game-ii](https://github.com/dragneel786/leetcode_practise/tree/main/1140-stone-game-ii/) | Medium |
 | [1406-stone-game-iii](https://github.com/dragneel786/leetcode_practise/tree/main/1406-stone-game-iii/) | Hard |
+| [2029-stone-game-ix](https://github.com/dragneel786/leetcode_practise/tree/main/2029-stone-game-ix/) | Medium |
+## Nim Game
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2029-stone-game-ix](https://github.com/dragneel786/leetcode_practise/tree/main/2029-stone-game-ix/) | Medium |
 <!---LeetCode Topics End-->
