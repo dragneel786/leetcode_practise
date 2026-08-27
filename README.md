@@ -177,6 +177,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3756-concatenate-non-zero-digits-and-multiply-by-sum-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3756-concatenate-non-zero-digits-and-multiply-by-sum-ii/) | Medium |
 | [3838-weighted-word-mapping](https://github.com/dragneel786/leetcode_practise/tree/main/3838-weighted-word-mapping/) | Easy |
 | [3856-trim-trailing-vowels](https://github.com/dragneel786/leetcode_practise/tree/main/3856-trim-trailing-vowels/) | Easy |
+| [4006-count-valid-prefixes](https://github.com/dragneel786/leetcode_practise/tree/main/4006-count-valid-prefixes/) | Easy |
 ## Recursion
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -474,6 +475,7 @@ Created with :heart: by [LeetPush](https://github.com/husamahmud/LeetPush)
 | [3518-smallest-palindromic-rearrangement-ii](https://github.com/dragneel786/leetcode_practise/tree/main/3518-smallest-palindromic-rearrangement-ii/) | Hard |
 | [3720-lexicographically-smallest-permutation-greater-than-target](https://github.com/dragneel786/leetcode_practise/tree/main/3720-lexicographically-smallest-permutation-greater-than-target/) | Medium |
 | [3737-count-subarrays-with-majority-element-i](https://github.com/dragneel786/leetcode_practise/tree/main/3737-count-subarrays-with-majority-element-i/) | Medium |
+| [4006-count-valid-prefixes](https://github.com/dragneel786/leetcode_practise/tree/main/4006-count-valid-prefixes/) | Easy |
 ## Geometry
 | Problem Name | Difficulty |
 | ------- | ------- |
